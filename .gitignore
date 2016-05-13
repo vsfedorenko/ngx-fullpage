@@ -1,7 +1,18 @@
+# Project specific
+
+/build
+
+# Typings
+
+/typings
+
+# JetBrains
+/.idea
+
 # Logs
+
 logs
 *.log
-npm-debug.log*
 
 # Runtime data
 pids
@@ -13,9 +24,6 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
-
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
 
 # node-waf configuration
 .lock-wscript

@@ -1,0 +1,180 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+
+body {
+    font-family: 'Titillium Web', Arial sans-serif;
+    color: #333;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+#fp-nav {
+    top: 50% !important;
+}
+
+#menu li {
+    display: inline-block;
+    margin: 10px;
+    color: #000;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#menu li.active {
+    background: #666;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: #000;
+}
+
+#menu li.active a:hover {
+    color: #000;
+}
+
+#menu li:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#menu li a,
+#menu li.active a {
+    padding: 9px 18px;
+    display: block;
+}
+
+#menu li.active a {
+    color: #fff;
+}
+
+#menu {
+    position: fixed;
+    height: 40px;
+    z-index: 70;
+    padding: 0;
+    margin: auto;
+}
+
+.section {
+    text-align: center;
+}
+
+.section pre {
+    margin-top: 5px;
+    text-align: start;
+}
+
+.section pre code {
+    background: rgba(255, 255, 255, 0.1) !important;
+    font-weight: normal;
+    font-size: 1.2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 25px;
+}
+
+.code-block {
+    margin: auto;
+    display: inline-block;
+}
+
+//
+// Section 1
+//
+
+$section1_degree: 90deg;
+$section1_first_color: rgba(0, 255, 68, 0.2);
+$section1_second_color: rgba(255, 0, 0, 0.4);
+
+#section1 {
+    background: #ffffff; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($section1_degree, $section1_first_color, $section1_second_color); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($section1_degree, $section1_first_color, $section1_second_color); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($section1_degree, $section1_first_color, $section1_second_color); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($section1_degree, $section1_first_color, $section1_second_color); /* Standard syntax */
+}
+
+#section1 .logo-image {
+    margin: 25px;
+}
+
+//
+// Section 2
+//
+
+$section2_degree: 90deg;
+$section2_first_color: rgba(32, 255, 0, 0.2);
+$section2_second_color: $section1_second_color;
+
+#section2 {
+    background: #ffffff; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($section2_degree, $section2_first_color, $section2_second_color); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($section2_degree, $section2_first_color, $section2_second_color); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($section2_degree, $section2_first_color, $section2_second_color); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($section2_degree, $section2_first_color, $section2_second_color); /* Standard syntax */
+}
+
+//
+// Section 3
+//
+
+$section3_degree: 90deg;
+$section3_first_color: rgba(145, 255, 1, 0.2);
+$section3_second_color: $section2_second_color;
+
+#section3 {
+    background: #ffffff; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($section3_degree, $section3_first_color, $section3_second_color); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($section3_degree, $section3_first_color, $section3_second_color); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($section3_degree, $section3_first_color, $section3_second_color); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($section3_degree, $section3_first_color, $section3_second_color); /* Standard syntax */
+}
+
+//
+// Section 4
+//
+
+$section4_degree: 90deg;
+$section4_first_color: rgba(255, 155, 0, 0.2);
+$section4_second_color: $section3_second_color;
+
+#section4 {
+    background: #ffffff; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($section4_degree, $section4_first_color, $section4_second_color); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($section4_degree, $section4_first_color, $section4_second_color); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($section4_degree, $section4_first_color, $section4_second_color); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($section4_degree, $section4_first_color, $section4_second_color); /* Standard syntax */
+}
+
+//
+// Section 4
+//
+
+$section5_degree: 45deg;
+$section5_first_color: rgba(255, 255, 255, 0.2);
+$section5_second_color: $section4_second_color;
+
+#section5 {
+    background: #ffffff; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($section5_degree, $section5_first_color, $section5_second_color); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($section5_degree, $section5_first_color, $section5_second_color); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($section5_degree, $section5_first_color, $section5_second_color); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($section5_degree, $section5_first_color, $section5_second_color); /* Standard syntax */
+}
