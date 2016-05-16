@@ -8,7 +8,7 @@ This is an Angular 2 [fullPage.js](https://github.com/alvarotrigo/fullPage.js) p
 [![Dependency Status](https://david-dm.org/meiblorn/ng2-fullpage.svg)](https://david-dm.org/meiblorn/ng2-fullpage)
 [![devDependency Status](https://david-dm.org/meiblorn/ng2-fullpage/dev-status.svg)](https://david-dm.org/meiblorn/ng2-fullpage#info=devDependencies)
 [![Test Coverage](https://codeclimate.com/github/meiblorn/ng2-fullpage/badges/coverage.svg)](https://codeclimate.com/github/meiblorn/ng2-fullpage/coverage)
-[![Issue Count](https://codeclimate.com/github/meiblorn/ng2-fullpage/badges/issue_count.svg)](https://codeclimate.com/github/meiblorn/ng2-fullpage)
+[![Code Climate](https://codeclimate.com/github/meiblorn/ng2-fullpage/badges/gpa.svg)](https://codeclimate.com/github/meiblorn/ng2-fullpage)
 
 ## Demo
 
