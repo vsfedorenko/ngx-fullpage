@@ -1,0 +1,21 @@
+engines:
+  fixme:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - typescript
+        - javascript
+  scss-lint:
+    enabled: true
+  eslint:
+    enabled: true
+
+ratings:
+  paths:
+    - components/**
+    - demo/**
+
+exclude_paths:
+  - test/**/*
