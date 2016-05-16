@@ -1,9 +1,39 @@
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web);
 
+$body-color: #333;
+
+$menu-color: #000;
+$menu-color-hover: rgba(255, 255, 255, .8);
+$menu-color-background: rgba(255, 255, 255, .5);
+$menu-color-active: #fff;
+$menu-color-active-background: rgba(0, 0, 0, .5);
+
+$section-code-background: rgba(255, 255, 255, .1);
+
+$welcome-section-degree: 90deg;
+$welcome-section-first-color: rgba(0, 255, 68, .2);
+$welcome-section-second-color: rgba(255, 0, 0, .4);
+
+$install-section-degree: 90deg;
+$install-section-first-color: rgba(32, 255, 0, .2);
+$install-section-second-color: $welcome-section-second-color;
+
+$usage-section-degree: 90deg;
+$usage-section-first-color: rgba(145, 255, 1, .2);
+$usage-section-second-color: $install-section-second-color;
+
+$slides-section-degree: 90deg;
+$slides-section-first-color: rgba(255, 155, 0, .2);
+$slides-section-second-color: $usage-section-second-color;
+
+$start-use-it-now-section-degree: 45deg;
+$start-use-it-now-section-first-color: rgba(255, 255, 255, .2);
+$start-use-it-now-section-second-color: $slides-section-second-color;
+
+
 body {
   font-family: 'Titillium Web', Arial sans-serif;
-  color: #333;
-  color: rgba(0, 0, 0, 0.5);
+  color: $body-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,30 +59,30 @@ h4 {
 #menu li {
   display: inline-block;
   margin: 10px;
-  color: #000;
-  background: #fff;
-  background: rgba(255, 255, 255, 0.5);
+  color: $menu-color;
+  background: $menu-color-active;
+  background: $menu-color-background;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
 
 #menu li.active {
   background: #666;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  background: $menu-color-active-background;
+  color: $menu-color-active;
 }
 
 #menu li a {
   text-decoration: none;
-  color: #000;
+  color: $menu-color;
 }
 
 #menu li.active a:hover {
-  color: #000;
+  color: $menu-color;
 }
 
 #menu li:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: $menu-color-hover;
 }
 
 #menu li a,
@@ -62,7 +92,7 @@ h4 {
 }
 
 #menu li.active a {
-  color: #fff;
+  color: $menu-color-active;
 }
 
 #menu {
@@ -83,10 +113,10 @@ h4 {
 }
 
 .section pre code {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: $section-code-background !important;
   font-weight: normal;
   font-size: 1.2em;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
   padding: 25px;
 }
 
@@ -95,66 +125,26 @@ h4 {
   display: inline-block;
 }
 
-//
-// Welcome section
-//
-
-$welcomeSectionDegree: 90deg;
-$welcomeSectionFirstColor: rgba(0, 255, 68, 0.2);
-$welcomeSectionSecondColor: rgba(255, 0, 0, 0.4);
-
 .welcome-section {
-  background: linear-gradient($welcomeSectionDegree, $welcomeSectionFirstColor, $welcomeSectionSecondColor);
+  background: linear-gradient($welcome-section-degree, $welcome-section-first-color, $welcome-section-second-color);
 }
 
 .welcome-section .logo-image {
   margin: 25px;
 }
 
-//
-// Install section
-//
-
-$installSectionDegree: 90deg;
-$installSectionFirstColor: rgba(32, 255, 0, 0.2);
-$installSectionSecondColor: $welcomeSectionSecondColor;
-
 .install-section {
-  background: linear-gradient($installSectionDegree, $installSectionFirstColor, $installSectionSecondColor); /* Standard syntax */
+  background: linear-gradient($install-section-degree, $install-section-first-color, $install-section-second-color); /* Standard syntax */
 }
-
-//
-// Usage section
-//
-
-$usageSectionDegree: 90deg;
-$usageSectionFirstColor: rgba(145, 255, 1, 0.2);
-$usageSectionSecondColor: $installSectionSecondColor;
 
 .usage-section {
-  background: linear-gradient($usageSectionDegree, $usageSectionFirstColor, $usageSectionSecondColor); /* Standard syntax */
+  background: linear-gradient($usage-section-degree, $usage-section-first-color, $usage-section-second-color); /* Standard syntax */
 }
-
-//
-// Slides section
-//
-
-$slidesSectionDegree: 90deg;
-$slidesSectionFirstColor: rgba(255, 155, 0, 0.2);
-$slidesSectionSecondColor: $usageSectionSecondColor;
 
 .slides-section {
-  background: linear-gradient($slidesSectionDegree, $slidesSectionFirstColor, $slidesSectionSecondColor); /* Standard syntax */
+  background: linear-gradient($slides-section-degree, $slides-section-first-color, $slides-section-second-color); /* Standard syntax */
 }
 
-//
-// Start Use It Now section
-//
-
-$startUseItNowSectiondegree: 45deg;
-$startUseItNowSectionFirstColor: rgba(255, 255, 255, 0.2);
-$startUseItNowSectionSecondColor: $slidesSectionSecondColor;
-
 .start-use-it-now-section {
-  background: linear-gradient($startUseItNowSectiondegree, $startUseItNowSectionFirstColor, $startUseItNowSectionSecondColor); /* Standard syntax */
+  background: linear-gradient($start-use-it-now-section-degree, $start-use-it-now-section-first-color, $start-use-it-now-section-second-color); /* Standard syntax */
 }
