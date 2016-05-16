@@ -18,9 +18,10 @@ export default config => {
         coverageReporter: {
             dir: Config('test.reports.coverage.directory'),
             reporters: [
-                {type: 'text-summary'},
-                {type: 'json'},
-                {type: 'html'}
+                {type: 'text-summary', subdir: '../summary-report'},
+                {type: 'json', subdir: '../json-report'},
+                {type: 'html', subdir: '../html-report'},
+                {type: 'lcov', subdir: '../lcov-report'}
             ]
         },
         webpackServer: {

@@ -26,13 +26,14 @@ describe('fullpage directive', () => {
             });
     }
 
-    it('compiled element should have fullpage-wrapper class, 100% height style', async(inject([TestComponentBuilder],
-        (tcb: TestComponentBuilder) => {
-            return createComponentAndTest(tcb, (fixture) => {
-                let compiled = fixture.debugElement.nativeElement.children[0];
-                
-                expect(compiled.classList.contains('fullpage-wrapper')).toBe(true);
-                expect(compiled.style.height).toBe('100%');
-            });
-        })));
+    it('compiled element should have fullpage-wrapper class, 100% height style',
+        async(inject([TestComponentBuilder],
+            (tcb: TestComponentBuilder) => {
+                return createComponentAndTest(tcb, (fixture) => {
+                    let compiled = fixture.debugElement.nativeElement.children[0];
+
+                    expect(compiled.classList.contains('fullpage-wrapper')).toBe(true);
+                    expect(compiled.style.height).toBe('100%');
+                });
+            })));
 });
