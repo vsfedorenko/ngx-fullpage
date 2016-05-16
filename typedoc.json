@@ -1,7 +1,7 @@
 {
   "mode": "modules",
   "out": "docs",
-  "theme": "default",
+  "theme": "minimal",
   "ignoreCompilerErrors": "true",
   "experimentalDecorators": "true",
   "emitDecoratorMetadata": "true",
