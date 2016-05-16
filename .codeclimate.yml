@@ -19,3 +19,4 @@ ratings:
 
 exclude_paths:
   - test/**/*
+  - demo/app/app.component.scss
