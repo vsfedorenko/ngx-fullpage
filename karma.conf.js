@@ -4,4 +4,4 @@
 
 require('babel-register');
 
-module.exports.config = require('./config/frontend/protractor.conf.babel').default;
+module.exports = require('./config/karma.conf.babel').default;

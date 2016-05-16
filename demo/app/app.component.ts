@@ -27,9 +27,9 @@ export class AppComponent {
 
     @Output() private templates = {
         install: require('raw!./templates/install.template.txt'),
-        usage: require('./templates/usage.template.html'),
+        usage: require('raw!./templates/usage.template.txt'),
         slides: {
-            attributes: require('./templates/slide1/usage.attributes.slide.template.html'),
+            attributes: require('raw!./templates/slide1/usage.attributes.slide.template.txt'),
             classOptions: require('raw!./templates/slide2/usage.class.options.template.txt'),
             mix: require('raw!./templates/slide3/usage.mix.template.txt')
         }

@@ -29,7 +29,13 @@ export default WebpackMerge(CommonWebpackConfig, {
             compress: {screw_ie8: true},
             comments: false
         }),
-        new CompressionPlugin({regExp: /\.css$|\.html$|\.js$|\.map$/, threshold: 2 * 1024})
+        new CompressionPlugin({regExp: /\.css$|\.html$|\.js$|\.map$/, threshold: 2 * 1024}),
+        new HtmlWebpackPlugin({
+            template: Utils.root('demo/index.html'),
+            filename: Utils.root('index.html'),
+            excludeChunks: ['ng2-fullpage'],
+            chunksSortMode: Utils.packageSort(['polyfills', 'vendor', 'samples.basic'])
+        })
     ],
     htmlLoader: {
         minimize: true,

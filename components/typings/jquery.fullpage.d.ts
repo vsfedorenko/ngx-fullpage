@@ -7,7 +7,7 @@
  * i.e: To use $elem.fullpage()
  */
 export interface JQuery {
-    fullpage(options?:Object):void;
+    fullpage(options?: Object): void;
 }
 
 

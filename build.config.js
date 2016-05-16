@@ -67,5 +67,22 @@ export default {
             }
         }
     },
-    test: {}
+    test: {
+        directory: 'test',
+        spec: {
+            bundle: {
+                filename: '<%= test.directory %>/spec.bundle.js'
+            }
+        },
+        e2e: {
+            url: 'localhost:3000',
+            directory: '<%= test.directory %>/e2e'
+        },
+        reports: {
+            directory: 'build/reports',
+            coverage: {
+                directory: '<%= test.reports.directory %>/coverage'
+            }
+        }
+    }
 }

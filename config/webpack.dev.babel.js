@@ -17,5 +17,15 @@ export default WebpackMerge(CommonWebpackConfig, {
         filename: Config('dev.dist.bundles.filename'),
         sourceMapFilename: Config('dev.dist.bundles.sourceMap.filename'),
         chunkFilename: Config('dev.dist.bundles.chunk.filename')
+    },
+    devServer: {
+        host: 'localhost',
+        port: 3000,
+        historyApiFallback: true,
+        watchOptions: {
+            aggregateTimeout: 300,
+            poll: 1000
+        },
+        outputPath: Utils.root(Config('all.dist.directory'))
     }
 });

@@ -9,4 +9,4 @@ export default {
     directives: [
         ...FULLPAGE_DIRECTIVES
     ]
-}
+};

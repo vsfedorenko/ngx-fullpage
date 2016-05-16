@@ -210,12 +210,6 @@ npm run test
 ```bash
 npm run watch:test
 ```
-### Run end-to-end tests
-```bash
-# make sure you have your server running in another terminal
-
-npm run e2e
-```
 
 # License
 

@@ -1,6 +1,8 @@
 # Project specific
 
 /build
+/docs
+index.html
 
 # Typings
 
