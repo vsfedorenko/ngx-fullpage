@@ -214,3 +214,6 @@ npm run watch:test
 # License
 
 MIT
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/meiblorn/ng2-fullpage/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
