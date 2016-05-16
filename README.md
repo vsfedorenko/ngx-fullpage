@@ -1,5 +1,7 @@
 [![ng2-fullpage](https://raw.githubusercontent.com/meiblorn/ng2-fullpage/develop/logo.png)](https://github.com/meiblorn/ng2-fullpage)
 # ng2-fullpage [![npm downloads](https://img.shields.io/npm/dm/ng2-fullpage.svg)](https://npmjs.org/ng2-fullpage)[![Build Status](https://travis-ci.org/meiblorn/ng2-fullpage.svg?branch=master)](https://travis-ci.org/meiblorn/ng2-fullpage)
+
+[![Join the chat at https://gitter.im/meiblorn/ng2-fullpage](https://badges.gitter.im/meiblorn/ng2-fullpage.svg)](https://gitter.im/meiblorn/ng2-fullpage?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Create Beautiful Fullscreen Scrolling websites (now with Angular 2)!
 
 This is an Angular 2 [fullPage.js](https://github.com/alvarotrigo/fullPage.js) port library.
