@@ -5,7 +5,7 @@
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import OccurenceOrderPlugin from 'webpack/lib/optimize/OccurenceOrderPlugin';
 import CommonsChunkPlugin from 'webpack/lib/optimize/CommonsChunkPlugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as AwesomeTypescriptLoader from 'awesome-typescript-loader';
 
 import Config from './helpers/config';

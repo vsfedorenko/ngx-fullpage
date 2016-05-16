@@ -5,6 +5,7 @@
 import WebpackMerge from 'webpack-merge';
 import UglifyJsPlugin from 'webpack/lib/optimize/UglifyJsPlugin';
 import CompressionPlugin from 'compression-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 
 import CommonWebpackConfig from './webpack.common.babel';
