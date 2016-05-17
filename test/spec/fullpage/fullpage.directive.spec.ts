@@ -5,8 +5,8 @@
 import {TestComponentBuilder} from '@angular/compiler/testing';
 import {async, describe, inject, it} from '@angular/core/testing';
 
-import {Component} from '@angular/core';
-import {FullpageDirective} from 'ng2-fullpage';
+import {Component, Input} from '@angular/core';
+import {FullpageDirective, FullpageOptions} from 'ng2-fullpage';
 
 describe('fullpage directive', () => {
     // Create a test component to test directives
@@ -15,6 +15,13 @@ describe('fullpage directive', () => {
         directives: [FullpageDirective]
     })
     class TestComponent {
+
+        @Input() public options: FullpageOptions = new FullpageOptions({
+            controlArrows: false,
+            scrollingSpeed: 1000,
+            css3: true
+        });
+
     }
 
     function createComponentAndTest(tcb: TestComponentBuilder, expectations: Function) {

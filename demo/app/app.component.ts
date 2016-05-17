@@ -1,11 +1,13 @@
 /**
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
  */
-import {Component, Input, Output, ViewEncapsulation} from '@angular/core';
-import {FullpageDirective, FullpageOptions} from "../../components";
+
+import {Component, Input, Output, ViewEncapsulation, provide} from '@angular/core';
+import {FullpageDirective, FullpageOptions, FullpageService} from "../../components";
 
 @Component({
     selector: 'app',
+    providers: [provide(FullpageService, {useClass: FullpageService})],
     directives: [FullpageDirective],
     styles: [
         require('fullpage.js/jquery.fullPage.css'),
@@ -33,6 +35,9 @@ export class AppComponent {
             classOptions: require('raw!./templates/slide2/usage.class.options.template.txt'),
             mix: require('raw!./templates/slide3/usage.mix.template.txt')
         }
+    };
+
+    constructor(private fullpageService: FullpageService) {
     }
 
 }

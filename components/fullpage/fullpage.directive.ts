@@ -14,13 +14,26 @@ import {FullpageOptions} from './fullpage-options.class';
 })
 export class FullpageDirective implements OnInit {
 
+    /**
+     * Prefix for directive-relative properties
+     * 
+     * @type {string} prefix
+     */
     private static propertyPrefix: string = 'fullpage';
 
+    /**
+     * Directive options reference
+     */
     @Input('fullpage') public options: FullpageOptions;
 
     /**
-     * Navigation
+     * ---------------------------------------------------------------------------
+     * |                                Navigation                               |
+     * ---------------------------------------------------------------------------
+     * 
+     * @see FullpageOptions for documentation
      */
+
     @Input() public fullpageMenu: string;
     @Input() public fullpageLockAnchors: boolean;
     @Input() public fullpageAnchors: Array<string>;
@@ -30,9 +43,15 @@ export class FullpageDirective implements OnInit {
     @Input() public fullpageShowActiveTooltip: boolean;
     @Input() public fullpageSlidesNavigation: boolean;
     @Input() public fullpageSlidesNavPosition: string;
+    
     /**
-     * Scrolling
+     * ---------------------------------------------------------------------------
+     * |                                 Scrolling                               |
+     * ---------------------------------------------------------------------------
+     * 
+     * @see FullpageOptions for documentation
      */
+    
     @Input() public fullpageCss3: boolean;
     @Input() public fullpageScrollingSpeed: number;
     @Input() public fullpageAutoScrolling: boolean;
@@ -51,15 +70,25 @@ export class FullpageDirective implements OnInit {
     @Input() public fullpageNormalScrollElementTouchThreshold: number;
 
     /**
-     * Accessibility
+     * ---------------------------------------------------------------------------
+     * |                              Accessibility                              |
+     * ---------------------------------------------------------------------------
+     * 
+     * @see FullpageOptions for documentation
      */
+    
     @Input() public fullpageKeyboardScrolling: boolean;
     @Input() public fullpageAnimateAnchor: boolean;
     @Input() public fullpageRecordHistory: boolean;
 
     /**
-     * Design
+     * ---------------------------------------------------------------------------
+     * |                                 Design                                  |
+     * ---------------------------------------------------------------------------
+     * 
+     * @see FullpageOptions for documentation
      */
+    
     @Input() public fullpageControlArrows: boolean;
     @Input() public fullpageVerticalCentered: boolean;
     @Input() public fullpageResize: boolean;
@@ -69,34 +98,103 @@ export class FullpageDirective implements OnInit {
     @Input() public fullpageFixedElements: string;
     @Input() public fullpageResponsiveWidth: number;
     @Input() public fullpageResponsiveHeight: number;
-
     @Input() public fullpageSectionSelector: string;
     @Input() public fullpageSlideSelector: string;
 
-    private _el: ElementRef;
+    /**
+     * ---------------------------------------------------------------------------
+     * |                                 Callbacks                               |
+     * ---------------------------------------------------------------------------
+     * 
+     * @see FullpageOptions for documentation
+     */
+    
+    @Input() public fullpageAfterLoad: (anchorLink: string, index: number) => void;
+    @Input() public fullpageOnLeave: (index: number, nextIndex: number, direction: string) => void;
+    @Input() public fullpageAfterRender: () => void;
+    @Input() public fullpageAfterResize: () => void;
+    @Input() public fullpageAfterSlideLoad: (anchorLink: string, index: number,
+                                             slideAnchor: string, slideIndex: number) => void;
+    @Input() public fullpageOnSlideLeave: (anchorLink: string, index: number, slideIndex: number,
+                                           direction: string, nextSlideIndex: number) => void;
 
+    /**
+     * ---------------------------------------------------------------------------
+     * |                              Class properties                           |
+     * ---------------------------------------------------------------------------
+     */
+
+     private _el: ElementRef;
+
+    /**
+     * Static method for option name retrieving
+     *
+     * @param property this class property name
+     * @returns {string} FullpageOption class option (property) name
+     */
     private static extractName(property) {
         return property[FullpageDirective.propertyPrefix.length].toLowerCase()
             + property.substring(FullpageDirective.propertyPrefix.length + 1);
     }
 
+    /**
+     * Default public constructor
+     *
+     * @param el element where directive is placed on
+     */
     public constructor(el: ElementRef) {
         this._el = el;
     }
 
+    /**
+     * Perform actions on init
+     */
     ngOnInit(): void {
+        /**
+         * Initialize options object with default (empty)
+         * values if it doesn't exist
+         */
         if (!this.options) {
             this.options = new FullpageOptions();
         }
 
+        /**
+         * Iterate over all properties of directive class
+         */
         for (let property of Object.keys(this)) {
+            /**
+             * If property name doesn't start with 'fullpage' prefix (it is stored in
+             * FullpageDirective.propertyPrefix static property) then skip this property and
+             * continue the cycle
+             */
             if (!property.startsWith(FullpageDirective.propertyPrefix)) {
                 continue;
             }
+
+            /**
+             * Extract option name from the property name
+             *
+             * @type {string} option name
+             */
             let option = FullpageDirective.extractName(property);
+
+            /**
+             * If options is already defined skip it
+             */
+            if (this.options[option]) {
+                continue;
+            }
+
+            /**
+             * Set property value to the options object property
+             */
             this.options[option] = this[property];
         }
 
+        /**
+         * Enable fullpage for the element
+         */
         (<any>$)(this._el.nativeElement).fullpage(this.options);
     }
+
 }

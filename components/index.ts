@@ -4,5 +4,5 @@
 
 import {FullpageDirective} from './fullpage/fullpage.directive';
 
-export {FullpageDirective, FullpageOptions} from './fullpage';
+export {FullpageDirective, FullpageOptions, FullpageService} from './fullpage';
 export const FULLPAGE_DIRECTIVES: Array<any> = [FullpageDirective];

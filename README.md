@@ -121,6 +121,7 @@ Like it is done in most of libraries, you can configure fullpage.js for you goal
 There 3 ways to configure fullPage.js:
 
 - **Via attributes**. Define options like attributes on the same element. 
+
 > Notice, options must be prefixed with 'fullpage' word and written in camelCase style.
 
 ```typescript
@@ -140,6 +141,7 @@ export class AppComponent {
 }
 ```
 - **Via options object**. Use FullpageOptions configuration object to inject options. 
+
 > Notice to wrap directive in square brackets **[fullpage]** and reference it to your options object
 
 ```typescript
@@ -165,6 +167,7 @@ export class AppComponent {
 }
 ```
 - **Mixed**. Mix two approaches to configure. 
+
 > Notice, Element options have more priority than options inside options object.
 
 ```typescript
