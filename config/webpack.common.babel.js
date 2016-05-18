@@ -26,6 +26,17 @@ export default {
         })(Config('all.sources.alias'))
     },
     module: {
+        preLoaders: [
+            {
+                test: /\.js$/,
+                loader: 'source-map-loader',
+                exclude: [
+                    // these packages have problems with their sourcemaps
+                    Utils.root('node_modules/rxjs'),
+                    Utils.root('node_modules/@angular')
+                ]
+            }
+        ],
         loaders: [
             {test: /\.ts$/, loaders: ['awesome-typescript-loader'], exclude: [/\.(spec|e2e)\.ts$/]},
             {test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/},

@@ -1,38 +1,33 @@
 sudo: false
 
 os:
-- linux
-- osx
+  - linux
 
 language: node_js
 node_js:
+  - '6'
   - '5'
-  - '5.1'
   - '4'
-  - '4.2'
-  - '4.1'
-  - '4.0'
-  - '0.12'
-  - '0.11'
   - '0.10'
   - iojs
-  - node
 
 env:
-- CXX=g++-4.8
+  - CXX=g++-5
 
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
+      - ubuntu-toolchain-r-test
     packages:
-    - g++-4.8
+      - gcc-5
+      - g++-5
 
   code_climate:
-    repo_token: d703bbnywJZBYOllybVPlUfJGh6QTulz+NGrQsjx+wxhl5a6cJaqKofxOUmUbZMYqWyodYrR685iYridhXLCF3bqO3Sfacm46Jdjhc4gxTE3Y5/MlVMV9syR6+1PLLCSsFTNcJmhyOM6+MmJMUZQgAv+lyXHHqA+v9qg9LfFj10bJF8eWDpi7Mjbyhe72o2FR2OVHy0B2FEClls0lkdnfhOdNBANiAYoZtJiwPXsxi521NdMg82gNyTMKoMmKimgXbSg7mjWqGzgqktmFtRctuBUxsyl/vVN5zfqbgS8rfqzHw2WpYuvWbW2sIIrB4iqlXqeXkOFkrYO8axenrSkAtgsGFf36xV33/vVXFxLYR2S7bl5GcnehqdGs3WgXv2c32CGoRzMocZAMf25/RhdvlCrKrOgobkUvwnT5dmyAL6jHowMzQJuf+tuFHeJEBuhFbcOHxrSvLYjnzKrq5p2Sz9+qtesraFUh72WuehKba9hjc7L96zuuT55qfxgSPIn/hC11F1mqs5yImyGzrpXG7BYaUg6Gmrnn9vuWio2jTSx+mWhhAi3/YCq9mZK0uBolVoz6anOWz3VNvQD08+WfYfKAnNG4CCc0ez+klTn05VlMXSZbNUosiSym+INHooKtAQR4GdHAp1rRwaGRn0EoPjSC1xHOwDHcfyfdky6T28=
+    repo_token:
+      secure: d703bbnywJZBYOllybVPlUfJGh6QTulz+NGrQsjx+wxhl5a6cJaqKofxOUmUbZMYqWyodYrR685iYridhXLCF3bqO3Sfacm46Jdjhc4gxTE3Y5/MlVMV9syR6+1PLLCSsFTNcJmhyOM6+MmJMUZQgAv+lyXHHqA+v9qg9LfFj10bJF8eWDpi7Mjbyhe72o2FR2OVHy0B2FEClls0lkdnfhOdNBANiAYoZtJiwPXsxi521NdMg82gNyTMKoMmKimgXbSg7mjWqGzgqktmFtRctuBUxsyl/vVN5zfqbgS8rfqzHw2WpYuvWbW2sIIrB4iqlXqeXkOFkrYO8axenrSkAtgsGFf36xV33/vVXFxLYR2S7bl5GcnehqdGs3WgXv2c32CGoRzMocZAMf25/RhdvlCrKrOgobkUvwnT5dmyAL6jHowMzQJuf+tuFHeJEBuhFbcOHxrSvLYjnzKrq5p2Sz9+qtesraFUh72WuehKba9hjc7L96zuuT55qfxgSPIn/hC11F1mqs5yImyGzrpXG7BYaUg6Gmrnn9vuWio2jTSx+mWhhAi3/YCq9mZK0uBolVoz6anOWz3VNvQD08+WfYfKAnNG4CCc0ez+klTn05VlMXSZbNUosiSym+INHooKtAQR4GdHAp1rRwaGRn0EoPjSC1xHOwDHcfyfdky6T28=
 
 after_success:
-- npm run codeclimate
+  - npm run codeclimate
 
 deploy:
   provider: npm
