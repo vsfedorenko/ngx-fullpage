@@ -2,25 +2,26 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
     "noEmitHelpers": true
   },
   "exclude": [
-    "node_modules",
-    "typings/main.d.ts",
-    "typings/main"
+    "./node_modules",
+    "./typings/main",
+    "./typings/main.d.ts"
   ],
   "filesGlob": [
     "./ng2-fullpage.ts",
     "./components/**/*.ts",
 
-    "./samples/**/*.ts",
+    "./demo/**/*.ts",
     "./tests/**/*.ts",
 
     "!./node_modules/**/*.ts",
-    "typings/browser.d.ts"
+    "./typings/browser.d.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
     "resolveGlobs": true,

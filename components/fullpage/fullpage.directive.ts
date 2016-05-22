@@ -16,7 +16,7 @@ export class FullpageDirective implements OnInit {
 
     /**
      * Prefix for directive-relative properties
-     * 
+     *
      * @type {string} prefix
      */
     private static propertyPrefix: string = 'fullpage';
@@ -30,7 +30,7 @@ export class FullpageDirective implements OnInit {
      * ---------------------------------------------------------------------------
      * |                                Navigation                               |
      * ---------------------------------------------------------------------------
-     * 
+     *
      * @see FullpageOptions for documentation
      */
 
@@ -43,15 +43,15 @@ export class FullpageDirective implements OnInit {
     @Input() public fullpageShowActiveTooltip: boolean;
     @Input() public fullpageSlidesNavigation: boolean;
     @Input() public fullpageSlidesNavPosition: string;
-    
+
     /**
      * ---------------------------------------------------------------------------
      * |                                 Scrolling                               |
      * ---------------------------------------------------------------------------
-     * 
+     *
      * @see FullpageOptions for documentation
      */
-    
+
     @Input() public fullpageCss3: boolean;
     @Input() public fullpageScrollingSpeed: number;
     @Input() public fullpageAutoScrolling: boolean;
@@ -73,10 +73,10 @@ export class FullpageDirective implements OnInit {
      * ---------------------------------------------------------------------------
      * |                              Accessibility                              |
      * ---------------------------------------------------------------------------
-     * 
+     *
      * @see FullpageOptions for documentation
      */
-    
+
     @Input() public fullpageKeyboardScrolling: boolean;
     @Input() public fullpageAnimateAnchor: boolean;
     @Input() public fullpageRecordHistory: boolean;
@@ -85,10 +85,10 @@ export class FullpageDirective implements OnInit {
      * ---------------------------------------------------------------------------
      * |                                 Design                                  |
      * ---------------------------------------------------------------------------
-     * 
+     *
      * @see FullpageOptions for documentation
      */
-    
+
     @Input() public fullpageControlArrows: boolean;
     @Input() public fullpageVerticalCentered: boolean;
     @Input() public fullpageResize: boolean;
@@ -105,10 +105,10 @@ export class FullpageDirective implements OnInit {
      * ---------------------------------------------------------------------------
      * |                                 Callbacks                               |
      * ---------------------------------------------------------------------------
-     * 
+     *
      * @see FullpageOptions for documentation
      */
-    
+
     @Input() public fullpageAfterLoad: (anchorLink: string, index: number) => void;
     @Input() public fullpageOnLeave: (index: number, nextIndex: number, direction: string) => void;
     @Input() public fullpageAfterRender: () => void;
@@ -124,7 +124,7 @@ export class FullpageDirective implements OnInit {
      * ---------------------------------------------------------------------------
      */
 
-     private _el: ElementRef;
+    private _el: ElementRef;
 
     /**
      * Static method for option name retrieving
