@@ -6,17 +6,17 @@ import {TestComponentBuilder} from '@angular/compiler/testing';
 import {async, describe, inject, it} from '@angular/core/testing';
 
 import {Component, Input} from '@angular/core';
-import {FullpageDirective, FullpageOptions} from 'ng2-fullpage';
+import {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';
 
-describe('fullpage directive', () => {
+describe('mnFullpage directive spec', () => {
     // Create a test component to test directives
     @Component({
         template: '',
-        directives: [FullpageDirective]
+        directives: [MnFullpageDirective]
     })
     class TestComponent {
 
-        @Input() public options: FullpageOptions = new FullpageOptions({
+        @Input() public options: MnFullpageOptions = new MnFullpageOptions({
             controlArrows: false,
             scrollingSpeed: 1000,
             css3: true
@@ -25,7 +25,7 @@ describe('fullpage directive', () => {
     }
 
     function createComponentAndTest(tcb: TestComponentBuilder, expectations: Function) {
-        return tcb.overrideTemplate(TestComponent, '<div fullpage>Content</div>')
+        return tcb.overrideTemplate(TestComponent, '<div mnFullpage>Content</div>')
             .createAsync(TestComponent).then((fixture: any) => {
                 fixture.detectChanges();
 

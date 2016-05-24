@@ -1,6 +1,6 @@
 {
   "mode": "modules",
-  "out": "docs",
+  "out": "build/docs",
   "theme": "minimal",
   "ignoreCompilerErrors": "true",
   "experimentalDecorators": "true",

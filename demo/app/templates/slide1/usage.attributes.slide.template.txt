@@ -1,9 +1,9 @@
-<div fullpage
-     [fullpageNavigation]="true"
-     [fullpageKeyboardScrolling]="true"
-     [fullpageSlidesNavigation]="true"
-     [fullpageSlidesNavPosition]="bottom"
-     [fullpageControlArrows]="false">
+<div mnFullpage
+     [mnFullpageNavigation]="true"
+     [mnFullpageKeyboardScrolling]="true"
+     [mnFullpageSlidesNavigation]="true"
+     [mnFullpageSlidesNavPosition]="bottom"
+     [mnFullpageControlArrows]="false">
 
     <div class="section fp-section fp-table">Section 1</div>
     <div class="section fp-section fp-table">Section 2</div>

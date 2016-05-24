@@ -6,11 +6,13 @@
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": false,
+    "sourceMap": true,
     "listFiles": true,
     "pretty": true,
     "removeComments": false,
-    "noEmitHelpers": true
+    "noEmitHelpers": true,
+    "noLib": false,
+    "outDir": "build"
   },
   "exclude": [
     "demo",

@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 import 'fullpage.js';
 
 @Injectable()
-export class FullpageService {
+export class MnFullpageService {
 
     /**
      * Scrolls one section up

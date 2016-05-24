@@ -3,40 +3,35 @@
  */
 
 import WebpackMerge from 'webpack-merge';
+import UnminifiedWebpackPlugin from 'unminified-webpack-plugin';
 import UglifyJsPlugin from 'webpack/lib/optimize/UglifyJsPlugin';
 import CompressionPlugin from 'compression-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 
 import CommonWebpackConfig from './webpack.common.babel';
 
-import Config from './helpers/config';
-import Utils from './helpers/utils';
+import config from './../helpers/config';
+import utils from './../helpers/utils';
 
 export default WebpackMerge(CommonWebpackConfig, {
     debug: false,
     devtool: 'source-map',
     output: {
-        path: Utils.root(Config('all.dist.scripts.directory')),
-        filename: Config('prod.dist.bundles.filename'),
-        sourceMapFilename: Config('prod.dist.bundles.sourceMap.filename'),
-        chunkFilename: Config('prod.dist.bundles.chunk.filename')
+        path: utils.root(config('common.build.scripts.directory')),
+        filename: config('prod.build.bundles.filename'),
+        sourceMapFilename: config('prod.build.bundles.sourceMap.filename'),
+        chunkFilename: config('prod.build.bundles.chunk.filename')
     },
     plugins: [
         new WebpackMd5Hash(),
+        new UnminifiedWebpackPlugin(),
         new UglifyJsPlugin({
             beautify: false,
             mangle: {screw_ie8 : true, keep_fnames: true},
             compress: {screw_ie8: true},
             comments: false
         }),
-        new CompressionPlugin({regExp: /\.css$|\.html$|\.js$|\.map$/, threshold: 2 * 1024}),
-        new HtmlWebpackPlugin({
-            template: Utils.root('demo/index.html'),
-            filename: Utils.root('index.html'),
-            excludeChunks: ['ng2-fullpage'],
-            chunksSortMode: Utils.packageSort(['polyfills', 'vendor', 'samples.basic'])
-        })
+        new CompressionPlugin({regExp: /\.css$|\.html$|\.js$|\.map$/, threshold: 2 * 1024})
     ],
     htmlLoader: {
         minimize: true,

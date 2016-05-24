@@ -8,22 +8,15 @@ import CommonsChunkPlugin from 'webpack/lib/optimize/CommonsChunkPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as AwesomeTypescriptLoader from 'awesome-typescript-loader';
 
-import Config from './helpers/config';
-import Utils from './helpers/utils';
+import config from './../helpers/config';
+import utils from './../helpers/utils';
 
 export default {
-    entry: Config('all.sources.entries.list'),
+    entry: config('common.sources.entries.list'),
     resolve: {
-        extensions: Config('all.sources.extensions'),
-        root: Utils.root(Config('all.sources.directory')),
-        modulesDirectories: Config('all.sources.modules.directories'),
-        alias: ((list) => {
-            var result = {};
-            for (var key in Object.keys(list)) {
-                result[key] = Utils.root(list[key]);
-            }
-            return result;
-        })(Config('all.sources.alias'))
+        extensions: config('common.sources.extensions'),
+        root: utils.root(config('common.sources.directory')),
+        modulesDirectories: config('common.sources.modules.directories')
     },
     module: {
         preLoaders: [
@@ -32,13 +25,20 @@ export default {
                 loader: 'source-map-loader',
                 exclude: [
                     // these packages have problems with their sourcemaps
-                    Utils.root('node_modules/rxjs'),
-                    Utils.root('node_modules/@angular')
+                    utils.root('node_modules/rxjs'),
+                    utils.root('node_modules/@angular')
                 ]
             }
         ],
         loaders: [
-            {test: /\.ts$/, loaders: ['awesome-typescript-loader'], exclude: [/\.(spec|e2e)\.ts$/]},
+            {
+                test: /\.ts$/, loader: 'awesome-typescript-loader',
+                exclude: [/\.(spec|e2e)\.ts$/],
+                query: {
+                    declaration: false,
+                    sourceMap: false
+                }
+            },
             {test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/},
             {test: /\.html$/, loader: 'html-loader'},
             {test: /\.css$/, loaders: ['raw-loader']},
@@ -48,17 +48,21 @@ export default {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin([Config('all.dist.directory')], {root: Utils.root(), dry: false, verbose: true}),
+        new CleanWebpackPlugin([config('common.build.directory')], {root: utils.root(), dry: false, verbose: true}),
         new AwesomeTypescriptLoader.ForkCheckerPlugin(),
         new OccurenceOrderPlugin(true),
         new CommonsChunkPlugin({
-            name: Config('all.sources.entries.chunks.commons.list'),
+            name: config('common.sources.entries.chunks.commons.list'),
             minChunks: Infinity
         }),
         new HtmlWebpackPlugin({
-            template: Utils.root('demo/index.html'),
+            template: utils.root(config('common.build.html.src')),
+            filename: utils.relative(
+                utils.root(config('common.build.scripts.directory')),
+                utils.root(config('common.build.html.dist'))
+            ),
             excludeChunks: ['ng2-fullpage'],
-            chunksSortMode: Utils.packageSort(['polyfills', 'vendor', 'samples.basic'])
+            chunksSortMode: utils.packageSort(['polyfills', 'vendor', 'demo'])
         })
     ]
 };

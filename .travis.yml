@@ -12,7 +12,10 @@ node_js:
   - iojs
 
 env:
-  - CXX=g++-5
+  global:
+    - ENCRYPTION_LABEL: "82f7c45687fc"
+    - COMMIT_AUTHOR_EMAIL: "meiblorn@gmail.com"
+    - CXX: g++-5
 
 addons:
   apt:
@@ -27,14 +30,7 @@ addons:
       secure: d703bbnywJZBYOllybVPlUfJGh6QTulz+NGrQsjx+wxhl5a6cJaqKofxOUmUbZMYqWyodYrR685iYridhXLCF3bqO3Sfacm46Jdjhc4gxTE3Y5/MlVMV9syR6+1PLLCSsFTNcJmhyOM6+MmJMUZQgAv+lyXHHqA+v9qg9LfFj10bJF8eWDpi7Mjbyhe72o2FR2OVHy0B2FEClls0lkdnfhOdNBANiAYoZtJiwPXsxi521NdMg82gNyTMKoMmKimgXbSg7mjWqGzgqktmFtRctuBUxsyl/vVN5zfqbgS8rfqzHw2WpYuvWbW2sIIrB4iqlXqeXkOFkrYO8axenrSkAtgsGFf36xV33/vVXFxLYR2S7bl5GcnehqdGs3WgXv2c32CGoRzMocZAMf25/RhdvlCrKrOgobkUvwnT5dmyAL6jHowMzQJuf+tuFHeJEBuhFbcOHxrSvLYjnzKrq5p2Sz9+qtesraFUh72WuehKba9hjc7L96zuuT55qfxgSPIn/hC11F1mqs5yImyGzrpXG7BYaUg6Gmrnn9vuWio2jTSx+mWhhAi3/YCq9mZK0uBolVoz6anOWz3VNvQD08+WfYfKAnNG4CCc0ez+klTn05VlMXSZbNUosiSym+INHooKtAQR4GdHAp1rRwaGRn0EoPjSC1xHOwDHcfyfdky6T28=
 
 after_success:
+  - chmod a+x scripts/*.sh
+  - bash ./scripts/gh-pages-deploy.sh
+  - bash ./scripts/npm-publish.sh
   - npm run codeclimate
-
-deploy:
-  provider: npm
-  email: meiblorn@gmail.com
-  api_key:
-    secure: UtNqmL+yqbchdW4w1jMwRiZFkWxlDhrCnOL7uHF48kMxwlVhxZtUJwT5rIXPkXt5/gDim7UPD9vY7zeRZ90JdbPflbH7KeVEynpr0k7Uvu6vH+cPV9ip1+ypBxfb/ydNJcvSD+tOW8ekmaS/hC46ImdlGnpLHryI6vOs8kXKqSPPpzFtxUz7EzhwuQBQFRchDfb+cJj5JdM7mS+Yc6czlP3mvJGYPrLgbgf2ni4bzif615xZ1Gbe0tKbbRY2ohsA45r1uzPwCFVNddMnAi2bFj9ctSB+9PzkasBflk0RAUdTw/b8QkmoBkH6iImkRjBS9TkK/joTlJB02GhOcf+387I3xR9urE+zFeHWOenFaSzYx3+2wKamE0bRBlcAMAluz9lB9chIl6xrgylQf65wBhRHJg1hWS8apWLHn5V5keecw6tsZWeE5uGwKOKWZFyDgk2vRw5JRKP+HwsYugqQxj9z7Tknbgwr7xKIiqiJVjWzKmNpLSk82+5VXN3StutPM0NKqQ/qMCegJaa0aol4QPtW874q7H1fE/303KyJQldB5cUgFf2tzIwXSepy3Xi+i84LYDciaF+fKdMRYIMR+G0ACUmcxjERv93SPBmscpBN0dte2ajXxc1d+xzYnlnop0mcWkMApYfxKiDvegr+Hm47WLe2o5KsSYW9VElF98Q=
-  on:
-    tags: true
-    repo: meiblorn/ng2-fullpage
-    branch: master
