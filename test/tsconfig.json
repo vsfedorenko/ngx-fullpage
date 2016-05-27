@@ -12,18 +12,18 @@
     "outDir": "build"
   },
   "exclude": [
-    "demo",
-    "test",
-    "node_modules"
+    "./demo",
+    "./test",
+    "./node_modules"
   ],
   "filesGlob": [
-    "./components/fullpage/**/*.ts",
+    "./ng2-fullpage.ts",
+    "./components/**/*.ts",
+    "./components/typings/**/*.d.ts",
 
-    "!./node_modules/**",
+    "./typings/index.d.ts",
 
-    "./components/typings",
-    "./typings/index.d.ts"
-
+    "!./node_modules/**"
   ],
   "awesomeTypescriptLoaderOptions": {
     "resolveGlobs": true,

@@ -1,8 +1,13 @@
 {
-  "ambientDependencies": {
+  "globalDependencies": {
     "core-js": "registry:dt/core-js#0.0.0+20160317120654",
     "jasmine": "registry:dt/jasmine#2.2.0+20160505161446",
     "jquery": "registry:dt/jquery#1.10.0+20160417213236",
-    "require": "registry:dt/require#2.1.20+20160316155526"
+    "hammerjs": "registry:dt/hammerjs#2.0.4+20160417130828",
+    "node": "registry:dt/node#6.0.0+20160524002506",
+    "zone.js": "registry:dt/zone.js#0.0.0+20160316155526",
+    "source-map": "registry:dt/source-map#0.0.0+20160317120654",
+    "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526",
+    "webpack": "registry:dt/webpack#1.12.9+20160523035535"
   }
 }

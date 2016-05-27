@@ -8,6 +8,7 @@ export default karma => {
     karma.set({
         basePath: '',
         frameworks: ['jasmine'],
+        exclude: [],
         files: [{pattern: SPEC_BUNDLE_PATH, watched: false}],
         preprocessors: (() => {
             var result = {};
@@ -24,11 +25,11 @@ export default karma => {
                 {type: 'lcov', subdir: '../lcov-report'}
             ]
         },
-        webpackServer: {
-            noInfo: true
-        },
+        webpackServer: {noInfo: true},
         logLevel: karma.LOG_INFO,
+        port: 9876,
         colors: true,
+        autoWatch: false,
         reporters: ['progress', 'mocha', 'coverage'],
         browsers: ['PhantomJS'],
         singleRun: true

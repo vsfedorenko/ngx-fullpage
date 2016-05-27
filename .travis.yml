@@ -1,11 +1,7 @@
-sudo: false
-
 os:
   - linux
 
-language: node_js
-node_js:
-  - stable
+sudo: false
 
 env:
   global:
@@ -26,9 +22,27 @@ addons:
     repo_token:
       secure: d703bbnywJZBYOllybVPlUfJGh6QTulz+NGrQsjx+wxhl5a6cJaqKofxOUmUbZMYqWyodYrR685iYridhXLCF3bqO3Sfacm46Jdjhc4gxTE3Y5/MlVMV9syR6+1PLLCSsFTNcJmhyOM6+MmJMUZQgAv+lyXHHqA+v9qg9LfFj10bJF8eWDpi7Mjbyhe72o2FR2OVHy0B2FEClls0lkdnfhOdNBANiAYoZtJiwPXsxi521NdMg82gNyTMKoMmKimgXbSg7mjWqGzgqktmFtRctuBUxsyl/vVN5zfqbgS8rfqzHw2WpYuvWbW2sIIrB4iqlXqeXkOFkrYO8axenrSkAtgsGFf36xV33/vVXFxLYR2S7bl5GcnehqdGs3WgXv2c32CGoRzMocZAMf25/RhdvlCrKrOgobkUvwnT5dmyAL6jHowMzQJuf+tuFHeJEBuhFbcOHxrSvLYjnzKrq5p2Sz9+qtesraFUh72WuehKba9hjc7L96zuuT55qfxgSPIn/hC11F1mqs5yImyGzrpXG7BYaUg6Gmrnn9vuWio2jTSx+mWhhAi3/YCq9mZK0uBolVoz6anOWz3VNvQD08+WfYfKAnNG4CCc0ez+klTn05VlMXSZbNUosiSym+INHooKtAQR4GdHAp1rRwaGRn0EoPjSC1xHOwDHcfyfdky6T28=
 
+git:
+  depth: 5
+
+branches:
+  except:
+    - gh-pages
+
+language: node_js
+node_js:
+  - stable
+
+install:
+  - npm install
+
+script:
+  - npm test
+  - npm run build:prod
+  - npm run docs
+
 after_success:
-  - tree -ahugpqCDL 2 --dirsfirst # Print directory tree
-  - chmod a+x scripts/*.sh # Grant execute rights for scripts
-  - bash ./scripts/gh-pages-deploy.sh # Deploy gh-pages
-  - bash ./scripts/npm-publish.sh # Publish npm package
-  - bash ./scripts/codeclimat-coverage.sh # Publish coverage stats
+  - chmod -R a+x scripts
+  - bash ./scripts/git/gh-pages.sh
+  - bash ./scripts/npm/publish.sh
+  - bash ./scripts/npm/codeclimate.sh

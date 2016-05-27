@@ -5,6 +5,7 @@
 export default {
     common: {
         sources: {
+            directory: '.',
             extensions: [
                 '', '.ts', '.js'
             ],

@@ -2,6 +2,10 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 11/05/16.
  */
 
+import WebpackMerge from 'webpack-merge';
+
+import CommonWebpackConfig from './webpack.common.babel';
+
 import config from './../helpers/config';
 import utils from './../helpers/utils';
 
@@ -47,5 +51,6 @@ export default {
                 ]
             }
         ]
-    }
+    },
+    node: WebpackMerge(CommonWebpackConfig.node, {process: false})
 };

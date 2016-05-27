@@ -21,13 +21,13 @@
   "bugs": {
     "url": "https://github.com/meiblorn/ng2-fullpage/issues"
   },
-  "main": "index.d.ts",
+  "main": "ng2-fullpage.js",
   "dependencies": {
     "@angular/common": "^2.0.0-rc.1",
     "@angular/compiler": "^2.0.0-rc.1",
     "@angular/core": "^2.0.0-rc.1",
-    "jquery": "^2.2.3",
-    "fullpage.js": "^2.7.9"
+    "jquery": "^2.2.4",
+    "fullpage.js": "^2.8.0"
   },
   "devDependencies": {
     "@angular/platform-browser": "^2.0.0-rc.1",
@@ -48,8 +48,9 @@
     "es6-promise-loader": "^1.0.1",
     "es6-shim": "^0.35.1",
     "es7-reflect-metadata": "^1.6.0",
+    "exports-loader": "^0.6.3",
+    "expose-loader": "^0.7.1",
     "getobject": "^0.1.0",
-    "gh-pages": "^0.11.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.17.0",
     "http-server": "^0.9.0",
@@ -65,7 +66,7 @@
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^1.7.0",
     "lodash.template": "^4.2.5",
-    "mocha": "^2.4.5",
+    "mocha": "^2.5.3",
     "node-sass": "^3.7.0",
     "npm-check-updates": "^2.6.5",
     "phantomjs-prebuilt": "^2.1.7",
@@ -73,17 +74,19 @@
     "rxjs": "5.0.0-beta.6",
     "sass-loader": "^3.2.0",
     "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.1",
     "traverse": "^0.6.6",
     "ts-helpers": "^1.1.1",
     "tslint": "^3.10.2",
     "tslint-loader": "^2.1.4",
     "typedoc": "^0.3.12",
+    "typescript": "^1.8.10",
     "typings": "^1.0.4",
     "unminified-webpack-plugin": "^1.0.0",
-    "webpack": "^1.13.0",
+    "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-md5-hash": "0.0.5",
-    "webpack-merge": "^0.12.0",
+    "webpack-merge": "^0.13.0",
     "zone.js": "^0.6.12"
   },
   "keywords": [

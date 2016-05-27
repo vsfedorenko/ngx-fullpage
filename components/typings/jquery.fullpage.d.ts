@@ -22,7 +22,7 @@ interface Fn {
          * @param section
          * @param slide
          */
-        moveTo(section: any, slide?: number): void;
+        moveTo(section: string | number, slide?: number): void;
 
         /**
          * Exactly the same as moveTo but in this case it performs the scroll without animation.
@@ -31,7 +31,7 @@ interface Fn {
          * @param section
          * @param slide
          */
-        silentMoveTo(section: any, slide?: number): void;
+        silentMoveTo(section: string | number, slide?: number): void;
 
         /**
          * Scrolls the horizontal slider of the current section to the next slide
