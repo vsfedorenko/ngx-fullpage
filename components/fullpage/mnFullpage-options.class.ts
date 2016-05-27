@@ -496,7 +496,7 @@ export class MnFullpageOptions {
      */
     constructor(options?: Object) {
         if (options) {
-            Object.assign(this, options);
+            (<any>Object).assign(this, options);
         }
     }
 
