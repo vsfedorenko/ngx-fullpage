@@ -22,7 +22,7 @@ function doPublish {
     cp LICENSE ${BUILD_DIR}/LICENSE
     cp README.md ${BUILD_DIR}/README.md
     cd ${BUILD_DIR}
-    echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ${BUILD_DIR}/.npmrc
+    echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 
     npm publish
 }
