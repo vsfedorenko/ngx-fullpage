@@ -31,6 +31,7 @@ SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing gh-pages for this repo into ${BUILD_DIR}/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
+rm -rf ${BUILD_DIR}
 git clone ${REPO} ${BUILD_DIR}
 cd ${BUILD_DIR}
 git checkout ${TARGET_BRANCH} || git checkout --orphan ${TARGET_BRANCH}
