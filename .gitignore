@@ -4,6 +4,17 @@
 /docs
 index.html
 
+*.js
+*.map
+*.d.ts
+
+!demo/**/*
+!config/**/*
+!*.conf.*js
+!*.config.*js
+!test/spec.bundle.js
+!components/typings/**/*
+
 # Typings
 
 /typings

@@ -3,21 +3,21 @@
  */
 
 export default {
-    all: {
+    common: {
         sources: {
             extensions: [
                 '', '.ts', '.js'
             ],
             entries: {
                 directories: {
-                    src: 'components',
-                    demo: 'demo'
+                    src: './components',
+                    demo: './demo'
                 },
                 list: {
                     'ng2-fullpage': './index.ts',
-                    'polyfills': './<%= all.sources.entries.directories.src %>/polyfills.ts',
-                    'vendor': './<%= all.sources.entries.directories.src %>/vendor.ts',
-                    'samples.basic': './<%= all.sources.entries.directories.demo %>/app/main.ts'
+                    'polyfills': '<%= common.sources.entries.directories.src %>/polyfills.ts',
+                    'vendor': '<%= common.sources.entries.directories.src %>/vendor.ts',
+                    'demo': '<%= common.sources.entries.directories.demo %>/app/main.ts'
                 },
                 chunks: {
                     commons: {
@@ -29,20 +29,21 @@ export default {
                 directories: [
                     'node_modules'
                 ]
-            },
-            alias: {
-                '@fullpage': './components'
             }
         },
-        dist: {
-            directory: 'build',
+        build: {
+            directory: './build',
             scripts: {
-                directory: '<%= all.dist.directory %>'
+                directory: '<%= common.build.directory %>/bundles'
+            },
+            html: {
+                src: '<%= common.sources.entries.directories.demo %>/index.html',
+                dist: '<%= common.build.directory %>/index.html'
             }
         }
     },
     dev: {
-        dist: {
+        build: {
             bundles: {
                 filename: '[name].bundle.js',
                 sourceMap: {
@@ -55,20 +56,20 @@ export default {
         }
     },
     prod: {
-        dist: {
+        build: {
             bundles: {
-                filename: '[name].[chunkhash].bundle.js',
+                filename: '[name].bundle.min.js',
                 sourceMap: {
-                    filename: '[name].[chunkhash].bundle.map'
+                    filename: '[name].bundle.min.map'
                 },
                 chunk: {
-                    filename: '[id].[chunkhash].chunk.js'
+                    filename: '[id].chunk.min.js'
                 }
             }
         }
     },
     test: {
-        directory: 'test',
+        directory: './test',
         spec: {
             bundle: {
                 filename: '<%= test.directory %>/spec.bundle.js'
