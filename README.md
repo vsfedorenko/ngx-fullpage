@@ -33,18 +33,18 @@ Write some code (e.g. in app/app.component.ts):
 * File: app/app.component.ts
 * 
 * If you are starting from scratch replace existing content with the code below
-* Otherwise update your template with 'fullpage' directive and section div-blocks.
+* Otherwise update your template with 'mnFullpage' directive and section div-blocks.
 * 
 */
 
 import {Component} from '@angular/core';
-import {FullpageDirective} from 'ng2-fullpage';
+import {MnFullpageDirective} from 'ng2-fullpage';
 
 @Component({
     selector: 'app',
-    directives: [FullpageDirective],
+    directives: [MnFullpageDirective],
     template: `
-        <div fullpage [fullpageNavigation]="true" [fullpageKeyboardScrolling]="true">
+        <div mnFullpage [mnFullpageNavigation]="true" [mnFullpageKeyboardScrolling]="true">
             <div class="section"> Some section 1 </div>
                 <div class="section"> Some section 2 </div>
                 <div class="section">
@@ -85,21 +85,21 @@ npm run start
 
 ### Basic installation
 
-All you need to do is just add [fullpage] @Component.directives array 
+All you need to do is just add [mnFullpage] @Component.directives array 
 and add directive to an html element inside your template:
 
 ```typescript
 /**
 * 
-* Just add FullpageDirective inside your @Component.directives array
+* Just add MnFullpageDirective inside your @Component.directives array
 * 
 */
 import {Component} from '@angular/core';
-import {FullpageDirective} from 'ng2-fullpage';
+import {MnFullpageDirective} from 'ng2-fullpage';
 
 @Component({
     selector: 'app',
-    directives: [FullpageDirective],
+    directives: [MnFullpageDirective],
     template: ` ... `
 })
 export class AppComponent {
@@ -110,7 +110,7 @@ export class AppComponent {
 ```html
 <!-- Add fullpage directive to an element -->
 
-<div fullpage>
+<div mnFullpage>
    ...
 </div>
 ```
@@ -126,13 +126,13 @@ There 3 ways to configure fullPage.js:
 
 ```typescript
 import {Component, Input} from '@angular/core';
-import {FullpageDirective, FullpageOptions} from 'ng2-fullpage';
+import {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';
 
 @Component({
     selector: 'app',
-    directives: [FullpageDirective],
+    directives: [MnFullpageDirective],
     template: `
-        <div fullpage [fullpageNavigation]="true" [fullpageKeyboardScrolling]="true">
+        <div mnFullpage [mnFullpageNavigation]="true" [mnFullpageKeyboardScrolling]="true">
             ....
         </div>  
     `
@@ -142,24 +142,24 @@ export class AppComponent {
 ```
 - **Via options object**. Use FullpageOptions configuration object to inject options. 
 
-> Notice to wrap directive in square brackets **[fullpage]** and reference it to your options object
+> Notice to wrap directive in square brackets **[mnFullpage]** and reference it to your options object
 
 ```typescript
 import {Component, Input} from '@angular/core';
-import {FullpageDirective, FullpageOptions} from 'ng2-fullpage';
+import {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';
 
 @Component({
     selector: 'app',
-    directives: [FullpageDirective],
+    directives: [MnFullpageDirective],
     template: `
-        <div [fullpage]="options">
+        <div [mnFullpage]="options">
             ....
         </div>
     `
 })
 export class AppComponent {
 
-    @Input() public options:FullpageOptions = new FullpageOptions({
+    @Input() public options:MnFullpageOptions = new MnFullpageOptions({
         navigation: true,
         keyboardScrolling: true
     });
@@ -172,20 +172,20 @@ export class AppComponent {
 
 ```typescript
 import {Component, Input} from '@angular/core';
-import {FullpageDirective, FullpageOptions} from 'ng2-fullpage';
+import {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';
 
 @Component({
     selector: 'app',
-    directives: [FullpageDirective],
+    directives: [MnFullpageDirective],
     template: `
-        <div [fullpage]="options" [fullpageNavigation]="true">
+        <div [mnFullpage]="options" [mnFullpageNavigation]="true">
             ....
         </div>
     `
 })
 export class AppComponent {
 
-    @Input() public options:FullpageOptions = new FullpageOptions({
+    @Input() public options:MnFullpageOptions = new MnFullpageOptions({
         keyboardScrolling: true
     });
 

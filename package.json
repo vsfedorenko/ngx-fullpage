@@ -21,15 +21,7 @@
   "bugs": {
     "url": "https://github.com/meiblorn/ng2-fullpage/issues"
   },
-  "main": "index.ts",
-  "files": [
-    "ng2-fullpage.ts",
-    "components/fullpage",
-    "components/typings",
-    "components/index.ts",
-    "package.json",
-    "readme.md"
-  ],
+  "main": "index.d.ts",
   "dependencies": {
     "@angular/common": "^2.0.0-rc.1",
     "@angular/compiler": "^2.0.0-rc.1",
@@ -45,6 +37,7 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-register": "^6.9.0",
+    "changelog": "^1.0.7",
     "clean-webpack-plugin": "^0.1.9",
     "codeclimate-test-reporter": "^0.3.1",
     "compression-webpack-plugin": "^0.3.1",
@@ -86,6 +79,7 @@
     "tslint-loader": "^2.1.4",
     "typedoc": "^0.3.12",
     "typings": "^1.0.4",
+    "unminified-webpack-plugin": "^1.0.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
     "webpack-md5-hash": "0.0.5",
@@ -102,17 +96,19 @@
     "one page"
   ],
   "scripts": {
+    "changelog": "changelog",
+    "tsc": "tsc",
     "typings": "typings",
     "typedoc": "typedoc",
     "webpack": "webpack",
     "tslint": "tslint",
-    "npm-check-updates": "npm-check-updates - a",
+    "npm-check-updates": "npm-check-updates -a",
     "ncu": "ncu -a",
     "build": "npm run build:dev",
-    "build:dev": "webpack --config ./config/webpack.dev.babel.js --progress --profile --colors --display-error-details --display-cached",
-    "build:prod": "webpack --config ./config/webpack.prod.babel.js  --progress --profile --colors --display-error-details --display-cached --bail",
+    "build:dev": "webpack --config ./config/webpack/webpack.dev.babel.js --progress --profile --colors --display-error-details --display-cached && tsc",
+    "build:prod": "webpack --config ./config/webpack/webpack.prod.babel.js  --progress --profile --colors --display-error-details --display-cached --bail && tsc",
     "server": "npm run server:dev",
-    "server:dev": "webpack-dev-server --config config/webpack.dev.babel.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base demo/",
+    "server:dev": "webpack-dev-server --config config/webpack/webpack.dev.babel.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base demo/",
     "server:prod": "npm run build:prod && http-server build --cors",
     "start": "npm run server:dev",
     "start:prod": "npm run server:prod",
@@ -125,7 +121,6 @@
     "test:watch": "npm run watch:test",
     "codeclimate": "codeclimate-test-reporter < build/reports/lcov-report/lcov.info",
     "postinstall": "npm run typings -- install",
-    "docs": "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./components/",
-    "gh-pages": "npm run build:prod && npm run docs"
+    "docs": "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./components/"
   }
 }

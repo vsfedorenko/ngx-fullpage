@@ -3,25 +3,31 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "noEmitHelpers": true
+    "listFiles": true,
+    "pretty": true,
+    "removeComments": false,
+    "noEmitHelpers": true,
+    "noLib": false,
+    "outDir": "build"
   },
   "exclude": [
-    "./node_modules",
-    "./typings/main",
-    "./typings/main.d.ts"
+    "demo",
+    "test",
+
+    "node_modules",
+    "typings/main.d.ts",
+    "typings/main"
   ],
   "filesGlob": [
-    "./ng2-fullpage.ts",
-    "./components/**/*.ts",
+    "ng2-fullpage.ts",
+    "components/**/*.ts",
 
-    "./demo/**/*.ts",
-    "./tests/**/*.ts",
-
-    "!./node_modules/**/*.ts",
-    "./typings/browser.d.ts"
+    "!node_modules/**/*.ts",
+    "typings/browser.d.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
     "resolveGlobs": true,

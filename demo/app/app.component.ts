@@ -3,12 +3,12 @@
  */
 
 import {Component, Input, Output, ViewEncapsulation, provide} from '@angular/core';
-import {FullpageDirective, FullpageOptions, FullpageService} from "../../components";
+import {MnFullpageDirective, MnFullpageOptions, MnFullpageService} from "../../components";
 
 @Component({
     selector: 'app',
-    providers: [provide(FullpageService, {useClass: FullpageService})],
-    directives: [FullpageDirective],
+    providers: [provide(MnFullpageService, {useClass: MnFullpageService})],
+    directives: [MnFullpageDirective],
     styles: [
         require('fullpage.js/jquery.fullPage.css'),
         require('./app.component.scss')
@@ -18,7 +18,7 @@ import {FullpageDirective, FullpageOptions, FullpageService} from "../../compone
 })
 export class AppComponent {
 
-    @Input() public options:FullpageOptions = new FullpageOptions({
+    @Input() public options: MnFullpageOptions = new MnFullpageOptions({
         controlArrows: false,
         scrollingSpeed: 1000,
 
@@ -37,7 +37,7 @@ export class AppComponent {
         }
     };
 
-    constructor(private fullpageService: FullpageService) {
+    constructor(private fullpageService: MnFullpageService) {
     }
 
 }
