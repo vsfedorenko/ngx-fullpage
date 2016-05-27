@@ -19,6 +19,7 @@
     "test",
 
     "node_modules",
+
     "typings/main.d.ts",
     "typings/main"
   ],
@@ -27,7 +28,9 @@
     "components/**/*.ts",
 
     "!node_modules/**/*.ts",
-    "typings/browser.d.ts"
+
+    "typings/browser.d.ts",
+    "typings/browser/**/*.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
     "resolveGlobs": true,

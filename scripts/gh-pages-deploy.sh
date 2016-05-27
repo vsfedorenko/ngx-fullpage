@@ -2,7 +2,7 @@
 
 set -e # Exit with nonzero exit code if anything fails
 
-SOURCE_BRANCH="master"
+SOURCE_BRANCH="develop"
 TARGET_BRANCH="gh-pages"
 BUILD_DIR="build"
 
@@ -45,6 +45,7 @@ doBuild
 
 # Now let's go have some fun with the cloned repo
 cd ${BUILD_DIR}
+tree # Print directory content
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 

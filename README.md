@@ -192,6 +192,36 @@ export class AppComponent {
 }
 ```
 
+### Services
+
+Service `MnFullpageService` contains `$.fn.*` static methods for `fullPage.js` library.   
+
+```typescript
+import {Component, Input} from '@angular/core';
+import {MnFullpageDirective, MnFullpageService} from 'ng2-fullpage';
+
+@Component({
+    selector: 'app',
+    providers: [provide(MnFullpageService, {useClass: MnFullpageService}],
+    directives: [MnFullpageDirective],
+    template: `
+        <button (click)="fullpageService.moveSectionUp();">Move section up</button>
+        <button (click)="fullpageService.moveSectionDown();">Move section down</button>
+        
+        <div mnFullpage [mnFullpageNavigation]="true">
+            ....
+        </div>
+    `
+})
+export class AppComponent {
+
+     constructor(private fullpageService: MnFullpageService) {
+     }
+
+}
+```
+
+
 # Development
 
 ### Build
