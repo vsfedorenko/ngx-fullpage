@@ -6,17 +6,17 @@ import WebpackMerge from 'webpack-merge';
 
 import CommonWebpackConfig from './webpack.common.babel';
 
-import Config from './helpers/config';
-import Utils from './helpers/utils';
+import config from './../helpers/config';
+import utils from './../helpers/utils';
 
 export default WebpackMerge(CommonWebpackConfig, {
     debug: true,
     devtool: 'cheap-module-source-map',
     output: {
-        path: Utils.root(Config('all.dist.scripts.directory')),
-        filename: Config('dev.dist.bundles.filename'),
-        sourceMapFilename: Config('dev.dist.bundles.sourceMap.filename'),
-        chunkFilename: Config('dev.dist.bundles.chunk.filename')
+        path: utils.root(config('common.build.scripts.directory')),
+        filename: config('dev.build.bundles.filename'),
+        sourceMapFilename: config('dev.build.bundles.sourceMap.filename'),
+        chunkFilename: config('dev.build.bundles.chunk.filename')
     },
     devServer: {
         host: 'localhost',
@@ -26,6 +26,6 @@ export default WebpackMerge(CommonWebpackConfig, {
             aggregateTimeout: 300,
             poll: 1000
         },
-        outputPath: Utils.root(Config('all.dist.directory'))
+        outputPath: utils.root(config('common.build.directory'))
     }
 });

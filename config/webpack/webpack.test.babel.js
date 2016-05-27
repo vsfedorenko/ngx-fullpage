@@ -2,16 +2,16 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 11/05/16.
  */
 
-import Config from './helpers/config';
-import Utils from './helpers/utils';
+import config from './../helpers/config';
+import utils from './../helpers/utils';
 
 export default {
     metadata: {},
     debug: false,
     devtool: 'inline-source-map',
     resolve: {
-        extensions: Config('all.sources.extensions'),
-        root: Utils.root(Config('all.sources.directory'))
+        extensions: config('common.sources.extensions'),
+        root: utils.root(config('common.sources.directory'))
     },
     module: {
         preLoaders: [
@@ -40,7 +40,7 @@ export default {
         postLoaders: [
             {
                 test: /\.(js|ts)$/, loader: 'istanbul-instrumenter-loader',
-                include: Utils.root(Config('all.sources.directory')),
+                include: utils.root(config('common.sources.directory')),
                 exclude: [
                     /\.(e2e|spec)\.ts$/,
                     /node_modules/

@@ -1,8 +1,8 @@
-<!-- Just add directive [fullpage] -->
-<!-- And parametrize it via [fullpage*] attributes -->
-<div fullpage
-     [fullpageNavigation]="true"
-     [fullpageKeyboardScrolling]="true">
+<!-- Just add directive [mnFullpage] -->
+<!-- And parametrize it via [mnFullpage*] attributes -->
+<div mnFullpage
+     [mnFullpageNavigation]="true"
+     [mnFullpageKeyboardScrolling]="true">
 
     <div id="section1" class="section fp-section fp-table">
         Section 1

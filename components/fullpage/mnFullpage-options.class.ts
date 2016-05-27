@@ -5,7 +5,7 @@
 import {Injectable} from '@angular/core';
 
 @Injectable()
-export class FullpageOptions {
+export class MnFullpageOptions {
 
     /**
      * Notice:

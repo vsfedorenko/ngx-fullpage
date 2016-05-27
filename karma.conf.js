@@ -4,4 +4,4 @@
 
 require('babel-register');
 
-module.exports = require('./config/karma.conf.babel').default;
+module.exports = require('./config/karma/karma.conf.babel').default;
