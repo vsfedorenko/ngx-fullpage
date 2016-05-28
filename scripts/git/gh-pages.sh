@@ -53,7 +53,7 @@
     git config user.name "Travis CI"
     git config user.email "$COMMIT_AUTHOR_EMAIL"
 
-    git add .
+    git add --all .
     git commit -m "Deploy to GitHub Pages: ${SHA_HASH}"
 
     # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
