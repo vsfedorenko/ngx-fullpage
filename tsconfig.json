@@ -2,14 +2,16 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "node",
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "listFiles": true,
     "removeComments": false,
-    "noEmitHelpers": true,
-    "outDir": "build"
+    "noEmitHelpers": false,
+    "outDir": "build",
+    "noLib": false
   },
   "exclude": [
     "demo",
