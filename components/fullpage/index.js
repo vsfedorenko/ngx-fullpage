@@ -8,4 +8,3 @@ var mnFullpage_options_class_1 = require('./mnFullpage-options.class');
 exports.MnFullpageOptions = mnFullpage_options_class_1.MnFullpageOptions;
 var mnFullpage_service_1 = require('./mnFullpage.service');
 exports.MnFullpageService = mnFullpage_service_1.MnFullpageService;
-//# sourceMappingURL=index.js.map

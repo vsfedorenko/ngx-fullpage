@@ -11,4 +11,3 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     directives: index_1.MN_FULLPAGE_DIRECTIVES.slice()
 };
-//# sourceMappingURL=ng2-fullpage.js.map

@@ -9,4 +9,3 @@ require('@angular/common');
 require('rxjs');
 require('jquery');
 require('fullpage.js');
-//# sourceMappingURL=vendor.js.map
