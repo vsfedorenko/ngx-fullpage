@@ -61,6 +61,7 @@
     chmod 600 deploy_key
     eval `ssh-agent -s`
     ssh-add deploy_key
+    rm deploy_key
 
     # Now that we're all set up, we can push.
     git push ${SSH_REPOSITORY} ${GIT_PAGES_TARGET_BRANCH}
