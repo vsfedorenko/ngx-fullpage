@@ -64,5 +64,12 @@ export default {
             excludeChunks: ['ng2-fullpage'],
             chunksSortMode: utils.packageSort(['polyfills', 'vendor', 'demo'])
         })
-    ]
+    ],
+    node: {
+        global: 'window',
+        crypto: 'empty',
+        module: false,
+        clearImmediate: false,
+        setImmediate: false
+    }
 };

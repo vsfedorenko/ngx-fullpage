@@ -43,5 +43,6 @@ export default WebpackMerge(CommonWebpackConfig, {
             [/\[?\(?/, /(?:)/]
         ],
         customAttrAssign: [/\)?\]?=/]
-    }
+    },
+    node: WebpackMerge(CommonWebpackConfig.node, {process: false})
 });

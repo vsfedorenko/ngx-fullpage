@@ -29,6 +29,11 @@ export class MnFullpageDirective implements OnInit {
     @Input(`${DIRECTIVE_NAME}`) public options: MnFullpageOptions;
 
     /**
+     * Index signature
+     */
+    [key: string]: any;
+
+    /**
      * ---------------------------------------------------------------------------
      * |                                Navigation                               |
      * ---------------------------------------------------------------------------
@@ -136,7 +141,7 @@ export class MnFullpageDirective implements OnInit {
      * @param property this class property name
      * @returns {string} FullpageOption class option (property) name
      */
-    private static extractName(property) {
+    private static extractName(property: string) {
         return property[MnFullpageDirective.propertyPrefix.length].toLowerCase()
             + property.substring(MnFullpageDirective.propertyPrefix.length + 1);
     }

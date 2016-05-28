@@ -27,5 +27,6 @@ export default WebpackMerge(CommonWebpackConfig, {
             poll: 1000
         },
         outputPath: utils.root(config('common.build.directory'))
-    }
+    },
+    node: WebpackMerge(CommonWebpackConfig.node, {process: true})
 });

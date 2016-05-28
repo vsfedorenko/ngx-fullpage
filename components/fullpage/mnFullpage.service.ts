@@ -31,7 +31,7 @@ export class MnFullpageService {
      * @param section
      * @param slide
      */
-    public moveTo(section, slide) {
+    public moveTo(section: string | number, slide?: number) {
         $.fn.fullpage.moveTo(section, slide);
     }
 
@@ -42,7 +42,7 @@ export class MnFullpageService {
      * @param section
      * @param slide
      */
-    public silentMoveTo(section, slide) {
+    public silentMoveTo(section: string | number, slide?: number) {
         $.fn.fullpage.silentMoveTo(section, slide);
     }
 
