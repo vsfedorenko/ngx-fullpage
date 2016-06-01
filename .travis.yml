@@ -33,6 +33,9 @@ language: node_js
 node_js:
   - stable
 
+deploy:
+	skip_cleanup: true
+
 install:
   - npm install
 
