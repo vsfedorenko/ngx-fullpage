@@ -31,7 +31,7 @@ export default karma => {
         colors: true,
         autoWatch: false,
         reporters: ['progress', 'mocha', 'coverage'],
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
         singleRun: true
     });
 };
