@@ -43,6 +43,6 @@ script:
 
 after_success:
   - chmod -R a+x scripts
+  - bash ./scripts/npm/codeclimate.sh
   - bash ./scripts/git/gh-pages.sh
   - bash ./scripts/npm/publish.sh
-  - bash ./scripts/npm/codeclimate.sh
