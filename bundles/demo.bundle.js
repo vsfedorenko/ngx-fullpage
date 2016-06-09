@@ -150,7 +150,7 @@ webpackJsonp([2],{
 	    MnFullpageDirective.propertyPrefix = "" + DIRECTIVE_NAME;
 	    __decorate([
 	        core_1.Input("" + DIRECTIVE_NAME), 
-	        __metadata('design:type', mnFullpage_options_class_1.MnFullpageOptions)
+	        __metadata('design:type', (typeof (_a = typeof mnFullpage_options_class_1.MnFullpageOptions !== 'undefined' && mnFullpage_options_class_1.MnFullpageOptions) === 'function' && _a) || Object)
 	    ], MnFullpageDirective.prototype, "options", void 0);
 	    __decorate([
 	        core_1.Input(), 
@@ -162,7 +162,7 @@ webpackJsonp([2],{
 	    ], MnFullpageDirective.prototype, "mnFullpageLockAnchors", void 0);
 	    __decorate([
 	        core_1.Input(), 
-	        __metadata('design:type', Array)
+	        __metadata('design:type', Object)
 	    ], MnFullpageDirective.prototype, "mnFullpageAnchors", void 0);
 	    __decorate([
 	        core_1.Input(), 
@@ -174,7 +174,7 @@ webpackJsonp([2],{
 	    ], MnFullpageDirective.prototype, "mnFullpageNavigationPosition", void 0);
 	    __decorate([
 	        core_1.Input(), 
-	        __metadata('design:type', Array)
+	        __metadata('design:type', Object)
 	    ], MnFullpageDirective.prototype, "mnFullpageNavigationTooltips", void 0);
 	    __decorate([
 	        core_1.Input(), 
@@ -278,7 +278,7 @@ webpackJsonp([2],{
 	    ], MnFullpageDirective.prototype, "mnFullpageResize", void 0);
 	    __decorate([
 	        core_1.Input(), 
-	        __metadata('design:type', Array)
+	        __metadata('design:type', Object)
 	    ], MnFullpageDirective.prototype, "mnFullpageSectionsColor", void 0);
 	    __decorate([
 	        core_1.Input(), 
@@ -336,9 +336,10 @@ webpackJsonp([2],{
 	        core_1.Directive({
 	            selector: "[" + DIRECTIVE_NAME + "]"
 	        }), 
-	        __metadata('design:paramtypes', [core_1.ElementRef])
+	        __metadata('design:paramtypes', [(typeof (_b = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _b) || Object])
 	    ], MnFullpageDirective);
 	    return MnFullpageDirective;
+	    var _a, _b;
 	}());
 	exports.MnFullpageDirective = MnFullpageDirective;
 
@@ -594,7 +595,7 @@ webpackJsonp([2],{
 	    }
 	    __decorate([
 	        core_1.Input(), 
-	        __metadata('design:type', components_1.MnFullpageOptions)
+	        __metadata('design:type', (typeof (_a = typeof components_1.MnFullpageOptions !== 'undefined' && components_1.MnFullpageOptions) === 'function' && _a) || Object)
 	    ], AppComponent.prototype, "options", void 0);
 	    __decorate([
 	        core_1.Output(), 
@@ -612,9 +613,10 @@ webpackJsonp([2],{
 	            encapsulation: core_1.ViewEncapsulation.None,
 	            template: __webpack_require__(426)
 	        }), 
-	        __metadata('design:paramtypes', [components_1.MnFullpageService])
+	        __metadata('design:paramtypes', [(typeof (_b = typeof components_1.MnFullpageService !== 'undefined' && components_1.MnFullpageService) === 'function' && _b) || Object])
 	    ], AppComponent);
 	    return AppComponent;
+	    var _a, _b;
 	}());
 	exports.AppComponent = AppComponent;
 
