@@ -23,7 +23,7 @@
   },
   "main": "ng2-fullpage.js",
   "dependencies": {
-    "jquery": "^2.2.4",
+    "jquery": "^3.0.0",
     "fullpage.js": "^2.8.0"
   },
   "peerDependencies": {
