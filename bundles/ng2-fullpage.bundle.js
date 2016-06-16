@@ -1,23 +1,23 @@
 webpackJsonp([3],{
 
-/***/ 196:
+/***/ 216:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
 	 */
 	"use strict";
-	var mnFullpage_directive_1 = __webpack_require__(96);
+	var mnFullpage_directive_1 = __webpack_require__(113);
 	exports.MnFullpageDirective = mnFullpage_directive_1.MnFullpageDirective;
-	var mnFullpage_options_class_1 = __webpack_require__(95);
+	var mnFullpage_options_class_1 = __webpack_require__(112);
 	exports.MnFullpageOptions = mnFullpage_options_class_1.MnFullpageOptions;
-	var mnFullpage_service_1 = __webpack_require__(197);
+	var mnFullpage_service_1 = __webpack_require__(217);
 	exports.MnFullpageService = mnFullpage_service_1.MnFullpageService;
 
 
 /***/ },
 
-/***/ 95:
+/***/ 112:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33,7 +33,7 @@ webpackJsonp([3],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(3);
+	var core_1 = __webpack_require__(2);
 	var MnFullpageOptions = (function () {
 	    /**
 	     * Public default constructor
@@ -56,7 +56,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 96:
+/***/ 113:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -72,10 +72,10 @@ webpackJsonp([3],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(3);
-	var $ = __webpack_require__(90);
-	__webpack_require__(103);
-	var mnFullpage_options_class_1 = __webpack_require__(95);
+	var core_1 = __webpack_require__(2);
+	var $ = __webpack_require__(103);
+	__webpack_require__(119);
+	var mnFullpage_options_class_1 = __webpack_require__(112);
 	var DIRECTIVE_NAME = 'mnFullpage';
 	var MnFullpageDirective = (function () {
 	    /**
@@ -346,7 +346,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 197:
+/***/ 217:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -362,9 +362,9 @@ webpackJsonp([3],{
 	var __metadata = (this && this.__metadata) || function (k, v) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
-	var core_1 = __webpack_require__(3);
-	var $ = __webpack_require__(90);
-	__webpack_require__(103);
+	var core_1 = __webpack_require__(2);
+	var $ = __webpack_require__(103);
+	__webpack_require__(119);
 	var MnFullpageService = (function () {
 	    function MnFullpageService() {
 	    }
@@ -523,15 +523,15 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 126:
+/***/ 145:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
 	 */
 	"use strict";
-	var mnFullpage_directive_1 = __webpack_require__(96);
-	var index_1 = __webpack_require__(196);
+	var mnFullpage_directive_1 = __webpack_require__(113);
+	var index_1 = __webpack_require__(216);
 	exports.MnFullpageDirective = index_1.MnFullpageDirective;
 	exports.MnFullpageOptions = index_1.MnFullpageOptions;
 	exports.MnFullpageService = index_1.MnFullpageService;
@@ -550,12 +550,12 @@ webpackJsonp([3],{
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(425));
+	__export(__webpack_require__(468));
 
 
 /***/ },
 
-/***/ 425:
+/***/ 468:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -565,8 +565,8 @@ webpackJsonp([3],{
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	var index_1 = __webpack_require__(126);
-	__export(__webpack_require__(126));
+	var index_1 = __webpack_require__(145);
+	__export(__webpack_require__(145));
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = {
 	    directives: index_1.MN_FULLPAGE_DIRECTIVES.slice()
