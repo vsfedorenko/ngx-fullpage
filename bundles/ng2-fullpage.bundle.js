@@ -523,7 +523,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 145:
+/***/ 146:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -550,12 +550,12 @@ webpackJsonp([3],{
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	__export(__webpack_require__(468));
+	__export(__webpack_require__(470));
 
 
 /***/ },
 
-/***/ 468:
+/***/ 470:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -565,8 +565,8 @@ webpackJsonp([3],{
 	function __export(m) {
 	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 	}
-	var index_1 = __webpack_require__(145);
-	__export(__webpack_require__(145));
+	var index_1 = __webpack_require__(146);
+	__export(__webpack_require__(146));
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = {
 	    directives: index_1.MN_FULLPAGE_DIRECTIVES.slice()
