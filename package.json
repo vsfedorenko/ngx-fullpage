@@ -84,7 +84,7 @@
     "ts-helpers": "^1.1.1",
     "tslint": "^3.10.2",
     "tslint-loader": "^2.1.4",
-    "typedoc": "^0.3.12",
+    "typedoc": "^0.4.3",
     "typescript": "^1.8.10",
     "typings": "^1.0.4",
     "unminified-webpack-plugin": "^1.0.0",
