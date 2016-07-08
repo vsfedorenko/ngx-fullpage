@@ -2,8 +2,7 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
  */
 
-import {TestComponentBuilder} from '@angular/compiler/testing';
-import {async, describe, inject, it} from '@angular/core/testing';
+import {TestComponentBuilder, async, describe, inject, it} from '@angular/core/testing';
 
 import {Component, Input} from '@angular/core';
 import {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';
