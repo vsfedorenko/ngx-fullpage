@@ -3,7 +3,7 @@
   "module": "commonjs",
   "moduleResolution": "node",
   "target": "ES5",
-  "theme": "minimal",
+  "theme": "node_modules/typedoc-default-themes/bin/default",
   "ignoreCompilerErrors": "true",
   "experimentalDecorators": "true",
   "emitDecoratorMetadata": "true",
