@@ -18,13 +18,16 @@ import {MnFullpageDirective, MnFullpageOptions, MnFullpageService} from "../../c
 })
 export class AppComponent {
 
-    @Input() public options: MnFullpageOptions = new MnFullpageOptions({
+    @Input() public options:MnFullpageOptions = new MnFullpageOptions({
         controlArrows: false,
         scrollingSpeed: 1000,
 
-        menu: '#menu',
+        menu: '.menu',
         css3: true,
-        anchors: ['menuAnchor1', 'menuAnchor2', 'menuAnchor3', 'menuAnchor4', 'menuAnchor5']
+        anchors: [
+            'menuAnchor1', 'menuAnchor2', 'menuAnchor3',
+            'menuAnchor4', 'menuAnchor5', 'menuAnchor6'
+        ]
     });
 
     @Output() private templates = {
@@ -38,7 +41,7 @@ export class AppComponent {
         service: require('raw!./templates/service.tempalte.txt')
     };
 
-    constructor(private fullpageService: MnFullpageService) {
+    constructor(private fullpageService:MnFullpageService) {
     }
 
 }
