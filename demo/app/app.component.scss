@@ -11,8 +11,8 @@ $menu-color-active-background: rgba(0, 0, 0, .5);
 $section-code-background: rgba(255, 255, 255, .1);
 
 $welcome-section-degree: 90deg;
-$welcome-section-first-color: rgba(0, 255, 68, .2);
-$welcome-section-second-color: rgba(255, 0, 0, .4);
+$welcome-section-first-color: rgba(255, 177, 0, 0.2);
+$welcome-section-second-color: rgba(52, 0, 255, 0.4);
 
 $install-section-degree: 90deg;
 $install-section-first-color: rgba(32, 255, 0, .2);
@@ -29,7 +29,6 @@ $slides-section-second-color: $usage-section-second-color;
 $start-use-it-now-section-degree: 45deg;
 $start-use-it-now-section-first-color: rgba(255, 255, 255, .2);
 $start-use-it-now-section-second-color: $slides-section-second-color;
-
 
 body {
   font-family: 'Titillium Web', Arial sans-serif;
@@ -56,7 +55,20 @@ h4 {
   top: 50% !important;
 }
 
-#menu li {
+.menu-wrapper {
+  position: fixed;
+  width: 100%;
+  z-index: 70;
+  text-align: center;
+  height: 40px;
+  margin: auto;
+}
+
+.menu {
+  padding: 0;
+}
+
+.menu li {
   display: inline-block;
   margin: 10px;
   color: $menu-color;
@@ -64,43 +76,36 @@ h4 {
   background: $menu-color-background;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+  text-align: center;
 }
 
-#menu li.active {
+.menu li.active {
   background: #666;
   background: $menu-color-active-background;
   color: $menu-color-active;
 }
 
-#menu li a {
+.menu li a {
   text-decoration: none;
   color: $menu-color;
 }
 
-#menu li.active a:hover {
+.menu li.active a:hover {
   color: $menu-color;
 }
 
-#menu li:hover {
+.menu li:hover {
   background: $menu-color-hover;
 }
 
-#menu li a,
-#menu li.active a {
+.menu li a,
+.menu li.active a {
   padding: 9px 18px;
   display: block;
 }
 
-#menu li.active a {
+.menu li.active a {
   color: $menu-color-active;
-}
-
-#menu {
-  position: fixed;
-  height: 40px;
-  z-index: 70;
-  padding: 0;
-  margin: auto;
 }
 
 .section {
