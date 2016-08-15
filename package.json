@@ -87,7 +87,7 @@
     "webpack-dev-server": "^1.14.1",
     "webpack-md5-hash": "0.0.5",
     "webpack-merge": "^0.14.0",
-    "zone.js": "^0.6.12"
+    "zone.js": "^0.6.13"
   },
   "keywords": [
     "fullpage",
