@@ -77,7 +77,7 @@
     "style-loader": "^0.13.1",
     "traverse": "^0.6.6",
     "ts-helpers": "^1.1.1",
-    "tslint": "^3.10.2",
+    "tslint": "^3.15.0",
     "tslint-loader": "^2.1.4",
     "typedoc": "^0.4.4",
     "typescript": "^1.8.10",
