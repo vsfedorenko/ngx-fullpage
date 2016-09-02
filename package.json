@@ -123,7 +123,6 @@
     "tests": "npm run test",
     "test:watch": "npm run watch:test",
     "codeclimate": "codeclimate-test-reporter < build/reports/lcov-report/lcov.info",
-    "postinstall": "npm run typings -- install",
     "docs": "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./components/"
   }
 }
