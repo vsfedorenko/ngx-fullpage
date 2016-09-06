@@ -67,7 +67,7 @@
     "karma-webpack": "^1.7.0",
     "lodash.template": "^4.2.5",
     "mocha": "^3.0.0",
-    "node-sass": "^3.7.0",
+    "node-sass": "^3.9.2",
     "npm-check-updates": "^2.6.5",
     "phantomjs-prebuilt": "^2.1.7",
     "raw-loader": "^0.5.1",
