@@ -44,7 +44,7 @@
     "concurrently": "^2.1.0",
     "core-js": "^2.4.0",
     "css-loader": "^0.23.1",
-    "es6-promise": "^3.2.1",
+    "es6-promise": "^3.3.1",
     "es6-promise-loader": "^1.0.1",
     "es6-shim": "^0.35.1",
     "es7-reflect-metadata": "^1.6.0",
