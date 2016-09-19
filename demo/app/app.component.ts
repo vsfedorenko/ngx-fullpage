@@ -2,23 +2,21 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
  */
 
-import {Component, Input, Output, ViewEncapsulation, provide} from '@angular/core';
-import {MnFullpageDirective, MnFullpageOptions, MnFullpageService} from "../../components";
+import { Component, Input, Output, ViewEncapsulation } from '@angular/core';
+import { MnFullpageService, MnFullpageOptions } from "../../components";
 
 @Component({
     selector: 'app',
-    providers: [provide(MnFullpageService, {useClass: MnFullpageService})],
-    directives: [MnFullpageDirective],
+    encapsulation: ViewEncapsulation.None,
     styles: [
         require('fullpage.js/jquery.fullPage.css'),
         require('./app.component.scss')
     ],
-    encapsulation: ViewEncapsulation.None,
     template: require('./app.component.html')
 })
 export class AppComponent {
 
-    @Input() public options:MnFullpageOptions = new MnFullpageOptions({
+    @Input() public options: MnFullpageOptions = new MnFullpageOptions({
         controlArrows: false,
         scrollingSpeed: 1000,
 
@@ -41,7 +39,7 @@ export class AppComponent {
         service: require('raw!./templates/service.tempalte.txt')
     };
 
-    constructor(private fullpageService:MnFullpageService) {
+    constructor(private fullpageService: MnFullpageService) {
     }
 
 }

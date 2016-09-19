@@ -6,30 +6,40 @@
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": false,
     "sourceMap": false,
     "listFiles": true,
     "removeComments": false,
     "noEmitHelpers": false,
     "outDir": "build",
-    "noLib": false
+    "noLib": false,
+    "baseUrl": ".",
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "types": [
+      "hammerjs",
+      "jasmine",
+      "node",
+      "webpack",
+      "jquery"
+    ]
   },
   "exclude": [
-    "demo",
+    "node_modules",
+    "build",
+
     "test",
-    "node_modules"
-  ],
-  "filesGlob": [
-    "./components/fullpage/**/*.ts",
+    "demo",
 
-    "!./node_modules/**",
-
-    "./components/typings",
-    "./typings/index.d.ts"
-
+    "index.ts",
+    "ng2-fullpage.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
-    "resolveGlobs": true,
-    "forkChecker": true
+    "forkChecker": true,
+    "useWebpackText": true
   },
   "compileOnSave": false,
   "buildOnSave": false,
