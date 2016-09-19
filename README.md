@@ -9,7 +9,10 @@ This is an Angular 2 [fullPage.js](https://github.com/alvarotrigo/fullPage.js) p
 [![devDependency Status](https://david-dm.org/meiblorn/ng2-fullpage/dev-status.svg)](https://david-dm.org/meiblorn/ng2-fullpage#info=devDependencies)
 [![Test Coverage](https://codeclimate.com/github/meiblorn/ng2-fullpage/badges/coverage.svg)](https://codeclimate.com/github/meiblorn/ng2-fullpage/coverage)
 [![Code Climate](https://codeclimate.com/github/meiblorn/ng2-fullpage/badges/gpa.svg)](https://codeclimate.com/github/meiblorn/ng2-fullpage)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/meiblorn/ng2-fullpage/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
+-----------------------------------
+NEW RELEASE 2.0.0: ANGULAR 2 FINAL
+-----------------------------------
 
 ## Demo
 
@@ -61,12 +64,12 @@ export class AppComponent {
      // no additional config is required
 }
 ```
-Update webpack vendors entry file (src/vendor.ts) with 'jquery' import:
+Update webpack vendors entry file (src/vendor.browser.ts) with 'jquery' import:
 
 ```typescript
 /**
 * 
-* File: vendor.ts
+* File: vendor.browser.ts
 * 
 * Just add 'jquery' module import statement.
 * 

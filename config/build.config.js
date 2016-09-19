@@ -6,9 +6,7 @@ export default {
     common: {
         sources: {
             directory: '.',
-            extensions: [
-                '', '.ts', '.js'
-            ],
+            extensions: ['', '.ts', '.js', '.json'],
             entries: {
                 directories: {
                     src: './components',
@@ -16,9 +14,9 @@ export default {
                 },
                 list: {
                     'ng2-fullpage': './index.ts',
-                    'polyfills': '<%= common.sources.entries.directories.src %>/polyfills.ts',
-                    'vendor': '<%= common.sources.entries.directories.src %>/vendor.ts',
-                    'demo': '<%= common.sources.entries.directories.demo %>/app/main.ts'
+                    'polyfills': '<%= common.sources.entries.directories.src %>/polyfills.browser.ts',
+                    'vendor': '<%= common.sources.entries.directories.src %>/vendor.browser.ts',
+                    'demo': '<%= common.sources.entries.directories.demo %>/app/main.browser.ts'
                 },
                 chunks: {
                     commons: {

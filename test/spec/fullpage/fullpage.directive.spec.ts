@@ -2,16 +2,19 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
  */
 
-import {TestComponentBuilder, async, describe, inject, it} from '@angular/core/testing';
+import {
+    fakeAsync,
+    tick,
+    TestBed
+} from '@angular/core/testing';
 
-import {Component, Input} from '@angular/core';
-import {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';
+import { Component, Input } from '@angular/core';
+import { MnFullpageDirective, MnFullpageOptions } from 'ng2-fullpage';
 
 describe('mnFullpage directive spec', () => {
-    // Create a test component to test directives
+
     @Component({
-        template: '',
-        directives: [MnFullpageDirective]
+        template: '<div mnFullpage>Content</div>',
     })
     class TestComponent {
 
@@ -23,23 +26,27 @@ describe('mnFullpage directive spec', () => {
 
     }
 
-    function createComponentAndTest(tcb: TestComponentBuilder, expectations: Function) {
-        return tcb.overrideTemplate(TestComponent, '<div mnFullpage>Content</div>')
-            .createAsync(TestComponent).then((fixture: any) => {
-                fixture.detectChanges();
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                MnFullpageDirective,
+                TestComponent
+            ]
+        });
+    });
 
-                expectations(fixture);
-            });
-    }
+    it('compiled element should have fullpage-wrapper class, 100% height style', fakeAsync(() => {
+        TestBed.compileComponents().then(() => {
 
-    it('compiled element should have fullpage-wrapper class, 100% height style',
-        async(inject([TestComponentBuilder],
-            (tcb: TestComponentBuilder) => {
-                return createComponentAndTest(tcb, (fixture) => {
-                    let compiled = fixture.debugElement.nativeElement.children[0];
+            const fixture = TestBed.createComponent(TestComponent);
+            fixture.detectChanges();
+            tick();
 
-                    expect(compiled.classList.contains('fullpage-wrapper')).toBe(true);
-                    expect(compiled.style.height).toBe('100%');
-                });
-            })));
+            let compiled = fixture.debugElement.nativeElement.children[ 0 ];
+
+            expect(compiled.classList.contains('fullpage-wrapper')).toBe(true);
+            expect(compiled.style.height).toBe('100%');
+
+        });
+    }));
 });

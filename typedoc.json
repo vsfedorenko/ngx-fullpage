@@ -1,15 +1,15 @@
 {
   "mode": "modules",
-  "module": "commonjs",
-  "moduleResolution": "node",
-  "target": "ES5",
-  "theme": "node_modules/typedoc-default-themes/bin/default",
+  "theme": "minimal",
   "ignoreCompilerErrors": "true",
   "experimentalDecorators": "true",
   "emitDecoratorMetadata": "true",
+  "target": "ES5",
+  "moduleResolution": "node",
   "preserveConstEnums": "true",
   "stripInternal": "true",
   "suppressExcessPropertyErrors": "true",
   "suppressImplicitAnyIndexErrors": "true",
+  "module": "commonjs",
   "out": "build/docs"
 }
