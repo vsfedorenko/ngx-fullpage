@@ -2,6 +2,7 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
  */
 
+import fs from 'fs';
 import path from 'path';
 import traverse from 'traverse';
 import loDashTemplate from 'lodash.template';
@@ -50,18 +51,21 @@ export default class Utils {
         return childProcess.exec(cmd);
     }
 
-    static packageSort(packages) {
-        var len = packages.length - 1;
-        return function sort(a, b) {
-            if (a.names[0] === packages[0]) {
-                return -1;
-            }
+    static getFiles(dir, subdirFiles) {
+        var result = subdirFiles || [];
 
-            if (a.names[0] === packages[len]) {
-                return 1;
+        var files = fs.readdirSync(dir);
+
+        for (var file in files) {
+            var name = dir + '/' + files[file];
+            if (fs.statSync(name).isDirectory()) {
+                this.getFiles(name, result);
+            } else {
+                result.push(name);
             }
-            
-            return 0;
         }
+
+        return result;
     }
+
 }

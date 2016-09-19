@@ -5,7 +5,8 @@ import config from './../helpers/config';
 const SPEC_BUNDLE_PATH = config('test.spec.bundle.filename');
 
 export default karma => {
-    karma.set({
+
+    const configuration = {
         basePath: '',
         frameworks: ['jasmine'],
         exclude: [],
@@ -15,7 +16,7 @@ export default karma => {
             result[SPEC_BUNDLE_PATH] = ['webpack', 'sourcemap'];
             return result;
         })(),
-        webpack: WebpackTest,
+        webpack: WebpackTest({env: 'test'}),
         coverageReporter: {
             dir: config('test.reports.coverage.directory'),
             reporters: [
@@ -32,6 +33,14 @@ export default karma => {
         autoWatch: false,
         reporters: ['progress', 'mocha', 'coverage'],
         browsers: ['PhantomJS'],
-        singleRun: true
-    });
+        singleRun: true,
+        customLaunchers: {
+            ChromeTravisCi: {
+                base: 'Chrome',
+                flags: ['--no-sandbox']
+            }
+        },
+    };
+
+    karma.set(configuration);
 };

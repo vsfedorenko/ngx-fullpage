@@ -2,25 +2,30 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 11/05/16.
  */
 
-import 'core-js';
-import 'ts-helpers';
+Error.stackTraceLimit = Infinity;
 
-import 'zone.js/dist/zone';
-import 'zone.js/dist/long-stack-trace-zone';
-import 'zone.js/dist/jasmine-patch';
-import 'zone.js/dist/async-test';
+require('core-js/es6');
+require('core-js/es7/reflect');
 
-import 'rxjs/Rx';
+require('ts-helpers');
 
-import * as testing from '@angular/core/testing';
-import * as browser from '@angular/platform-browser-dynamic/testing';
+require('zone.js/dist/zone');
+require('zone.js/dist/long-stack-trace-zone');
+require('zone.js/dist/proxy'); // since zone.js 0.6.15
+require('zone.js/dist/sync-test');
+require('zone.js/dist/jasmine-patch'); // put here since zone.js 0.6.14
+require('zone.js/dist/async-test');
+require('zone.js/dist/fake-async-test');
 
-testing.setBaseTestProviders(
-    browser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
-    browser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
+require('rxjs/Rx');
+
+var testing = require('@angular/core/testing');
+var browser = require('@angular/platform-browser-dynamic/testing');
+
+testing.TestBed.initTestEnvironment(
+    browser.BrowserDynamicTestingModule,
+    browser.platformBrowserDynamicTesting()
 );
-
-Object.assign(global, testing);
 
 var testContext = require.context('./spec/', true, /\.spec\.ts/);
 
