@@ -273,14 +273,21 @@ var AppComponent = (function () {
             ]
         });
         this.templates = {
-            install: __webpack_require__(375),
-            usage: __webpack_require__(380),
-            slides: {
-                attributes: __webpack_require__(377),
-                classOptions: __webpack_require__(378),
-                mix: __webpack_require__(379)
+            install: __webpack_require__(378),
+            usage: {
+                slides: {
+                    module: __webpack_require__(380),
+                    html: __webpack_require__(381)
+                }
             },
-            service: __webpack_require__(376)
+            configuration: {
+                slides: {
+                    attributes: __webpack_require__(375),
+                    classOptions: __webpack_require__(376),
+                    mix: __webpack_require__(377)
+                }
+            },
+            service: __webpack_require__(379),
         };
     }
     __decorate([
@@ -296,8 +303,8 @@ var AppComponent = (function () {
             selector: 'app',
             encapsulation: core_1.ViewEncapsulation.None,
             styles: [
-                __webpack_require__(894),
-                __webpack_require__(381)
+                __webpack_require__(895),
+                __webpack_require__(382)
             ],
             template: __webpack_require__(374)
         }), 
@@ -314,7 +321,7 @@ exports.AppComponent = AppComponent;
 /***/ 373:
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(614)();
+exports = module.exports = __webpack_require__(615)();
 // imports
 
 
@@ -329,60 +336,67 @@ exports.push([module.i, "/*!\r\n * fullPage 2.8.6\r\n * https://github.com/alvar
 /***/ 374:
 /***/ function(module, exports) {
 
-module.exports = "<!--suppress HtmlUnknownAnchorTarget, HtmlUnknownTarget -->\n\n<div class=\"menu-wrapper\">\n    <ul class=\"menu\">\n        <li data-menuanchor=\"menuAnchor1\" class=\"active\"><a href=\"#menuAnchor1\">First section</a></li>\n        <li data-menuanchor=\"menuAnchor2\"><a href=\"#menuAnchor2\">Second section</a></li>\n        <li data-menuanchor=\"menuAnchor3\"><a href=\"#menuAnchor3\">Third section</a></li>\n        <li data-menuanchor=\"menuAnchor4\"><a href=\"#menuAnchor4\">Fourth section</a></li>\n        <li data-menuanchor=\"menuAnchor5\"><a href=\"#menuAnchor5\">Fifth section</a></li>\n        <li data-menuanchor=\"menuAnchor6\"><a href=\"#menuAnchor6\">Sixth section</a></li>\n    </ul>\n</div>\n\n\n<div [mnFullpage]=\"options\"\n     [mnFullpageNavigation]=\"true\"\n     [mnFullpageKeyboardScrolling]=\"true\"\n     [mnFullpageSlidesNavigation]=\"true\"\n     [mnFullpageSlidesNavPosition]=\"bottom\">\n\n    <div class=\"section welcome-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Angular 2 fullPage.js</h1>\n            <h4>Create Beautiful Fullscreen Scrolling Websites (now with Angular 2)!</h4>\n            <img class=\"logo-image\" src=\"https://raw.githubusercontent.com/meiblorn/ng2-fullpage/develop/logo.png\"/>\n        </div>\n    </div>\n    <div class=\"section install-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Easy to install !</h1>\n            <div class=\"code-block\">\n            <pre>\n                <code class=\"bash\">{{templates.install}}</code>\n            </pre>\n            </div>\n        </div>\n    </div>\n    <div class=\"section usage-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Easy to use !</h1>\n            <div class=\"code-block\">\n            <pre>\n                <code class=\"html\">{{templates.usage}}</code>\n            </pre>\n            </div>\n        </div>\n    </div>\n    <div class=\"section slides-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <div class=\"slide\">\n                <h1>Many ways to configure!</h1>\n                <h4>Use keyboard arrows or navigation below to slide right</h4>\n            </div>\n            <div class=\"slide\">\n                <h1>Configure it via attributes</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"html\">{{templates.slides.attributes}}</code>\n                </pre>\n                </div>\n            </div>\n            <div class=\"slide\">\n                <h1>Use configuration object instead</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"javascript\">{{templates.slides.classOptions}}</code>\n                </pre>\n                </div>\n            </div>\n            <div class=\"slide\">\n                <h1>Or MIX IT !</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"javascript\">{{templates.slides.mix}}</code>\n                </pre>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"section usage-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Get full control on the page !</h1>\n            <div class=\"code-block\">\n            <pre>\n                <code class=\"html\">{{templates.service}}</code>\n            </pre>\n            </div>\n        </div>\n    </div>\n    <div class=\"section start-use-it-now-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Start use it now!</h1>\n            <h4>\n                Return to <a href=\"https://github.com/meiblorn/ng2-fullpage\">GitHub</a>\n                or start reading <a href=\"docs/index.html\">docs</a>\n            </h4>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<!--suppress HtmlUnknownAnchorTarget, HtmlUnknownTarget -->\n\n<div class=\"menu-wrapper\">\n    <ul class=\"menu\">\n        <li data-menuanchor=\"menuAnchor1\" class=\"active\"><a href=\"#menuAnchor1\">First section</a></li>\n        <li data-menuanchor=\"menuAnchor2\"><a href=\"#menuAnchor2\">Second section</a></li>\n        <li data-menuanchor=\"menuAnchor3\"><a href=\"#menuAnchor3\">Third section</a></li>\n        <li data-menuanchor=\"menuAnchor4\"><a href=\"#menuAnchor4\">Fourth section</a></li>\n        <li data-menuanchor=\"menuAnchor5\"><a href=\"#menuAnchor5\">Fifth section</a></li>\n        <li data-menuanchor=\"menuAnchor6\"><a href=\"#menuAnchor6\">Sixth section</a></li>\n    </ul>\n</div>\n\n\n<div [mnFullpage]=\"options\"\n     [mnFullpageNavigation]=\"true\"\n     [mnFullpageKeyboardScrolling]=\"true\"\n     [mnFullpageSlidesNavigation]=\"true\"\n     [mnFullpageSlidesNavPosition]=\"bottom\">\n\n    <div class=\"section welcome-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Angular 2 fullPage.js</h1>\n            <h4>Create Beautiful Fullscreen Scrolling Websites (now with Angular 2)!</h4>\n            <img class=\"logo-image\" src=\"https://raw.githubusercontent.com/meiblorn/ng2-fullpage/develop/logo.png\"/>\n        </div>\n    </div>\n    <div class=\"section install-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Easy to install !</h1>\n            <div class=\"code-block\">\n            <pre>\n                <code class=\"bash\">{{templates.install}}</code>\n            </pre>\n            </div>\n        </div>\n    </div>\n    <div class=\"section usage-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <div class=\"slide\">\n                <h1>Easy to use !</h1>\n                <h4>Use keyboard arrows or navigation below to slide right</h4>\n            </div>\n            <div class=\"slide\">\n                <h1>Declare it in your module</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"javascript\">{{templates.usage.slides.module}}</code>\n                </pre>\n                </div>\n            </div>\n            <div class=\"slide\">\n                <h1>Now use it in your html template</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"html\">{{templates.usage.slides.html}}</code>\n                </pre>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"section slides-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <div class=\"slide\">\n                <h1>Many ways to configure!</h1>\n                <h4>Use keyboard arrows or navigation below to slide right</h4>\n            </div>\n            <div class=\"slide\">\n                <h1>Configure it via attributes</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"html\">{{templates.configuration.slides.attributes}}</code>\n                </pre>\n                </div>\n            </div>\n            <div class=\"slide\">\n                <h1>Use configuration object instead</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"javascript\">{{templates.configuration.slides.classOptions}}</code>\n                </pre>\n                </div>\n            </div>\n            <div class=\"slide\">\n                <h1>Or MIX IT !</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"javascript\">{{templates.configuration.slides.mix}}</code>\n                </pre>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"section usage-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Get full control on the page !</h1>\n            <div class=\"code-block\">\n            <pre>\n                <code class=\"html\">{{templates.service}}</code>\n            </pre>\n            </div>\n            <div>\n                <button (click)=\"fullpageService.moveSectionUp();\">Move section up</button>\n                <button (click)=\"fullpageService.moveSectionDown();\">Move section down</button>\n            </div>\n        </div>\n    </div>\n    <div class=\"section start-use-it-now-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Start use it now!</h1>\n            <h4>\n                Return to <a href=\"https://github.com/meiblorn/ng2-fullpage\">GitHub</a>\n                or start reading <a href=\"docs/index.html\">docs</a>\n            </h4>\n        </div>\n    </div>\n</div>\n"
 
 /***/ },
 
 /***/ 375:
 /***/ function(module, exports) {
 
-module.exports = "#!/bin/bash\n\n# install module via npm\nnpm install ng2-fullpage --save\n\n# install typings\ntypings install jquery --save --ambient\n\n# you are done!\n"
+module.exports = "<div mnFullpage\n     [mnFullpageNavigation]=\"true\"\n     [mnFullpageKeyboardScrolling]=\"true\"\n     [mnFullpageSlidesNavigation]=\"true\"\n     [mnFullpageSlidesNavPosition]=\"bottom\"\n     [mnFullpageControlArrows]=\"false\">\n\n    <div id=\"section1\" class=\"section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            Section 1\n        </div>\n    </div>\n    <div id=\"section2\" class=\"section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            Section 2\n        </div>\n    </div>\n\n</div>\n"
 
 /***/ },
 
 /***/ 376:
 /***/ function(module, exports) {
 
-module.exports = "import {Component, Input} from '@angular/core';\nimport {MnFullpageDirective, MnFullpageService} from 'ng2-fullpage';\n\n@Component({\n    selector: 'app',\n    providers: [provide(MnFullpageService, {useClass: MnFullpageService}],\n    directives: [MnFullpageDirective],\n    template: `\n        <button (click)=\"fullpageService.moveSectionUp();\">Move section up</button>\n        <button (click)=\"fullpageService.moveSectionDown();\">Move section down</button>\n\n        <div mnFullpage [mnFullpageNavigation]=\"true\">\n            ....\n        </div>\n    `\n})\nexport class AppComponent {\n\n     constructor(private fullpageService: MnFullpageService) {\n     }\n\n}\n"
+module.exports = "import { Component, Output } from '@angular/core';\nimport { MnFullpageOptions } from 'ng2-fullpage';\n\n@Component({\n    selector: 'app',\n    template: `\n        <div [mnFullpage]=\"options\">\n            <div id=\"section1\" class=\"section fp-section fp-table\">\n                <div class=\"fp-tableCell\">\n                    Section 1\n                </div>\n            </div>\n            ......\n        </div>\n    `\n})\nexport class AppComponent {\n    @Output() private options: MnFullpageOptions = new MnFullpageOptions({\n        navigation: true,\n        keyboardScrolling: true\n    });\n}\n"
 
 /***/ },
 
 /***/ 377:
 /***/ function(module, exports) {
 
-module.exports = "<div mnFullpage\n     [mnFullpageNavigation]=\"true\"\n     [mnFullpageKeyboardScrolling]=\"true\"\n     [mnFullpageSlidesNavigation]=\"true\"\n     [mnFullpageSlidesNavPosition]=\"bottom\"\n     [mnFullpageControlArrows]=\"false\">\n\n    <div class=\"section fp-section fp-table\">Section 1</div>\n    <div class=\"section fp-section fp-table\">Section 2</div>\n\n</div>\n"
+module.exports = "import { Component, Output } from '@angular/core';\nimport { MnFullpageOptions } from 'ng2-fullpage';\n\n@Component({\n    selector: 'app',\n    template: `\n        <div [mnFullpage]=\"options\" [mnFullpageControlArrows]=\"false\">\n            <div class=\"section\"> Some section 1 </div>\n            <div class=\"section\"> Some section 2 </div>\n        </div>\n    `\n})\nexport class AppComponent {\n    @Output() private options: MnFullpageOptions = new MnFullpageOptions({\n        navigation: true,\n        keyboardScrolling: true\n    });\n}\n"
 
 /***/ },
 
 /***/ 378:
 /***/ function(module, exports) {
 
-module.exports = "import {Component, Output} from '@angular/core';\nimport {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';\n\n@Component({\n    selector: 'app',\n    directives: [MnFullpageDirective],\n    template: `\n        <div [mnFullpage]=\"options\">\n            <div class=\"section\"> Some section 1 </div>\n            <div class=\"section\"> Some section 2 </div>\n        </div>\n    `\n})\nexport class AppComponent {\n    @Output() private options: MnFullpageOptions = new MnFullpageOptions({\n        navigation: true,\n        keyboardScrolling: true\n    });\n}\n"
+module.exports = "#!/bin/bash\n\n# install module via npm\nnpm install ng2-fullpage --save\n\n# install typings\nnpm install @types/jquery --save-dev\n# or if you prefer \"typings\" tool then try\n# \"typings install jquery --save --ambient\"\n\n# you are done!\n"
 
 /***/ },
 
 /***/ 379:
 /***/ function(module, exports) {
 
-module.exports = "import {Component, Output} from '@angular/core';\nimport {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';\n\n@Component({\n    selector: 'app',\n    directives: [MnFullpageDirective],\n    template: `\n        <div [mnFullpage]=\"options\" [mnFullpageControlArrows]=\"false\">\n            <div class=\"section\"> Some section 1 </div>\n            <div class=\"section\"> Some section 2 </div>\n        </div>\n    `\n})\nexport class AppComponent {\n    @Output() private options: MnFullpageOptions = new MnFullpageOptions({\n        navigation: true,\n        keyboardScrolling: true\n    });\n}\n"
+module.exports = "import { Component, Input } from '@angular/core';\nimport { MnFullpageService } from 'ng2-fullpage';\n\n@Component({\n    selector: 'app',\n    template: `\n        <button (click)=\"fullpageService.moveSectionUp();\">Move section up</button>\n        <button (click)=\"fullpageService.moveSectionDown();\">Move section down</button>\n\n        <div mnFullpage [mnFullpageNavigation]=\"true\">\n            ....\n        </div>\n    `\n})\nexport class AppComponent {\n\n     constructor(private fullpageService: MnFullpageService) {\n     }\n\n}\n"
 
 /***/ },
 
 /***/ 380:
 /***/ function(module, exports) {
 
-module.exports = "<!-- Just add directive [mnFullpage] -->\n<!-- And parametrize it via [mnFullpage*] attributes -->\n<div mnFullpage\n     [mnFullpageNavigation]=\"true\"\n     [mnFullpageKeyboardScrolling]=\"true\">\n\n    <div id=\"section1\" class=\"section fp-section fp-table\">\n        Section 1\n    </div>\n    <div id=\"section2\" class=\"section fp-section fp-table\">\n        Section 2\n    </div>\n    <div id=\"section3\" class=\"section fp-section fp-table\">\n        <div class=\"slide\"> Slide 1</div>\n        <div class=\"slide\"> Slide 2</div>\n        <div class=\"slide\"> Slide 3</div>\n        <div class=\"slide\"> Slide 4</div>\n    </div>\n    <div id=\"section4\" class=\"section fp-section fp-table\">\n        Section 4\n    </div>\n</div>\n"
+module.exports = "import { NgModule } from \"@angular/core\";\nimport { BrowserModule } from \"@angular/platform-browser\";\n\nimport { AppComponent } from \"./app.component\";\nimport { MnFullpageDirective, MnFullpageService } from \"ng2-fullpage\";\n\n@NgModule({\n    bootstrap: [ AppComponent ],\n    declarations: [\n        AppComponent,\n        MnFullpageDirective // add directive declaration here\n    ],\n    imports: [\n        BrowserModule,\n    ],\n    providers: [\n        MnFullpageService // also add provider here\n    ]\n})\nexport class AppModule {\n\n}\n"
 
 /***/ },
 
 /***/ 381:
 /***/ function(module, exports) {
 
-module.exports = "@import url(https://fonts.googleapis.com/css?family=Titillium+Web);\nbody {\n  font-family: 'Titillium Web', Arial sans-serif;\n  color: #333; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-weight: normal;\n  font-size: 100%;\n  margin: 0;\n  padding: 0;\n  color: #444; }\n\nh1 {\n  font-size: 4em; }\n\nh4 {\n  font-size: 1.3em; }\n\n#fp-nav {\n  top: 50% !important; }\n\n.menu-wrapper {\n  position: fixed;\n  width: 100%;\n  z-index: 70;\n  text-align: center;\n  height: 40px;\n  margin: auto; }\n\n.menu {\n  padding: 0; }\n\n.menu li {\n  display: inline-block;\n  margin: 10px;\n  color: #000;\n  background: #fff;\n  background: rgba(255, 255, 255, 0.5);\n  -webkit-border-radius: 5px;\n  border-radius: 5px;\n  text-align: center; }\n\n.menu li.active {\n  background: #666;\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff; }\n\n.menu li a {\n  text-decoration: none;\n  color: #000; }\n\n.menu li.active a:hover {\n  color: #000; }\n\n.menu li:hover {\n  background: rgba(255, 255, 255, 0.8); }\n\n.menu li a,\n.menu li.active a {\n  padding: 9px 18px;\n  display: block; }\n\n.menu li.active a {\n  color: #fff; }\n\n.section {\n  text-align: center; }\n\n.section pre {\n  margin-top: 5px;\n  text-align: start; }\n\n.section pre code {\n  background: rgba(255, 255, 255, 0.1) !important;\n  font-weight: normal;\n  font-size: 1.2em;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  padding: 25px; }\n\n.code-block {\n  margin: auto;\n  display: inline-block; }\n\n.welcome-section {\n  background: linear-gradient(90deg, rgba(255, 177, 0, 0.2), rgba(52, 0, 255, 0.4)); }\n\n.welcome-section .logo-image {\n  margin: 25px; }\n\n.install-section {\n  background: linear-gradient(90deg, rgba(32, 255, 0, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n\n.usage-section {\n  background: linear-gradient(90deg, rgba(145, 255, 1, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n\n.slides-section {\n  background: linear-gradient(90deg, rgba(255, 155, 0, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n\n.start-use-it-now-section {\n  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n"
+module.exports = "<!-- Just add directive [mnFullpage] -->\n<!-- And parametrize it via [mnFullpage*] attributes -->\n<div mnFullpage\n     [mnFullpageNavigation]=\"true\"\n     [mnFullpageKeyboardScrolling]=\"true\">\n\n    <div id=\"section1\" class=\"section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            Section 1\n        </div>\n    </div>\n    <div id=\"section2\" class=\"section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <div class=\"slide\">Slide 1</div>\n            <div class=\"slide\">Slide 2</div>\n            <div class=\"slide\">Slide 3</div>\n            <div class=\"slide\">Slide 4</div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ },
 
-/***/ 614:
+/***/ 382:
+/***/ function(module, exports) {
+
+module.exports = "@import url(https://fonts.googleapis.com/css?family=Titillium+Web);\nbody {\n  font-family: 'Titillium Web', Arial sans-serif;\n  color: #333; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-weight: normal;\n  font-size: 100%;\n  margin: 0;\n  padding: 0;\n  color: #444; }\n\nh1 {\n  font-size: 3em; }\n\nh4 {\n  font-size: 1.3em; }\n\n#fp-nav {\n  top: 50% !important; }\n\n.menu-wrapper {\n  position: fixed;\n  width: 100%;\n  z-index: 70;\n  text-align: center;\n  height: 40px;\n  margin: auto; }\n\n.menu {\n  padding: 0; }\n\n.menu li {\n  display: inline-block;\n  margin: 10px;\n  color: #000;\n  background: #fff;\n  background: rgba(255, 255, 255, 0.5);\n  -webkit-border-radius: 5px;\n  border-radius: 5px;\n  text-align: center; }\n\n.menu li.active {\n  background: #666;\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff; }\n\n.menu li a {\n  text-decoration: none;\n  color: #000; }\n\n.menu li.active a:hover {\n  color: #000; }\n\n.menu li:hover {\n  background: rgba(255, 255, 255, 0.8); }\n\n.menu li a,\n.menu li.active a {\n  padding: 9px 18px;\n  display: block; }\n\n.menu li.active a {\n  color: #fff; }\n\n.section {\n  text-align: center; }\n\n.section pre {\n  margin-top: 5px;\n  text-align: start; }\n\n.section pre code {\n  background: rgba(255, 255, 255, 0.1) !important;\n  font-weight: normal;\n  font-size: 1.2em;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  padding: 25px; }\n\n.code-block {\n  margin: auto;\n  display: inline-block; }\n\n.code-block code {\n  font-size: 1em !important; }\n\nbutton {\n  display: inline-block;\n  margin: 10px;\n  color: #000;\n  background: #fff;\n  background: rgba(255, 255, 255, 0.5);\n  -webkit-border-radius: 5px;\n  border-radius: 5px;\n  text-align: center;\n  padding: 7px 50px;\n  border-color: white;\n  background: rgba(255, 255, 255, 0.1); }\n\n.welcome-section {\n  background: linear-gradient(90deg, rgba(255, 177, 0, 0.2), rgba(52, 0, 255, 0.4)); }\n\n.welcome-section .logo-image {\n  margin: 25px; }\n\n.install-section {\n  background: linear-gradient(90deg, rgba(32, 255, 0, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n\n.usage-section {\n  background: linear-gradient(90deg, rgba(145, 255, 1, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n\n.slides-section {\n  background: linear-gradient(90deg, rgba(255, 155, 0, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n\n.start-use-it-now-section {\n  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n"
+
+/***/ },
+
+/***/ 615:
 /***/ function(module, exports) {
 
 /*
@@ -788,7 +802,7 @@ exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
 
 /***/ },
 
-/***/ 894:
+/***/ 895:
 /***/ function(module, exports, __webpack_require__) {
 
 
@@ -803,7 +817,7 @@ exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
 
 /***/ },
 
-/***/ 897:
+/***/ 898:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -824,4 +838,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }
 
-},[897]);
+},[898]);
