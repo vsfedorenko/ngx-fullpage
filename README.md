@@ -20,6 +20,11 @@ Check out the live demo [HERE](http://meiblorn.github.io/ng2-fullpage)
 
 ## Quick Start
 
+###Start with SystemJS
+
+[Plunker example](http://embed.plnkr.co/1p9zKp4CNI1HncAh1h9m)
+
+
 #### With [AngularClass/angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter):
 Install `ng2-fullpage` npm module:
 ```bash
@@ -27,44 +32,94 @@ Install `ng2-fullpage` npm module:
 ```  
 Install ambient typings for `jquery` library:
 ```bash
+  npm install @types/jquery --save-dev
+  
+  # or if you prefer "typings" tool
   typings install jquery --save --ambient
 ```
-Write some code (e.g. in app/app.component.ts):
+
+**Write some code:**
+
+_app/app.module.ts_:
+```typescript
+
+/**
+ *
+ * File: app/app.module.ts
+ *
+ */
+ 
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+
+import { AppComponent } from "./app.component";
+import { MnFullpageDirective, MnFullpageService } from "ng2-fullpage";
+
+@NgModule({
+    bootstrap: [ AppComponent ],
+    declarations: [
+        AppComponent,
+        MnFullpageDirective // add MnFullpageDirective declaration here
+    ],
+    imports: [
+        BrowserModule,
+    ],
+    providers: [
+        MnFullpageService // also add MnFullpageService provider here
+    ]
+})
+export class AppModule {
+
+}
+```
+
 ```typescript
 /**
 * 
 * File: app/app.component.ts
 * 
 * If you are starting from scratch replace existing content with the code below
-* Otherwise update your template with 'mnFullpage' directive and section div-blocks.
+* Otherwise update your html template with 'mnFullpage' directive.
 * 
 */
 
-import {Component} from '@angular/core';
-import {MnFullpageDirective} from 'ng2-fullpage';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app',
-    directives: [MnFullpageDirective],
-    template: `
-        <div mnFullpage [mnFullpageNavigation]="true" [mnFullpageKeyboardScrolling]="true">
-            <div class="section"> Some section 1 </div>
-                <div class="section"> Some section 2 </div>
-                <div class="section">
+  selector: 'app',
+  template: `
+        <div mnFullpage 
+            [mnFullpageNavigation]="true" 
+            [mnFullpageKeyboardScrolling]="true"
+            [mnFullpageControlArrows]="false">
+            <div class="section fp-section fp-table">        
+                <div class="fp-tableCell">
+                    Some section 1
+                </div> 
+            </div>
+            <div class="section fp-section fp-table">        
+                <div class="fp-tableCell"> Some section 2</div> 
+            </div>
+            <div class="section fp-section fp-table">
+                <div class="fp-tableCell">
                     <div class="slide"> Slide 1 </div>
                     <div class="slide"> Slide 2 </div>
                     <div class="slide"> Slide 3 </div>
                     <div class="slide"> Slide 4 </div>
                 </div>
-            <div class="section"> Some section 4 </div>
+            </div>
+            <div class="section fp-section fp-table">        
+                <div class="fp-tableCell"> Some section 4</div> 
+            </div>
         </div>
+   
     `
 })
 export class AppComponent {
-     // no additional config is required
+    // no additional config is required
 }
 ```
-Update webpack vendors entry file (src/vendor.browser.ts) with 'jquery' import:
+Update webpack vendors entry file (src/vendor.browser.ts) with 'jquery' and 'fullpage.js' import:
 
 ```typescript
 /**
@@ -76,6 +131,7 @@ Update webpack vendors entry file (src/vendor.browser.ts) with 'jquery' import:
 */
 
 import 'jquery';
+import 'fullpage.js'
 
 ```
 
@@ -91,25 +147,53 @@ npm run start
 All you need to do is just add [mnFullpage] @Component.directives array 
 and add directive to an html element inside your template:
 
+_app/app.module.ts_:
 ```typescript
 /**
 * 
-* Just add MnFullpageDirective inside your @Component.directives array
+* Just add MnFullpageDirective into the @Component.declarations  
+* and MnFullpageService into the @Component.providers arrays
 * 
 */
-import {Component} from '@angular/core';
-import {MnFullpageDirective} from 'ng2-fullpage';
 
-@Component({
-    selector: 'app',
-    directives: [MnFullpageDirective],
-    template: ` ... `
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+
+import { AppComponent } from "./app.component";
+import { MnFullpageDirective, MnFullpageService } from "ng2-fullpage";
+
+@NgModule({
+    bootstrap: [ AppComponent ],
+    declarations: [
+        AppComponent,
+        MnFullpageDirective // add MnFullpageDirective declaration here
+    ],
+    imports: [
+        BrowserModule,
+    ],
+    providers: [
+        MnFullpageService // also add MnFullpageService provider here
+    ]
 })
-export class AppComponent {
-     // no additional config is required
+export class AppModule {
+
 }
 ```
 
+_app/app.component.ts_:
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'my-app',
+  templateUrl: ./template.html
+})
+export class AppComponent {
+    // no additional config is required
+}
+```
+
+_template.html_:
 ```html
 <!-- Add fullpage directive to an element -->
 
@@ -125,20 +209,18 @@ There 3 ways to configure fullPage.js:
 
 - **Via attributes**. Define options like attributes on the same element. 
 
-> Notice, options must be prefixed with 'fullpage' word and written in camelCase style.
+> Notice, options must be prefixed with 'mnFullpage' word and written in camelCase style.
 
 ```typescript
-import {Component, Input} from '@angular/core';
-import {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app',
-    directives: [MnFullpageDirective],
-    template: `
-        <div mnFullpage [mnFullpageNavigation]="true" [mnFullpageKeyboardScrolling]="true">
-            ....
-        </div>  
-    `
+  selector: 'app',
+  template: `
+    <div mnFullpage [mnFullpageNavigation]="true" [mnFullpageKeyboardScrolling]="true">
+        ....
+    </div>  
+  `
 })
 export class AppComponent {
 }
@@ -148,12 +230,11 @@ export class AppComponent {
 > Notice to wrap directive in square brackets **[mnFullpage]** and reference it to your options object
 
 ```typescript
-import {Component, Input} from '@angular/core';
-import {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';
+import { Component, Input } from '@angular/core';
+import { MnFullpageOptions } from 'ng2-fullpage';
 
 @Component({
     selector: 'app',
-    directives: [MnFullpageDirective],
     template: `
         <div [mnFullpage]="options">
             ....
@@ -162,7 +243,7 @@ import {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';
 })
 export class AppComponent {
 
-    @Input() public options:MnFullpageOptions = new MnFullpageOptions({
+    @Input() public options: MnFullpageOptions = new MnFullpageOptions({
         navigation: true,
         keyboardScrolling: true
     });
@@ -171,15 +252,14 @@ export class AppComponent {
 ```
 - **Mixed**. Mix two approaches to configure. 
 
-> Notice, Element options have more priority than options inside options object.
+> Notice, html element options have less priority than options inside options object.
 
 ```typescript
-import {Component, Input} from '@angular/core';
-import {MnFullpageDirective, MnFullpageOptions} from 'ng2-fullpage';
+import { Component, Input } from '@angular/core';
+import { MnFullpageOptions } from 'ng2-fullpage';
 
 @Component({
     selector: 'app',
-    directives: [MnFullpageDirective],
     template: `
         <div [mnFullpage]="options" [mnFullpageNavigation]="true">
             ....
@@ -200,13 +280,11 @@ export class AppComponent {
 Service `MnFullpageService` contains `$.fn.*` static methods for `fullPage.js` library.   
 
 ```typescript
-import {Component, Input} from '@angular/core';
-import {MnFullpageDirective, MnFullpageService} from 'ng2-fullpage';
+import { Component, Input } from '@angular/core';
+import { MnFullpageService } from 'ng2-fullpage';
 
 @Component({
     selector: 'app',
-    providers: [provide(MnFullpageService, {useClass: MnFullpageService}],
-    directives: [MnFullpageDirective],
     template: `
         <button (click)="fullpageService.moveSectionUp();">Move section up</button>
         <button (click)="fullpageService.moveSectionDown();">Move section down</button>

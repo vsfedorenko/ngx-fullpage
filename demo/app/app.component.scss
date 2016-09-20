@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 3em;
 }
 
 h4 {
@@ -128,6 +128,24 @@ h4 {
 .code-block {
   margin: auto;
   display: inline-block;
+}
+
+.code-block code {
+  font-size: 1em !important;
+}
+
+button {
+  display: inline-block;
+  margin: 10px;
+  color: $menu-color;
+  background: $menu-color-active;
+  background: $menu-color-background;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 7px 50px;
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .welcome-section {

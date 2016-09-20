@@ -4,6 +4,8 @@
 npm install ng2-fullpage --save
 
 # install typings
-typings install jquery --save --ambient
+npm install @types/jquery --save-dev
+# or if you prefer "typings" tool then try
+# "typings install jquery --save --ambient"
 
 # you are done!

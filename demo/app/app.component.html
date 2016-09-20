@@ -37,11 +37,25 @@
     </div>
     <div class="section usage-section fp-section fp-table">
         <div class="fp-tableCell">
-            <h1>Easy to use !</h1>
-            <div class="code-block">
-            <pre>
-                <code class="html">{{templates.usage}}</code>
-            </pre>
+            <div class="slide">
+                <h1>Easy to use !</h1>
+                <h4>Use keyboard arrows or navigation below to slide right</h4>
+            </div>
+            <div class="slide">
+                <h1>Declare it in your module</h1>
+                <div class="code-block">
+                <pre>
+                    <code class="javascript">{{templates.usage.slides.module}}</code>
+                </pre>
+                </div>
+            </div>
+            <div class="slide">
+                <h1>Now use it in your html template</h1>
+                <div class="code-block">
+                <pre>
+                    <code class="html">{{templates.usage.slides.html}}</code>
+                </pre>
+                </div>
             </div>
         </div>
     </div>
@@ -55,7 +69,7 @@
                 <h1>Configure it via attributes</h1>
                 <div class="code-block">
                 <pre>
-                    <code class="html">{{templates.slides.attributes}}</code>
+                    <code class="html">{{templates.configuration.slides.attributes}}</code>
                 </pre>
                 </div>
             </div>
@@ -63,7 +77,7 @@
                 <h1>Use configuration object instead</h1>
                 <div class="code-block">
                 <pre>
-                    <code class="javascript">{{templates.slides.classOptions}}</code>
+                    <code class="javascript">{{templates.configuration.slides.classOptions}}</code>
                 </pre>
                 </div>
             </div>
@@ -71,7 +85,7 @@
                 <h1>Or MIX IT !</h1>
                 <div class="code-block">
                 <pre>
-                    <code class="javascript">{{templates.slides.mix}}</code>
+                    <code class="javascript">{{templates.configuration.slides.mix}}</code>
                 </pre>
                 </div>
             </div>
@@ -84,6 +98,10 @@
             <pre>
                 <code class="html">{{templates.service}}</code>
             </pre>
+            </div>
+            <div>
+                <button (click)="fullpageService.moveSectionUp();">Move section up</button>
+                <button (click)="fullpageService.moveSectionDown();">Move section down</button>
             </div>
         </div>
     </div>

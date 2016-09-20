@@ -1,0 +1,19 @@
+<div mnFullpage
+     [mnFullpageNavigation]="true"
+     [mnFullpageKeyboardScrolling]="true"
+     [mnFullpageSlidesNavigation]="true"
+     [mnFullpageSlidesNavPosition]="bottom"
+     [mnFullpageControlArrows]="false">
+
+    <div id="section1" class="section fp-section fp-table">
+        <div class="fp-tableCell">
+            Section 1
+        </div>
+    </div>
+    <div id="section2" class="section fp-section fp-table">
+        <div class="fp-tableCell">
+            Section 2
+        </div>
+    </div>
+
+</div>
