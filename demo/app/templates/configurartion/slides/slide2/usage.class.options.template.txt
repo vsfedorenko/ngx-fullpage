@@ -1,0 +1,22 @@
+import { Component, Output } from '@angular/core';
+import { MnFullpageOptions } from 'ng2-fullpage';
+
+@Component({
+    selector: 'app',
+    template: `
+        <div [mnFullpage]="options">
+            <div id="section1" class="section fp-section fp-table">
+                <div class="fp-tableCell">
+                    Section 1
+                </div>
+            </div>
+            ......
+        </div>
+    `
+})
+export class AppComponent {
+    @Output() private options: MnFullpageOptions = new MnFullpageOptions({
+        navigation: true,
+        keyboardScrolling: true
+    });
+}

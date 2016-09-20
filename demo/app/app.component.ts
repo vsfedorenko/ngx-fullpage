@@ -30,13 +30,20 @@ export class AppComponent {
 
     @Output() private templates = {
         install: require('raw!./templates/install.template.txt'),
-        usage: require('raw!./templates/usage.template.txt'),
-        slides: {
-            attributes: require('raw!./templates/slide1/usage.attributes.slide.template.txt'),
-            classOptions: require('raw!./templates/slide2/usage.class.options.template.txt'),
-            mix: require('raw!./templates/slide3/usage.mix.template.txt')
+        usage: {
+            slides: {
+                module: require('raw!./templates/usage/slides/slide1/module.template.txt'),
+                html: require('raw!./templates/usage/slides/slide2/html.template.txt')
+            }
         },
-        service: require('raw!./templates/service.tempalte.txt')
+        configuration: {
+            slides: {
+                attributes: require('raw!./templates/configurartion/slides/slide1/usage.attributes.slide.template.txt'),
+                classOptions: require('raw!./templates/configurartion/slides/slide2/usage.class.options.template.txt'),
+                mix: require('raw!./templates/configurartion/slides/slide3/usage.mix.template.txt')
+            }
+        },
+        service: require('raw!./templates/service.tempalte.txt'),
     };
 
     constructor(private fullpageService: MnFullpageService) {
