@@ -11,7 +11,7 @@ This is an Angular 2 [fullPage.js](https://github.com/alvarotrigo/fullPage.js) p
 [![Code Climate](https://codeclimate.com/github/meiblorn/ng2-fullpage/badges/gpa.svg)](https://codeclimate.com/github/meiblorn/ng2-fullpage)
 
 -----------------------------------
-NEW RELEASE 2.0.0: ANGULAR 2 FINAL
+NEW RELEASE 2.0.1: ANGULAR 2 FINAL
 -----------------------------------
 
 ## Demo
@@ -20,12 +20,11 @@ Check out the live demo [HERE](http://meiblorn.github.io/ng2-fullpage)
 
 ## Quick Start
 
-###Start with SystemJS
+### Start with SystemJS
 
-[Plunker example](http://embed.plnkr.co/1p9zKp4CNI1HncAh1h9m)
+#### [Plunker example](http://embed.plnkr.co/1p9zKp4CNI1HncAh1h9m)
 
-
-#### With [AngularClass/angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter):
+## With [AngularClass/angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter):
 Install `ng2-fullpage` npm module:
 ```bash
   npm install ng2-fullpage --save
