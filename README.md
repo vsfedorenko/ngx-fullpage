@@ -303,6 +303,28 @@ export class AppComponent {
 ```
 
 
+# Troubleshooting
+
+### View Encapsulation issue 
+##### Thanks to @aamir1995 #94
+
+If you get error when you *include fullPage.js styles* into your component, 
+probably you've faced with Angular 2 *ViewEncapsulation issue* [see #94].
+
+Try to update your component: 
+_Set value of 'encapsulation' property to 'ViewEncapsulation.None' like this below_:
+
+  ```typescript
+  @Component({
+      ...
+      encapsulation: ViewEncapsulation.None
+      ...
+  })
+  export class AppComponent {
+      ...
+  }
+  ```
+
 # Development
 
 ### Build
