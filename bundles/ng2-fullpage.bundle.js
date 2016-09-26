@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 142:
+/***/ 141:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12,13 +12,13 @@ var mnFullpage_directive_1 = __webpack_require__(83);
 exports.MnFullpageDirective = mnFullpage_directive_1.MnFullpageDirective;
 var mnFullpage_options_class_1 = __webpack_require__(82);
 exports.MnFullpageOptions = mnFullpage_options_class_1.MnFullpageOptions;
-var mnFullpage_service_1 = __webpack_require__(143);
+var mnFullpage_service_1 = __webpack_require__(142);
 exports.MnFullpageService = mnFullpage_service_1.MnFullpageService;
 
 
 /***/ },
 
-/***/ 143:
+/***/ 142:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36,7 +36,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(2);
-var $ = __webpack_require__(72);
+var $ = __webpack_require__(71);
 __webpack_require__(81);
 var MnFullpageService = (function () {
     function MnFullpageService() {
@@ -196,7 +196,7 @@ exports.MnFullpageService = MnFullpageService;
 
 /***/ },
 
-/***/ 350:
+/***/ 351:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -275,7 +275,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(2);
-var $ = __webpack_require__(72);
+var $ = __webpack_require__(71);
 __webpack_require__(81);
 var mnFullpage_options_class_1 = __webpack_require__(82);
 var DIRECTIVE_NAME = 'mnFullpage';
@@ -557,7 +557,7 @@ exports.MnFullpageDirective = MnFullpageDirective;
  */
 "use strict";
 var mnFullpage_directive_1 = __webpack_require__(83);
-var index_1 = __webpack_require__(142);
+var index_1 = __webpack_require__(141);
 exports.MnFullpageDirective = index_1.MnFullpageDirective;
 exports.MnFullpageOptions = index_1.MnFullpageOptions;
 exports.MnFullpageService = index_1.MnFullpageService;
@@ -566,7 +566,7 @@ exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
 
 /***/ },
 
-/***/ 899:
+/***/ 901:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -577,9 +577,9 @@ exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(350));
+__export(__webpack_require__(351));
 
 
 /***/ }
 
-},[899]);
+},[901]);
