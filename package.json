@@ -49,7 +49,7 @@
     "babel-register": "^6.14.0",
     "changelog": "^1.0.7",
     "clean-webpack-plugin": "^0.1.10",
-    "codeclimate-test-reporter": "^0.3.3",
+    "codeclimate-test-reporter": "^0.4.0",
     "codelyzer": "~1.0.0-beta.0",
     "compression-webpack-plugin": "^0.3.1",
     "concurrently": "^3.0.0",
