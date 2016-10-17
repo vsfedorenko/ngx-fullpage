@@ -27,7 +27,7 @@
     "@angular/compiler": "2.0.1",
     "@angular/core": "2.0.1",
     "jquery": "^3.1.1",
-    "fullpage.js": "^2.8.6"
+    "fullpage.js": "^2.8.7"
   },
   "devDependencies": {
     "@angular/forms": "^2.0.1",
