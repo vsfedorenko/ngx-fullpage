@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 141:
+/***/ 139:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8,17 +8,17 @@ webpackJsonp([2],{
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
  */
 "use strict";
-var mnFullpage_directive_1 = __webpack_require__(83);
+var mnFullpage_directive_1 = __webpack_require__(82);
 exports.MnFullpageDirective = mnFullpage_directive_1.MnFullpageDirective;
-var mnFullpage_options_class_1 = __webpack_require__(82);
+var mnFullpage_options_class_1 = __webpack_require__(81);
 exports.MnFullpageOptions = mnFullpage_options_class_1.MnFullpageOptions;
-var mnFullpage_service_1 = __webpack_require__(142);
+var mnFullpage_service_1 = __webpack_require__(140);
 exports.MnFullpageService = mnFullpage_service_1.MnFullpageService;
 
 
 /***/ },
 
-/***/ 142:
+/***/ 140:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37,7 +37,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(2);
 var $ = __webpack_require__(71);
-__webpack_require__(81);
+__webpack_require__(80);
 var MnFullpageService = (function () {
     function MnFullpageService() {
     }
@@ -196,7 +196,7 @@ exports.MnFullpageService = MnFullpageService;
 
 /***/ },
 
-/***/ 351:
+/***/ 352:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -207,8 +207,8 @@ exports.MnFullpageService = MnFullpageService;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-var index_1 = __webpack_require__(84);
-__export(__webpack_require__(84));
+var index_1 = __webpack_require__(83);
+__export(__webpack_require__(83));
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     directives: index_1.MN_FULLPAGE_DIRECTIVES.slice()
@@ -217,7 +217,7 @@ exports.default = {
 
 /***/ },
 
-/***/ 82:
+/***/ 81:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -257,7 +257,7 @@ exports.MnFullpageOptions = MnFullpageOptions;
 
 /***/ },
 
-/***/ 83:
+/***/ 82:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -276,8 +276,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(2);
 var $ = __webpack_require__(71);
-__webpack_require__(81);
-var mnFullpage_options_class_1 = __webpack_require__(82);
+__webpack_require__(80);
+var mnFullpage_options_class_1 = __webpack_require__(81);
 var DIRECTIVE_NAME = 'mnFullpage';
 var MnFullpageDirective = (function () {
     /**
@@ -548,7 +548,7 @@ exports.MnFullpageDirective = MnFullpageDirective;
 
 /***/ },
 
-/***/ 84:
+/***/ 83:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -556,8 +556,8 @@ exports.MnFullpageDirective = MnFullpageDirective;
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
  */
 "use strict";
-var mnFullpage_directive_1 = __webpack_require__(83);
-var index_1 = __webpack_require__(141);
+var mnFullpage_directive_1 = __webpack_require__(82);
+var index_1 = __webpack_require__(139);
 exports.MnFullpageDirective = index_1.MnFullpageDirective;
 exports.MnFullpageOptions = index_1.MnFullpageOptions;
 exports.MnFullpageService = index_1.MnFullpageService;
@@ -566,7 +566,7 @@ exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
 
 /***/ },
 
-/***/ 901:
+/***/ 897:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -577,9 +577,9 @@ exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__(351));
+__export(__webpack_require__(352));
 
 
 /***/ }
 
-},[901]);
+},[897]);
