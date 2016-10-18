@@ -14,25 +14,11 @@
     "noEmitHelpers": false,
     "outDir": "build",
     "noLib": false,
-    "baseUrl": ".",
-    "paths": {
-    },
-    "lib": [
-      "dom",
-      "es6"
-    ],
-    "types": [
-      "hammerjs",
-      "jasmine",
-      "node",
-      "webpack",
-      "jquery"
-    ]
+    "baseUrl": "."
   },
   "exclude": [
     "node_modules",
     "build",
-
     "test",
     "demo"
   ],

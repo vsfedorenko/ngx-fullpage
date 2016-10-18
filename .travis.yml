@@ -39,7 +39,7 @@ install:
 script:
   - npm test
   - npm run build:prod
-#  - npm run docs # excluded until support for ts 2.0 for typedoc is released
+  - npm run docs
 
 after_success:
   - chmod -R a+x scripts

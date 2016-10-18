@@ -9,7 +9,7 @@ import { MnFullpageService, MnFullpageOptions } from "../../components";
     selector: 'app',
     encapsulation: ViewEncapsulation.None,
     styles: [
-        require('fullpage.js/jquery.fullPage.css'),
+        require('fullpage.js/dist/jquery.fullpage.css'),
         require('./app.component.scss')
     ],
     template: require('./app.component.html')
