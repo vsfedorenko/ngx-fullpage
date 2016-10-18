@@ -4,7 +4,9 @@
 
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import CommonsChunkPlugin from 'webpack/lib/optimize/CommonsChunkPlugin';
+import ContextReplacementPlugin from 'webpack/lib/ContextReplacementPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import DashboardPlugin from 'webpack-dashboard/plugin';
 import * as AwesomeTypescriptLoader from 'awesome-typescript-loader';
 
 import config from './../helpers/config';
@@ -12,7 +14,7 @@ import utils from './../helpers/utils';
 
 export default options => {
 
-    return {
+    var webpackConfig = {
         entry: config('common.sources.entries.list'),
         resolve: {
             extensions: config('common.sources.extensions'),
@@ -72,6 +74,10 @@ export default options => {
                 name: config('common.sources.entries.chunks.commons.list'),
                 minChunks: Infinity
             }),
+            new ContextReplacementPlugin(
+                /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+                utils.root(config('common.sources.directory'))
+            ),
             new HtmlWebpackPlugin({
                 template: utils.root(config('common.build.html.src')),
                 filename: utils.relative(
@@ -90,5 +96,11 @@ export default options => {
             setImmediate: false
         }
     };
+
+    if (process.env.DASHBOARD) {
+        webpackConfig.plugins.push(new DashboardPlugin());
+    }
+
+    return webpackConfig;
 
 };
