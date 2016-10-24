@@ -17016,7 +17016,7 @@ exports.MulticastOperator = MulticastOperator;
 /***/ function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * fullPage 2.8.7
+ * fullPage 2.8.8
  * https://github.com/alvarotrigo/fullPage.js
  * @license MIT licensed
  *
@@ -17152,7 +17152,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
             loopTop: false,
             loopHorizontal: true,
             continuousVertical: false,
-            continuousHorizontal: true,
+            continuousHorizontal: false,
             scrollHorizontally: false,
             interlockedSlides: false,
             resetSliders: false,
@@ -17187,7 +17187,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
             sectionSelector: SECTION_DEFAULT_SEL,
             slideSelector: SLIDE_DEFAULT_SEL,
 
-
             //events
             afterLoad: null,
             onLeave: null,
@@ -17196,7 +17195,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
             afterReBuild: null,
             afterSlideLoad: null,
             onSlideLeave: null,
-            afterResponsive: null
+            afterResponsive: null,
+
+            lazyLoading: true
         }, options);
 
         //flag to avoid very fast sliding for landscape sliders
@@ -17954,9 +17955,13 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 var isAtBottom = $body.height() - $window.height() === currentScroll;
                 var sections =  document.querySelectorAll(SECTION_SEL);
 
-                //when using `auto-height` for a small last section it won't take most of the viewport
+                //when using `auto-height` for a small last section it won't be centered in the viewport
                 if(isAtBottom){
                     visibleSectionIndex = sections.length - 1;
+                }
+                //is at top? when using `auto-height` for a small first section it won't be centered in the viewport
+                else if(!currentScroll){
+                    visibleSectionIndex = 0;
                 }
 
                 //taking the section which is showing more content in the viewport
@@ -18083,7 +18088,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
             }
             var check = (type === 'down') ? 'bottom' : 'top';
             var scrollSection = (type === 'down') ? moveSectionDown : moveSectionUp;
-            
+
             if(scrollable.length > 0 ){
                 //is the scrollbar at the start/end of the scroll?
                 if(options.scrollOverflowHandler.isScrolled(check, scrollable)){
@@ -18097,6 +18102,16 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
             }
         }
 
+        /*
+        * Preventing bouncing in iOS #2285
+        */
+        function preventBouncing(event){
+            var e = event.originalEvent;
+            if(options.autoScrolling && isReallyTouch(e)){
+                //preventing the easing on iOS devices
+                event.preventDefault();
+            }
+        }
 
         var touchStartY = 0;
         var touchStartX = 0;
@@ -18197,7 +18212,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
         * Handler for the touch start event.
         */
         function touchStartHandler(event){
-            event.preventDefault();
             var e = event.originalEvent;
 
             //stopping the auto scroll to adjust to a section
@@ -18370,7 +18384,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
             //is the destination element bigger than the viewport?
             if(element.outerHeight() > windowsHeight){
-                //scrolling up? 
+                //scrolling up?
                 if(!isScrollingDown && !bigSectionsDestination || bigSectionsDestination === 'bottom' ){
                     position = sectionBottom;
                 }
@@ -18445,6 +18459,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
             stopMedia(v.activeSection);
 
+            options.scrollOverflowHandler.beforeLeave();
             element.addClass(ACTIVE).siblings().removeClass(ACTIVE);
             lazyLoad(element);
             options.scrollOverflowHandler.onLeave();
@@ -18471,7 +18486,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
         function performMovement(v){
             // using CSS3 translate functionality
             if (options.css3 && options.autoScrolling && !options.scrollBar) {
-                var translate3d = 'translate3d(0px, -' + v.dtop + 'px, 0px)';
+
+                // The first section can have a negative value in iOS 10. Not quite sure why: -0.0142822265625
+                // that's why we round it to 0.
+                var translate3d = 'translate3d(0px, -' + Math.round(v.dtop) + 'px, 0px)';
                 transformContainer(translate3d, true);
 
                 //even when the scrollingSpeed is 0 there's a little delay, which might cause the
@@ -18594,7 +18612,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
             playMedia(v.element);
             v.element.addClass(COMPLETELY).siblings().removeClass(COMPLETELY);
-            
+
             canScroll = true;
 
             $.isFunction(v.callback) && v.callback.call(this);
@@ -18604,14 +18622,20 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
         * Lazy loads image, video and audio elements.
         */
         function lazyLoad(destiny){
+            if (!options.lazyLoading){
+                return;
+            }
+
             var panel = getSlideOrSection(destiny);
+            var element;
 
             panel.find('img[data-src], source[data-src], audio[data-src], iframe[data-src]').each(function(){
-                $(this).attr('src', $(this).data('src'));
-                $(this).removeAttr('data-src');
+                element = $(this);
+                element.attr('src', element.data('src'));
+                element.removeAttr('data-src');
 
-                if($(this).is('source')){
-                    $(this).closest('video').get(0).load();
+                if(element.is('source')){
+                    element.closest('video').get(0).load();
                 }
             });
         }
@@ -18638,7 +18662,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 if ( element.hasAttribute('data-autoplay') ){
                     playYoutube(element);
                 }
-                    
+
                 //in case the URL was not loaded yet. On page load we need time for the new URL (with the API string) to load.
                 element.onload = function() {
                     if ( element.hasAttribute('data-autoplay') ){
@@ -18952,10 +18976,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
                     }
                 }
             }
-            stopMedia(v.prevSlide);
 
             destiny.addClass(ACTIVE).siblings().removeClass(ACTIVE);
+
             if(!v.localIsResizing){
+                stopMedia(v.prevSlide);
                 lazyLoad(destiny);
             }
 
@@ -18991,12 +19016,12 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
             playMedia(v.destiny);
 
             //letting them slide again
-            slideMoving = false;     
+            slideMoving = false;
         }
 
         /**
         * Performs the horizontal movement. (CSS3 or jQuery)
-        * 
+        *
         * @param fireCallback {Bool} - determines whether or not to fire the callback
         */
         function performHorizontalMove(slides, v, fireCallback){
@@ -19547,9 +19572,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
         * Adds the possibility to auto scroll through sections on touch devices.
         */
         function addTouchHandler(){
-            if(isTouchDevice || isTouch){
+            if(options.autoScrolling && (isTouchDevice || isTouch)){
                 //Microsoft pointers
                 var MSPointer = getMSPointer();
+
+                $body.off('touchmove ' + MSPointer.move).on('touchmove ' + MSPointer.move, preventBouncing);
 
                 $(WRAPPER_SEL)
                     .off('touchstart ' +  MSPointer.down).on('touchstart ' + MSPointer.down, touchStartHandler)
@@ -19635,15 +19662,19 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
         * Scrolls silently (with no animation) the page to the given Y position.
         */
         function silentScroll(top){
+            // The first section can have a negative value in iOS 10. Not quite sure why: -0.0142822265625
+            // that's why we round it to 0.
+            var roundedTop = Math.round(top);
+
             if(options.scrollBar){
-                container.scrollTop(top);
+                container.scrollTop(roundedTop);
             }
             else if (options.css3) {
-                var translate3d = 'translate3d(0px, -' + top + 'px, 0px)';
+                var translate3d = 'translate3d(0px, -' + roundedTop + 'px, 0px)';
                 transformContainer(translate3d, false);
             }
             else {
-                container.css('top', -top);
+                container.css('top', -roundedTop);
             }
         }
 
@@ -19699,15 +19730,15 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
                 .off('resize', resizeHandler);
 
             $document
-                .off('click', SECTION_NAV_SEL + ' a')
+                .off('click touchstart', SECTION_NAV_SEL + ' a')
                 .off('mouseenter', SECTION_NAV_SEL + ' li')
                 .off('mouseleave', SECTION_NAV_SEL + ' li')
-                .off('click', SLIDES_NAV_LINK_SEL)
+                .off('click touchstart', SLIDES_NAV_LINK_SEL)
                 .off('mouseover', options.normalScrollElements)
                 .off('mouseout', options.normalScrollElements);
 
             $(SECTION_SEL)
-                .off('click', SLIDES_ARROW_SEL);
+                .off('click touchstart', SLIDES_ARROW_SEL);
 
             clearTimeout(afterSlideLoadsId);
             clearTimeout(afterSectionLoadsId);
@@ -19836,7 +19867,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
             extensions.forEach(function(extension){
                 //is the option set to true?
                 if(options[extension]){
-                    showError('warn', 'fullpage.js extensions require jquery.fullpage.extensions.min.js file instead of the usual jquery.fullpage.js');       
+                    showError('warn', 'fullpage.js extensions require jquery.fullpage.extensions.min.js file instead of the usual jquery.fullpage.js. Requested: '+ extension);
                 }
             });
 
@@ -19866,7 +19897,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
         function showError(type, text){
             console && console[type] && console[type]('fullPage: ' + text);
         }
-        
+
     }; //end of $.fn.fullpage
 
     if(typeof IScroll !== 'undefined'){
@@ -19916,6 +19947,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
             }
         },
 
+        // Turns off iScroll for the leaving section
+        beforeLeave: function(){
+            iscrollHandler.onLeave()
+        },
+
         // Turns on iScroll on section load
         afterLoad: function(){
             var scroller = $(SECTION_ACTIVE_SEL).find(SCROLLABLE_SEL).data('iscrollInstance');
@@ -19945,6 +19981,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
                 iScrollInstance = new IScroll($this.get(0), iscrollOptions);
                 iscrollHandler.iScrollInstances.push(iScrollInstance);
+
+                //off by default until the section gets active
+                iScrollInstance.wheelOff();
+
                 $this.data('iscrollInstance', iScrollInstance);
             });
         },
@@ -19959,8 +19999,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
          */
         isScrolled: function(type, scrollable) {
             var scroller = scrollable.data('iscrollInstance');
-            
-            //no scroller? 
+
+            //no scroller?
             if (!scroller) {
                 return true;
             }
@@ -20050,6 +20090,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
         }
     };
 });
+
 
 /***/ },
 /* 81 */,
