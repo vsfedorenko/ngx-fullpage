@@ -88,7 +88,7 @@
     "npm-check-updates": "^2.8.5",
     "parse5": "^2.2.2",
     "phantomjs-prebuilt": "^2.1.13",
-    "protractor": "^4.0.9",
+    "protractor": "^4.0.11",
     "raw-loader": "0.5.1",
     "remap-istanbul": "^0.7.0",
     "rimraf": "^2.5.4",
