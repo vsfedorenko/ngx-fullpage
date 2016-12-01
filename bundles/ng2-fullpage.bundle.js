@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 139:
+/***/ 140:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12,13 +12,13 @@ var mnFullpage_directive_1 = __webpack_require__(82);
 exports.MnFullpageDirective = mnFullpage_directive_1.MnFullpageDirective;
 var mnFullpage_options_class_1 = __webpack_require__(81);
 exports.MnFullpageOptions = mnFullpage_options_class_1.MnFullpageOptions;
-var mnFullpage_service_1 = __webpack_require__(140);
+var mnFullpage_service_1 = __webpack_require__(141);
 exports.MnFullpageService = mnFullpage_service_1.MnFullpageService;
 
 
 /***/ },
 
-/***/ 140:
+/***/ 141:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -557,7 +557,7 @@ exports.MnFullpageDirective = MnFullpageDirective;
  */
 "use strict";
 var mnFullpage_directive_1 = __webpack_require__(82);
-var index_1 = __webpack_require__(139);
+var index_1 = __webpack_require__(140);
 exports.MnFullpageDirective = index_1.MnFullpageDirective;
 exports.MnFullpageOptions = index_1.MnFullpageOptions;
 exports.MnFullpageService = index_1.MnFullpageService;
@@ -566,7 +566,7 @@ exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
 
 /***/ },
 
-/***/ 897:
+/***/ 896:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -582,4 +582,4 @@ __export(__webpack_require__(352));
 
 /***/ }
 
-},[897]);
+},[896]);
