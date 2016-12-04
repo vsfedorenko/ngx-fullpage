@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 140:
+/***/ 145:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8,17 +8,17 @@ webpackJsonp([1],{
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
  */
 "use strict";
-var mnFullpage_directive_1 = __webpack_require__(82);
+var mnFullpage_directive_1 = __webpack_require__(85);
 exports.MnFullpageDirective = mnFullpage_directive_1.MnFullpageDirective;
-var mnFullpage_options_class_1 = __webpack_require__(81);
+var mnFullpage_options_class_1 = __webpack_require__(84);
 exports.MnFullpageOptions = mnFullpage_options_class_1.MnFullpageOptions;
-var mnFullpage_service_1 = __webpack_require__(141);
+var mnFullpage_service_1 = __webpack_require__(146);
 exports.MnFullpageService = mnFullpage_service_1.MnFullpageService;
 
 
 /***/ },
 
-/***/ 141:
+/***/ 146:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36,8 +36,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(2);
-var $ = __webpack_require__(71);
-__webpack_require__(80);
+var $ = __webpack_require__(74);
+__webpack_require__(83);
 var MnFullpageService = (function () {
     function MnFullpageService() {
     }
@@ -196,7 +196,7 @@ exports.MnFullpageService = MnFullpageService;
 
 /***/ },
 
-/***/ 351:
+/***/ 354:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -211,9 +211,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(2);
-var platform_browser_1 = __webpack_require__(138);
-var app_component_1 = __webpack_require__(374);
-var components_1 = __webpack_require__(83);
+var platform_browser_1 = __webpack_require__(143);
+var app_component_1 = __webpack_require__(377);
+var components_1 = __webpack_require__(86);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -240,7 +240,7 @@ exports.AppModule = AppModule;
 
 /***/ },
 
-/***/ 374:
+/***/ 377:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -258,7 +258,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(2);
-var components_1 = __webpack_require__(83);
+var components_1 = __webpack_require__(86);
 var AppComponent = (function () {
     function AppComponent(fullpageService) {
         this.fullpageService = fullpageService;
@@ -273,26 +273,26 @@ var AppComponent = (function () {
             ]
         });
         this.templates = {
-            install: __webpack_require__(380),
+            install: __webpack_require__(383),
             usage: {
                 slides: {
-                    module: __webpack_require__(382),
-                    html: __webpack_require__(383)
+                    module: __webpack_require__(385),
+                    html: __webpack_require__(386)
                 }
             },
             configuration: {
                 slides: {
-                    attributes: __webpack_require__(377),
-                    classOptions: __webpack_require__(378),
-                    mix: __webpack_require__(379)
+                    attributes: __webpack_require__(380),
+                    classOptions: __webpack_require__(381),
+                    mix: __webpack_require__(382)
                 }
             },
-            service: __webpack_require__(381),
+            service: __webpack_require__(384),
         };
     }
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', (typeof (_a = typeof components_1.MnFullpageOptions !== 'undefined' && components_1.MnFullpageOptions) === 'function' && _a) || Object)
+        __metadata('design:type', components_1.MnFullpageOptions)
     ], AppComponent.prototype, "options", void 0);
     __decorate([
         core_1.Output(), 
@@ -303,25 +303,24 @@ var AppComponent = (function () {
             selector: 'app',
             encapsulation: core_1.ViewEncapsulation.None,
             styles: [
-                __webpack_require__(892),
-                __webpack_require__(384)
+                __webpack_require__(894),
+                __webpack_require__(387)
             ],
-            template: __webpack_require__(376)
+            template: __webpack_require__(379)
         }), 
-        __metadata('design:paramtypes', [(typeof (_b = typeof components_1.MnFullpageService !== 'undefined' && components_1.MnFullpageService) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [components_1.MnFullpageService])
     ], AppComponent);
     return AppComponent;
-    var _a, _b;
 }());
 exports.AppComponent = AppComponent;
 
 
 /***/ },
 
-/***/ 375:
+/***/ 378:
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(616)();
+exports = module.exports = __webpack_require__(618)();
 // imports
 
 
@@ -333,70 +332,70 @@ exports.push([module.i, "/*!\r\n * fullPage 2.8.9\r\n * https://github.com/alvar
 
 /***/ },
 
-/***/ 376:
+/***/ 379:
 /***/ function(module, exports) {
 
 module.exports = "<!--suppress HtmlUnknownAnchorTarget, HtmlUnknownTarget -->\n\n<div class=\"menu-wrapper\">\n    <ul class=\"menu\">\n        <li data-menuanchor=\"menuAnchor1\" class=\"active\"><a href=\"#menuAnchor1\">First section</a></li>\n        <li data-menuanchor=\"menuAnchor2\"><a href=\"#menuAnchor2\">Second section</a></li>\n        <li data-menuanchor=\"menuAnchor3\"><a href=\"#menuAnchor3\">Third section</a></li>\n        <li data-menuanchor=\"menuAnchor4\"><a href=\"#menuAnchor4\">Fourth section</a></li>\n        <li data-menuanchor=\"menuAnchor5\"><a href=\"#menuAnchor5\">Fifth section</a></li>\n        <li data-menuanchor=\"menuAnchor6\"><a href=\"#menuAnchor6\">Sixth section</a></li>\n    </ul>\n</div>\n\n\n<div [mnFullpage]=\"options\"\n     [mnFullpageNavigation]=\"true\"\n     [mnFullpageKeyboardScrolling]=\"true\"\n     [mnFullpageSlidesNavigation]=\"true\"\n     [mnFullpageSlidesNavPosition]=\"bottom\">\n\n    <div class=\"section welcome-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Angular 2 fullPage.js</h1>\n            <h4>Create Beautiful Fullscreen Scrolling Websites (now with Angular 2)!</h4>\n            <img class=\"logo-image\" src=\"https://raw.githubusercontent.com/meiblorn/ng2-fullpage/develop/logo.png\"/>\n        </div>\n    </div>\n    <div class=\"section install-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Easy to install !</h1>\n            <div class=\"code-block\">\n            <pre>\n                <code class=\"bash\">{{templates.install}}</code>\n            </pre>\n            </div>\n        </div>\n    </div>\n    <div class=\"section usage-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <div class=\"slide\">\n                <h1>Easy to use !</h1>\n                <h4>Use keyboard arrows or navigation below to slide right</h4>\n            </div>\n            <div class=\"slide\">\n                <h1>Declare it in your module</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"javascript\">{{templates.usage.slides.module}}</code>\n                </pre>\n                </div>\n            </div>\n            <div class=\"slide\">\n                <h1>Now use it in your html template</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"html\">{{templates.usage.slides.html}}</code>\n                </pre>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"section slides-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <div class=\"slide\">\n                <h1>Many ways to configure!</h1>\n                <h4>Use keyboard arrows or navigation below to slide right</h4>\n            </div>\n            <div class=\"slide\">\n                <h1>Configure it via attributes</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"html\">{{templates.configuration.slides.attributes}}</code>\n                </pre>\n                </div>\n            </div>\n            <div class=\"slide\">\n                <h1>Use configuration object instead</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"javascript\">{{templates.configuration.slides.classOptions}}</code>\n                </pre>\n                </div>\n            </div>\n            <div class=\"slide\">\n                <h1>Or MIX IT !</h1>\n                <div class=\"code-block\">\n                <pre>\n                    <code class=\"javascript\">{{templates.configuration.slides.mix}}</code>\n                </pre>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"section usage-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Get full control on the page !</h1>\n            <div class=\"code-block\">\n            <pre>\n                <code class=\"html\">{{templates.service}}</code>\n            </pre>\n            </div>\n            <div>\n                <button (click)=\"fullpageService.moveSectionUp();\">Move section up</button>\n                <button (click)=\"fullpageService.moveSectionDown();\">Move section down</button>\n            </div>\n        </div>\n    </div>\n    <div class=\"section start-use-it-now-section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <h1>Start use it now!</h1>\n            <h4>\n                Return to <a href=\"https://github.com/meiblorn/ng2-fullpage\">GitHub</a>\n                or start reading <a href=\"docs/index.html\">docs</a>\n            </h4>\n        </div>\n    </div>\n</div>\n"
 
 /***/ },
 
-/***/ 377:
+/***/ 380:
 /***/ function(module, exports) {
 
 module.exports = "<div mnFullpage\n     [mnFullpageNavigation]=\"true\"\n     [mnFullpageKeyboardScrolling]=\"true\"\n     [mnFullpageSlidesNavigation]=\"true\"\n     [mnFullpageSlidesNavPosition]=\"bottom\"\n     [mnFullpageControlArrows]=\"false\">\n\n    <div id=\"section1\" class=\"section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            Section 1\n        </div>\n    </div>\n    <div id=\"section2\" class=\"section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            Section 2\n        </div>\n    </div>\n\n</div>\n"
 
 /***/ },
 
-/***/ 378:
+/***/ 381:
 /***/ function(module, exports) {
 
 module.exports = "import { Component, Output } from '@angular/core';\nimport { MnFullpageOptions } from 'ng2-fullpage';\n\n@Component({\n    selector: 'app',\n    template: `\n        <div [mnFullpage]=\"options\">\n            <div id=\"section1\" class=\"section fp-section fp-table\">\n                <div class=\"fp-tableCell\">\n                    Section 1\n                </div>\n            </div>\n            ......\n        </div>\n    `\n})\nexport class AppComponent {\n    @Output() private options: MnFullpageOptions = new MnFullpageOptions({\n        navigation: true,\n        keyboardScrolling: true\n    });\n}\n"
 
 /***/ },
 
-/***/ 379:
+/***/ 382:
 /***/ function(module, exports) {
 
 module.exports = "import { Component, Output } from '@angular/core';\nimport { MnFullpageOptions } from 'ng2-fullpage';\n\n@Component({\n    selector: 'app',\n    template: `\n        <div [mnFullpage]=\"options\" [mnFullpageControlArrows]=\"false\">\n            <div class=\"section\"> Some section 1 </div>\n            <div class=\"section\"> Some section 2 </div>\n        </div>\n    `\n})\nexport class AppComponent {\n    @Output() private options: MnFullpageOptions = new MnFullpageOptions({\n        navigation: true,\n        keyboardScrolling: true\n    });\n}\n"
 
 /***/ },
 
-/***/ 380:
+/***/ 383:
 /***/ function(module, exports) {
 
 module.exports = "#!/bin/bash\n\n# install module via npm\nnpm install ng2-fullpage --save\n\n# install typings\nnpm install @types/jquery --save-dev\n# or if you prefer \"typings\" tool then try\n# \"typings install jquery --save --ambient\"\n\n# you are done!\n"
 
 /***/ },
 
-/***/ 381:
+/***/ 384:
 /***/ function(module, exports) {
 
 module.exports = "import { Component, Input } from '@angular/core';\nimport { MnFullpageService } from 'ng2-fullpage';\n\n@Component({\n    selector: 'app',\n    template: `\n        <button (click)=\"fullpageService.moveSectionUp();\">Move section up</button>\n        <button (click)=\"fullpageService.moveSectionDown();\">Move section down</button>\n\n        <div mnFullpage [mnFullpageNavigation]=\"true\">\n            ....\n        </div>\n    `\n})\nexport class AppComponent {\n\n     constructor(private fullpageService: MnFullpageService) {\n     }\n\n}\n"
 
 /***/ },
 
-/***/ 382:
+/***/ 385:
 /***/ function(module, exports) {
 
 module.exports = "import { NgModule } from \"@angular/core\";\nimport { BrowserModule } from \"@angular/platform-browser\";\n\nimport { AppComponent } from \"./app.component\";\nimport { MnFullpageDirective, MnFullpageService } from \"ng2-fullpage\";\n\n@NgModule({\n    bootstrap: [ AppComponent ],\n    declarations: [\n        AppComponent,\n        MnFullpageDirective // add directive declaration here\n    ],\n    imports: [\n        BrowserModule,\n    ],\n    providers: [\n        MnFullpageService // also add provider here\n    ]\n})\nexport class AppModule {\n\n}\n"
 
 /***/ },
 
-/***/ 383:
+/***/ 386:
 /***/ function(module, exports) {
 
 module.exports = "<!-- Just add directive [mnFullpage] -->\n<!-- And parametrize it via [mnFullpage*] attributes -->\n<div mnFullpage\n     [mnFullpageNavigation]=\"true\"\n     [mnFullpageKeyboardScrolling]=\"true\">\n\n    <div id=\"section1\" class=\"section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            Section 1\n        </div>\n    </div>\n    <div id=\"section2\" class=\"section fp-section fp-table\">\n        <div class=\"fp-tableCell\">\n            <div class=\"slide\">Slide 1</div>\n            <div class=\"slide\">Slide 2</div>\n            <div class=\"slide\">Slide 3</div>\n            <div class=\"slide\">Slide 4</div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ },
 
-/***/ 384:
+/***/ 387:
 /***/ function(module, exports) {
 
 module.exports = "@import url(https://fonts.googleapis.com/css?family=Titillium+Web);\nbody {\n  font-family: 'Titillium Web', Arial sans-serif;\n  color: #333; }\n\nh1, h2, h3, h4, h5, h6 {\n  font-weight: normal;\n  font-size: 100%;\n  margin: 0;\n  padding: 0;\n  color: #444; }\n\nh1 {\n  font-size: 3em; }\n\nh4 {\n  font-size: 1.3em; }\n\n#fp-nav {\n  top: 50% !important; }\n\n.menu-wrapper {\n  position: fixed;\n  width: 100%;\n  z-index: 70;\n  text-align: center;\n  height: 40px;\n  margin: auto; }\n\n.menu {\n  padding: 0; }\n\n.menu li {\n  display: inline-block;\n  margin: 10px;\n  color: #000;\n  background: #fff;\n  background: rgba(255, 255, 255, 0.5);\n  -webkit-border-radius: 5px;\n  border-radius: 5px;\n  text-align: center; }\n\n.menu li.active {\n  background: #666;\n  background: rgba(0, 0, 0, 0.5);\n  color: #fff; }\n\n.menu li a {\n  text-decoration: none;\n  color: #000; }\n\n.menu li.active a:hover {\n  color: #000; }\n\n.menu li:hover {\n  background: rgba(255, 255, 255, 0.8); }\n\n.menu li a,\n.menu li.active a {\n  padding: 9px 18px;\n  display: block; }\n\n.menu li.active a {\n  color: #fff; }\n\n.section {\n  text-align: center; }\n\n.section pre {\n  margin-top: 5px;\n  text-align: start; }\n\n.section pre code {\n  background: rgba(255, 255, 255, 0.1) !important;\n  font-weight: normal;\n  font-size: 1.2em;\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  padding: 25px; }\n\n.code-block {\n  margin: auto;\n  display: inline-block; }\n\n.code-block code {\n  font-size: 1em !important; }\n\nbutton {\n  display: inline-block;\n  margin: 10px;\n  color: #000;\n  background: #fff;\n  background: rgba(255, 255, 255, 0.5);\n  -webkit-border-radius: 5px;\n  border-radius: 5px;\n  text-align: center;\n  padding: 7px 50px;\n  border-color: white;\n  background: rgba(255, 255, 255, 0.1); }\n\n.welcome-section {\n  background: linear-gradient(90deg, rgba(255, 177, 0, 0.2), rgba(52, 0, 255, 0.4)); }\n\n.welcome-section .logo-image {\n  margin: 25px; }\n\n.install-section {\n  background: linear-gradient(90deg, rgba(32, 255, 0, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n\n.usage-section {\n  background: linear-gradient(90deg, rgba(145, 255, 1, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n\n.slides-section {\n  background: linear-gradient(90deg, rgba(255, 155, 0, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n\n.start-use-it-now-section {\n  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(52, 0, 255, 0.4));\n  /* Standard syntax */ }\n"
 
 /***/ },
 
-/***/ 616:
+/***/ 618:
 /***/ function(module, exports) {
 
 /*
@@ -453,7 +452,7 @@ module.exports = function() {
 
 /***/ },
 
-/***/ 81:
+/***/ 84:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -493,7 +492,7 @@ exports.MnFullpageOptions = MnFullpageOptions;
 
 /***/ },
 
-/***/ 82:
+/***/ 85:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -511,9 +510,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(2);
-var $ = __webpack_require__(71);
-__webpack_require__(80);
-var mnFullpage_options_class_1 = __webpack_require__(81);
+var $ = __webpack_require__(74);
+__webpack_require__(83);
+var mnFullpage_options_class_1 = __webpack_require__(84);
 var DIRECTIVE_NAME = 'mnFullpage';
 var MnFullpageDirective = (function () {
     /**
@@ -588,7 +587,7 @@ var MnFullpageDirective = (function () {
     MnFullpageDirective.propertyPrefix = "" + DIRECTIVE_NAME;
     __decorate([
         core_1.Input("" + DIRECTIVE_NAME), 
-        __metadata('design:type', (typeof (_a = typeof mnFullpage_options_class_1.MnFullpageOptions !== 'undefined' && mnFullpage_options_class_1.MnFullpageOptions) === 'function' && _a) || Object)
+        __metadata('design:type', mnFullpage_options_class_1.MnFullpageOptions)
     ], MnFullpageDirective.prototype, "options", void 0);
     __decorate([
         core_1.Input(), 
@@ -600,7 +599,7 @@ var MnFullpageDirective = (function () {
     ], MnFullpageDirective.prototype, "mnFullpageLockAnchors", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Object)
+        __metadata('design:type', Array)
     ], MnFullpageDirective.prototype, "mnFullpageAnchors", void 0);
     __decorate([
         core_1.Input(), 
@@ -612,7 +611,7 @@ var MnFullpageDirective = (function () {
     ], MnFullpageDirective.prototype, "mnFullpageNavigationPosition", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Object)
+        __metadata('design:type', Array)
     ], MnFullpageDirective.prototype, "mnFullpageNavigationTooltips", void 0);
     __decorate([
         core_1.Input(), 
@@ -716,7 +715,7 @@ var MnFullpageDirective = (function () {
     ], MnFullpageDirective.prototype, "mnFullpageResize", void 0);
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Object)
+        __metadata('design:type', Array)
     ], MnFullpageDirective.prototype, "mnFullpageSectionsColor", void 0);
     __decorate([
         core_1.Input(), 
@@ -774,17 +773,16 @@ var MnFullpageDirective = (function () {
         core_1.Directive({
             selector: "[" + DIRECTIVE_NAME + "]"
         }), 
-        __metadata('design:paramtypes', [(typeof (_b = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _b) || Object])
+        __metadata('design:paramtypes', [core_1.ElementRef])
     ], MnFullpageDirective);
     return MnFullpageDirective;
-    var _a, _b;
 }());
 exports.MnFullpageDirective = MnFullpageDirective;
 
 
 /***/ },
 
-/***/ 83:
+/***/ 86:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -792,8 +790,8 @@ exports.MnFullpageDirective = MnFullpageDirective;
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
  */
 "use strict";
-var mnFullpage_directive_1 = __webpack_require__(82);
-var index_1 = __webpack_require__(140);
+var mnFullpage_directive_1 = __webpack_require__(85);
+var index_1 = __webpack_require__(145);
 exports.MnFullpageDirective = index_1.MnFullpageDirective;
 exports.MnFullpageOptions = index_1.MnFullpageOptions;
 exports.MnFullpageService = index_1.MnFullpageService;
@@ -802,11 +800,11 @@ exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
 
 /***/ },
 
-/***/ 892:
+/***/ 894:
 /***/ function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(375);
+        var result = __webpack_require__(378);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -817,7 +815,7 @@ exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
 
 /***/ },
 
-/***/ 895:
+/***/ 897:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -826,8 +824,8 @@ exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
  */
 "use strict";
 var core_1 = __webpack_require__(2);
-var platform_browser_dynamic_1 = __webpack_require__(139);
-var app_module_1 = __webpack_require__(351);
+var platform_browser_dynamic_1 = __webpack_require__(144);
+var app_module_1 = __webpack_require__(354);
 core_1.enableProdMode();
 document.addEventListener('DOMContentLoaded', function () {
     platform_browser_dynamic_1.platformBrowserDynamic()
@@ -838,4 +836,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }
 
-},[895]);
+},[897]);
