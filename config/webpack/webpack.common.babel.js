@@ -7,7 +7,6 @@ import CommonsChunkPlugin from 'webpack/lib/optimize/CommonsChunkPlugin';
 import ContextReplacementPlugin from 'webpack/lib/ContextReplacementPlugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import DashboardPlugin from 'webpack-dashboard/plugin';
-import * as AwesomeTypescriptLoader from 'awesome-typescript-loader';
 
 import config from './../helpers/config';
 import utils from './../helpers/utils';
@@ -69,7 +68,6 @@ export default options => {
             new CleanWebpackPlugin([config('common.build.directory')], {
                 root: utils.root(), dry: false, verbose: true
             }),
-            new AwesomeTypescriptLoader.ForkCheckerPlugin(),
             new CommonsChunkPlugin({
                 name: config('common.sources.entries.chunks.commons.list'),
                 minChunks: Infinity
