@@ -2,20 +2,16 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { AppComponent } from "./app.component";
-import { MnFullpageDirective, MnFullpageService } from "../../components";
+import { MnFullpageModule } from '../../components/fullpage/mnFullpage.module';
 
 @NgModule({
     bootstrap: [ AppComponent ],
     declarations: [
         AppComponent,
-
-        MnFullpageDirective
     ],
     imports: [
         BrowserModule,
-    ],
-    providers: [
-        MnFullpageService
+        MnFullpageModule.forRoot(),
     ]
 })
 export class AppModule {
