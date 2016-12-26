@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ng2-fullpage | ng2-fullpage</title>
+	<title>MnFullpageModule | ng2-fullpage</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -909,332 +909,59 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
+		<li class="current tsd-kind-class tsd-parent-kind-external-module">
+			<a href="_fullpage_mnfullpage_module_.mnfullpagemodule.html" class="tsd-kind-icon">Mn<wbr>Fullpage<wbr>Module</a>
+			<ul>
+				<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a href="_fullpage_mnfullpage_module_.mnfullpagemodule.html#forroot" class="tsd-kind-icon">for<wbr>Root</a>
+				</li>
+			</ul>
+		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<p><a href="https://github.com/meiblorn/ng2-fullpage"><img src="https://raw.githubusercontent.com/meiblorn/ng2-fullpage/develop/logo.png" alt="ng2-fullpage"></a></p>
-			<h1 id="ng2-fullpage-npm-downloads-https-img-shields-io-npm-dm-ng2-fullpage-svg-https-npmjs-org-ng2-fullpage-build-status-https-travis-ci-org-meiblorn-ng2-fullpage-svg-branch-master-https-travis-ci-org-meiblorn-ng2-fullpage-join-the-chat-at-https-gitter-im-meiblorn-ng2-fullpage-https-badges-gitter-im-meiblorn-ng2-fullpage-svg-https-gitter-im-meiblorn-ng2-fullpage-utm_source-badge-utm_medium-badge-utm_campaign-pr-badge-utm_content-badge-">ng2-fullpage <a href="https://npmjs.org/ng2-fullpage"><img src="https://img.shields.io/npm/dm/ng2-fullpage.svg" alt="npm downloads"></a><a href="https://travis-ci.org/meiblorn/ng2-fullpage"><img src="https://travis-ci.org/meiblorn/ng2-fullpage.svg?branch=master" alt="Build Status"></a><a href="https://gitter.im/meiblorn/ng2-fullpage?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/meiblorn/ng2-fullpage.svg" alt="Join the chat at https://gitter.im/meiblorn/ng2-fullpage"></a></h1>
-			<p>Create Beautiful Fullscreen Scrolling websites (now with Angular 2)!</p>
-			<p>This is an Angular 2 <a href="https://github.com/alvarotrigo/fullPage.js">fullPage.js</a> port library.</p>
-			<p><a href="https://badge.fury.io/js/ng2-fullpage"><img src="https://badge.fury.io/js/ng2-fullpage.svg" alt="npm version"></a>
-				<a href="https://david-dm.org/meiblorn/ng2-fullpage"><img src="https://david-dm.org/meiblorn/ng2-fullpage.svg" alt="Dependency Status"></a>
-				<a href="https://david-dm.org/meiblorn/ng2-fullpage#info=devDependencies"><img src="https://david-dm.org/meiblorn/ng2-fullpage/dev-status.svg" alt="devDependency Status"></a>
-				<a href="https://codeclimate.com/github/meiblorn/ng2-fullpage/coverage"><img src="https://codeclimate.com/github/meiblorn/ng2-fullpage/badges/coverage.svg" alt="Test Coverage"></a>
-			<a href="https://codeclimate.com/github/meiblorn/ng2-fullpage"><img src="https://codeclimate.com/github/meiblorn/ng2-fullpage/badges/gpa.svg" alt="Code Climate"></a></p>
-			<hr>
-			<h2 id="new-release-2-0-1-angular-2-final">NEW RELEASE 2.0.1: ANGULAR 2 FINAL</h2>
-			<h2 id="demo">Demo</h2>
-			<p>Check out the live demo <a href="http://meiblorn.github.io/ng2-fullpage">HERE</a></p>
-			<h2 id="quick-start">Quick Start</h2>
-			<h3 id="start-with-systemjs">Start with SystemJS</h3>
-			<h4 id="-plunker-example-http-embed-plnkr-co-1p9zkp4cni1hncah1h9m-"><a href="http://embed.plnkr.co/1p9zKp4CNI1HncAh1h9m">Plunker example</a></h4>
-			<h2 id="with-angularclass-angular2-webpack-starter-https-github-com-angularclass-angular2-webpack-starter-">With <a href="https://github.com/AngularClass/angular2-webpack-starter">AngularClass/angular2-webpack-starter</a>:</h2>
-			<p>Install <code>ng2-fullpage</code> npm module:</p>
-			<pre><code class="lang-bash">  npm install ng2-fullpage --save
-</code></pre>
-			<p>Install ambient typings for <code>jquery</code> library:</p>
-			<pre><code class="lang-bash">  npm install @types/jquery --save-dev
-
-  <span class="hljs-comment"># or if you prefer "typings" tool</span>
-  typings install jquery --save --ambient
-</code></pre>
-			<p><strong>Write some code:</strong></p>
-			<p><em>app/app.module.ts</em>:</p>
-			<pre><code class="lang-typescript">
-<span class="hljs-comment">/**
- *
- * File: app/app.module.ts
- *
- */</span>
-
-<span class="hljs-keyword">import</span> { NgModule } from <span class="hljs-string">"@angular/core"</span>;
-<span class="hljs-keyword">import</span> { BrowserModule } from <span class="hljs-string">"@angular/platform-browser"</span>;
-
-<span class="hljs-keyword">import</span> { AppComponent } from <span class="hljs-string">"./app.component"</span>;
-<span class="hljs-keyword">import</span> { MnFullpageDirective, MnFullpageService } from <span class="hljs-string">"ng2-fullpage"</span>;
-
-<span class="hljs-meta">@NgModule</span>({
-    bootstrap: [ AppComponent ],
-    declarations: [
-        AppComponent,
-        MnFullpageDirective <span class="hljs-comment">// add MnFullpageDirective declaration here</span>
-    ],
-    imports: [
-        BrowserModule,
-    ],
-    providers: [
-        MnFullpageService <span class="hljs-comment">// also add MnFullpageService provider here</span>
-    ]
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule {
-
-}
-</code></pre>
-			<pre><code class="lang-typescript"><span class="hljs-comment">/**
-* 
-* File: app/app.component.ts
-* 
-* If you are starting from scratch replace existing content with the code below
-* Otherwise update your html template with 'mnFullpage' directive.
-* 
-*/</span>
-
-<span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
-
-<span class="hljs-meta">@Component</span>({
-  selector: <span class="hljs-string">'app'</span>,
-  template: <span class="hljs-string">`
-        &lt;div mnFullpage 
-            [mnFullpageNavigation]="true" 
-            [mnFullpageKeyboardScrolling]="true"
-            [mnFullpageControlArrows]="false"&gt;
-            &lt;div class="section fp-section fp-table"&gt;        
-                &lt;div class="fp-tableCell"&gt;
-                    Some section 1
-                &lt;/div&gt; 
-            &lt;/div&gt;
-            &lt;div class="section fp-section fp-table"&gt;        
-                &lt;div class="fp-tableCell"&gt; Some section 2&lt;/div&gt; 
-            &lt;/div&gt;
-            &lt;div class="section fp-section fp-table"&gt;
-                &lt;div class="fp-tableCell"&gt;
-                    &lt;div class="slide"&gt; Slide 1 &lt;/div&gt;
-                    &lt;div class="slide"&gt; Slide 2 &lt;/div&gt;
-                    &lt;div class="slide"&gt; Slide 3 &lt;/div&gt;
-                    &lt;div class="slide"&gt; Slide 4 &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class="section fp-section fp-table"&gt;        
-                &lt;div class="fp-tableCell"&gt; Some section 4&lt;/div&gt; 
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-    `</span>
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
-    <span class="hljs-comment">// no additional config is required</span>
-}
-</code></pre>
-			<p>Update webpack vendors entry file (src/vendor.browser.ts) with &#39;jquery&#39; and &#39;fullpage.js&#39; import:</p>
-			<pre><code class="lang-typescript"><span class="hljs-comment">/**
-* 
-* File: vendor.browser.ts
-* 
-* Just add 'jquery' module import statement.
-* 
-*/</span>
-
-<span class="hljs-keyword">import</span> <span class="hljs-string">'jquery'</span>;
-<span class="hljs-keyword">import</span> <span class="hljs-string">'fullpage.js'</span>
-</code></pre>
-			<p>Start server and open <a href="http://localhost:3000">http://localhost:3000</a> url in browser:</p>
-			<pre><code class="lang-bash">npm run start
-</code></pre>
-			<h1 id="usage">Usage</h1>
-			<h3 id="basic-installation">Basic installation</h3>
-			<p>All you need to do is just add [mnFullpage] @Component.directives array
-			and add directive to an html element inside your template:</p>
-			<p><em>app/app.module.ts</em>:</p>
-			<pre><code class="lang-typescript"><span class="hljs-comment">/**
-* 
-* Just add MnFullpageDirective into the @Component.declarations  
-* and MnFullpageService into the @Component.providers arrays
-* 
-*/</span>
-
-<span class="hljs-keyword">import</span> { NgModule } from <span class="hljs-string">"@angular/core"</span>;
-<span class="hljs-keyword">import</span> { BrowserModule } from <span class="hljs-string">"@angular/platform-browser"</span>;
-
-<span class="hljs-keyword">import</span> { AppComponent } from <span class="hljs-string">"./app.component"</span>;
-<span class="hljs-keyword">import</span> { MnFullpageDirective, MnFullpageService } from <span class="hljs-string">"ng2-fullpage"</span>;
-
-<span class="hljs-meta">@NgModule</span>({
-    bootstrap: [ AppComponent ],
-    declarations: [
-        AppComponent,
-        MnFullpageDirective <span class="hljs-comment">// add MnFullpageDirective declaration here</span>
-    ],
-    imports: [
-        BrowserModule,
-    ],
-    providers: [
-        MnFullpageService <span class="hljs-comment">// also add MnFullpageService provider here</span>
-    ]
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule {
-
-}
-</code></pre>
-			<p><em>app/app.component.ts</em>:</p>
-			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
-
-<span class="hljs-meta">@Component</span>({
-  selector: <span class="hljs-string">'my-app'</span>,
-  templateUrl: ./template.html
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
-    <span class="hljs-comment">// no additional config is required</span>
-}
-</code></pre>
-			<p><em>template.html</em>:</p>
-			<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Add fullpage directive to an element --&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">mnFullpage</span>&gt;</span>
-   ...
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
-			<h3 id="advanced-usage">Advanced usage</h3>
-			<p>Like it is done in most of libraries, you can configure fullpage.js for you goals.
-			There 3 ways to configure fullPage.js:</p>
-			<ul>
-				<li><strong>Via attributes</strong>. Define options like attributes on the same element. </li>
-			</ul>
-			<blockquote>
-				<p>Notice, options must be prefixed with &#39;mnFullpage&#39; word and written in camelCase style.</p>
-			</blockquote>
-			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
-
-<span class="hljs-meta">@Component</span>({
-  selector: <span class="hljs-string">'app'</span>,
-  template: <span class="hljs-string">`
-    &lt;div mnFullpage [mnFullpageNavigation]="true" [mnFullpageKeyboardScrolling]="true"&gt;
-        ....
-    &lt;/div&gt;  
-  `</span>
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
-}
-</code></pre>
-			<ul>
-				<li><strong>Via options object</strong>. Use FullpageOptions configuration object to inject options. </li>
-			</ul>
-			<blockquote>
-				<p>Notice to wrap directive in square brackets <strong>[mnFullpage]</strong> and reference it to your options object</p>
-			</blockquote>
-			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component, Input } from <span class="hljs-string">'@angular/core'</span>;
-<span class="hljs-keyword">import</span> { MnFullpageOptions } from <span class="hljs-string">'ng2-fullpage'</span>;
-
-<span class="hljs-meta">@Component</span>({
-    selector: <span class="hljs-string">'app'</span>,
-    template: <span class="hljs-string">`
-        &lt;div [mnFullpage]="options"&gt;
-            ....
-        &lt;/div&gt;
-    `</span>
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
-
-    <span class="hljs-meta">@Input</span>() <span class="hljs-keyword">public</span> options: MnFullpageOptions = <span class="hljs-keyword">new</span> MnFullpageOptions({
-        navigation: <span class="hljs-literal">true</span>,
-        keyboardScrolling: <span class="hljs-literal">true</span>
-    });
-
-}
-</code></pre>
-			<ul>
-				<li><strong>Mixed</strong>. Mix two approaches to configure. </li>
-			</ul>
-			<blockquote>
-				<p>Notice, html element options have less priority than options inside options object.</p>
-			</blockquote>
-			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component, Input } from <span class="hljs-string">'@angular/core'</span>;
-<span class="hljs-keyword">import</span> { MnFullpageOptions } from <span class="hljs-string">'ng2-fullpage'</span>;
-
-<span class="hljs-meta">@Component</span>({
-    selector: <span class="hljs-string">'app'</span>,
-    template: <span class="hljs-string">`
-        &lt;div [mnFullpage]="options" [mnFullpageNavigation]="true"&gt;
-            ....
-        &lt;/div&gt;
-    `</span>
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
-
-    <span class="hljs-meta">@Input</span>() <span class="hljs-keyword">public</span> options:MnFullpageOptions = <span class="hljs-keyword">new</span> MnFullpageOptions({
-        keyboardScrolling: <span class="hljs-literal">true</span>
-    });
-
-}
-</code></pre>
-			<h3 id="services">Services</h3>
-			<p>Service <code>MnFullpageService</code> contains <code>$.fn.*</code> static methods for <code>fullPage.js</code> library.   </p>
-			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component, Input } from <span class="hljs-string">'@angular/core'</span>;
-<span class="hljs-keyword">import</span> { MnFullpageService } from <span class="hljs-string">'ng2-fullpage'</span>;
-
-<span class="hljs-meta">@Component</span>({
-    selector: <span class="hljs-string">'app'</span>,
-    template: <span class="hljs-string">`
-        &lt;button (click)="fullpageService.moveSectionUp();"&gt;Move section up&lt;/button&gt;
-        &lt;button (click)="fullpageService.moveSectionDown();"&gt;Move section down&lt;/button&gt;
-
-        &lt;div mnFullpage [mnFullpageNavigation]="true"&gt;
-            ....
-        &lt;/div&gt;
-    `</span>
-})
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
-
-     <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> fullpageService: MnFullpageService</span>) {
-     }
-
-}
-</code></pre>
-			<h1 id="troubleshooting">Troubleshooting</h1>
-			<h3 id="view-encapsulation-issue">View Encapsulation issue</h3>
-			<h5 id="thanks-to-aamir1995-94-https-github-com-meiblorn-ng2-fullpage-issues-94-">Thanks to @aamir1995 <a href="https://github.com/meiblorn/ng2-fullpage/issues/94">#94</a></h5>
-			<p>If you get error when you <em>include fullPage.js styles</em> into your component,
-			probably you&#39;ve faced with Angular 2 <em>ViewEncapsulation issue</em> <a href="https://github.com/meiblorn/ng2-fullpage/issues/94">#94</a>.</p>
-			<p>Try to update your component:
-			<em>Set value of &#39;encapsulation&#39; property to &#39;ViewEncapsulation.None&#39; like this below</em>:</p>
-			<pre><code class="lang-typescript">  <span class="hljs-meta">@Component</span>({
-      ...
-      encapsulation: ViewEncapsulation.None
-      ...
-  })
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
-      ...
-  }
-</code></pre>
-			<h1 id="development">Development</h1>
-			<h3 id="build">Build</h3>
-			<pre><code class="lang-bash"><span class="hljs-comment"># development</span>
-npm run build:dev
-
-<span class="hljs-comment"># production</span>
-npm run build:prod
-</code></pre>
-			<h3 id="watch-and-build-files">Watch and build files</h3>
-			<pre><code class="lang-bash">npm run watch
-</code></pre>
-			<h3 id="run-tests">Run tests</h3>
-			<pre><code class="lang-bash">npm run <span class="hljs-built_in">test</span>
-</code></pre>
-			<h3 id="watch-and-run-tests">Watch and run tests</h3>
-			<pre><code class="lang-bash">npm run watch:<span class="hljs-built_in">test</span>
-</code></pre>
-			<h1 id="license">License</h1>
-			<p>MIT</p>
 		</div>
+		<section class="tsd-panel tsd-hierarchy">
+			<h3>Hierarchy</h3>
+			<ul class="tsd-hierarchy">
+				<li>
+					<span class="target">MnFullpageModule</span>
+				</li>
+			</ul>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>External modules</h3>
+						<h3>Methods</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-external-module"><a href="modules/_fullpage_index_.html" class="tsd-kind-icon">"fullpage/index"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_fullpage_mnfullpage_options_class_.html" class="tsd-kind-icon">"fullpage/mn<wbr>Fullpage-<wbr>options.class"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_fullpage_mnfullpage_directive_.html" class="tsd-kind-icon">"fullpage/mn<wbr>Fullpage.directive"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_fullpage_mnfullpage_module_.html" class="tsd-kind-icon">"fullpage/mn<wbr>Fullpage.module"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_fullpage_mnfullpage_service_.html" class="tsd-kind-icon">"fullpage/mn<wbr>Fullpage.service"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_index_.html" class="tsd-kind-icon">"index"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_polyfills_browser_.html" class="tsd-kind-icon">"polyfills.browser"</a></li>
-							<li class="tsd-kind-external-module"><a href="modules/_vendor_browser_.html" class="tsd-kind-icon">"vendor.browser"</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="_fullpage_mnfullpage_module_.mnfullpagemodule.html#forroot" class="tsd-kind-icon">for<wbr>Root</a></li>
 						</ul>
 					</section>
 				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+				<a name="forroot" class="tsd-anchor"></a>
+				<h3>for<wbr>Root</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<li class="tsd-signature tsd-kind-icon">for<wbr>Root<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ModuleWithProviders</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/meiblorn/ng2-fullpage/blob/78c8b7b/components/fullpage/mnFullpage.module.ts#L11">fullpage/mnFullpage.module.ts:11</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ModuleWithProviders</span></h4>
+					</li>
+				</ul>
 			</section>
 		</section>
 		<footer class="with-border-bottom">

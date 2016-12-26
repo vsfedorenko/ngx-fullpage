@@ -11,9 +11,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var $ = require('jquery');
-require('fullpage.js');
+var core_1 = require("@angular/core");
+var $ = require("jquery");
+require("fullpage.js");
 var MnFullpageService = (function () {
     function MnFullpageService() {
     }
@@ -161,10 +161,10 @@ var MnFullpageService = (function () {
     MnFullpageService.prototype.reBuild = function () {
         $.fn.fullpage.reBuild();
     };
-    MnFullpageService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], MnFullpageService);
     return MnFullpageService;
 }());
+MnFullpageService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], MnFullpageService);
 exports.MnFullpageService = MnFullpageService;

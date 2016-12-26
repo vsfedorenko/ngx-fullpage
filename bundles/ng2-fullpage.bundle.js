@@ -1,6 +1,84 @@
 webpackJsonp([2],{
 
-/***/ 145:
+/***/ 117:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(2);
+var mnFullpage_service_1 = __webpack_require__(92);
+var mnFullpage_directive_1 = __webpack_require__(91);
+var MnFullpageModule = MnFullpageModule_1 = (function () {
+    function MnFullpageModule() {
+    }
+    MnFullpageModule.forRoot = function () {
+        return { ngModule: MnFullpageModule_1, providers: [mnFullpage_service_1.MnFullpageService] };
+    };
+    return MnFullpageModule;
+}());
+MnFullpageModule = MnFullpageModule_1 = __decorate([
+    core_1.NgModule({
+        declarations: [mnFullpage_directive_1.MnFullpageDirective],
+        exports: [mnFullpage_directive_1.MnFullpageDirective]
+    }),
+    __metadata("design:paramtypes", [])
+], MnFullpageModule);
+exports.MnFullpageModule = MnFullpageModule;
+var MnFullpageModule_1;
+
+
+/***/ },
+
+/***/ 118:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
+ */
+"use strict";
+var index_1 = __webpack_require__(89);
+var index_2 = __webpack_require__(89);
+exports.MnFullpageModule = index_2.MnFullpageModule;
+exports.MnFullpageDirective = index_2.MnFullpageDirective;
+exports.MnFullpageOptions = index_2.MnFullpageOptions;
+exports.MnFullpageService = index_2.MnFullpageService;
+exports.MN_FULLPAGE_DIRECTIVES = [index_1.MnFullpageDirective];
+
+
+/***/ },
+
+/***/ 367:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 11/05/16.
+ */
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+var index_1 = __webpack_require__(118);
+__export(__webpack_require__(118));
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    directives: index_1.MN_FULLPAGE_DIRECTIVES.slice()
+};
+
+
+/***/ },
+
+/***/ 89:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8,17 +86,352 @@ webpackJsonp([2],{
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
  */
 "use strict";
-var mnFullpage_directive_1 = __webpack_require__(85);
+var mnFullpage_module_1 = __webpack_require__(117);
+exports.MnFullpageModule = mnFullpage_module_1.MnFullpageModule;
+var mnFullpage_directive_1 = __webpack_require__(91);
 exports.MnFullpageDirective = mnFullpage_directive_1.MnFullpageDirective;
-var mnFullpage_options_class_1 = __webpack_require__(84);
+var mnFullpage_options_class_1 = __webpack_require__(90);
 exports.MnFullpageOptions = mnFullpage_options_class_1.MnFullpageOptions;
-var mnFullpage_service_1 = __webpack_require__(146);
+var mnFullpage_service_1 = __webpack_require__(92);
 exports.MnFullpageService = mnFullpage_service_1.MnFullpageService;
 
 
 /***/ },
 
-/***/ 146:
+/***/ 90:
+/***/ function(module, exports) {
+
+"use strict";
+/**
+ * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
+ */
+"use strict";
+var MnFullpageOptions = (function () {
+    /**
+     * Public default constructor
+     *
+     * @param options options js-object
+     */
+    function MnFullpageOptions(options) {
+        if (options) {
+            Object.assign(this, options);
+        }
+    }
+    return MnFullpageOptions;
+}());
+exports.MnFullpageOptions = MnFullpageOptions;
+
+
+/***/ },
+
+/***/ 91:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
+ */
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(2);
+var $ = __webpack_require__(80);
+__webpack_require__(88);
+var mnFullpage_options_class_1 = __webpack_require__(90);
+var DIRECTIVE_NAME = 'mnFullpage';
+var MnFullpageDirective = MnFullpageDirective_1 = (function () {
+    /**
+     * Default public constructor
+     *
+     * @param el element where directive is placed on
+     */
+    function MnFullpageDirective(el) {
+        this._el = el;
+    }
+    /**
+     * Static method for option name retrieving
+     *
+     * @param property this class property name
+     * @returns {string} FullpageOption class option (property) name
+     */
+    MnFullpageDirective.extractName = function (property) {
+        return property[MnFullpageDirective_1.propertyPrefix.length].toLowerCase()
+            + property.substring(MnFullpageDirective_1.propertyPrefix.length + 1);
+    };
+    /**
+     * Perform actions on init
+     */
+    MnFullpageDirective.prototype.ngOnInit = function () {
+        /**
+         * Initialize options object with default (empty)
+         * values if it doesn't exist
+         */
+        if (!this.options) {
+            this.options = new mnFullpage_options_class_1.MnFullpageOptions();
+        }
+        /**
+         * Iterate over all properties of directive class
+         */
+        for (var _i = 0, _a = Object.keys(this); _i < _a.length; _i++) {
+            var property = _a[_i];
+            /**
+             * If property name doesn't start with 'fullpage' prefix (it is stored in
+             * FullpageDirective.propertyPrefix static property) then skip this property and
+             * continue the cycle
+             */
+            if (!property.startsWith(MnFullpageDirective_1.propertyPrefix)) {
+                continue;
+            }
+            /**
+             * Extract option name from the property name
+             *
+             * @type {string} option name
+             */
+            var option = MnFullpageDirective_1.extractName(property);
+            /**
+             * If options is already defined skip it
+             */
+            if (this.options[option]) {
+                continue;
+            }
+            /**
+             * Set property value to the options object property
+             */
+            this.options[option] = this[property];
+        }
+        /**
+         * Enable fullpage for the element
+         */
+        $(this._el.nativeElement).fullpage(this.options);
+    };
+    return MnFullpageDirective;
+}());
+/**
+ * Prefix for directive-relative properties
+ *
+ * @type {string} prefix
+ */
+MnFullpageDirective.propertyPrefix = "" + DIRECTIVE_NAME;
+__decorate([
+    core_1.Input("" + DIRECTIVE_NAME),
+    __metadata("design:type", mnFullpage_options_class_1.MnFullpageOptions)
+], MnFullpageDirective.prototype, "options", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageMenu", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageLockAnchors", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], MnFullpageDirective.prototype, "mnFullpageAnchors", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageNavigation", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageNavigationPosition", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], MnFullpageDirective.prototype, "mnFullpageNavigationTooltips", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageShowActiveTooltip", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageSlidesNavigation", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageSlidesNavPosition", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageCss3", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageScrollingSpeed", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageAutoScrolling", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageFitToSection", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageFitToSectionDelay", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageScrollBar", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageEasing", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageEasingcss3", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageLoopBottom", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageLoopTop", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageLoopHorizontal", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageContinuousVertical", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageNormalScrollElements", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageScrollOverflow", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageTouchSensitivity", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageNormalScrollElementTouchThreshold", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageKeyboardScrolling", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageAnimateAnchor", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageRecordHistory", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageControlArrows", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageVerticalCentered", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageResize", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], MnFullpageDirective.prototype, "mnFullpageSectionsColor", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpagePaddingTop", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpagePaddingBottom", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageFixedElements", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageResponsiveWidth", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageResponsiveHeight", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageSectionSelector", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageSlideSelector", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageAfterLoad", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageOnLeave", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageAfterRender", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageAfterResize", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageAfterSlideLoad", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageOnSlideLeave", void 0);
+MnFullpageDirective = MnFullpageDirective_1 = __decorate([
+    core_1.Directive({
+        selector: "[" + DIRECTIVE_NAME + "]"
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], MnFullpageDirective);
+exports.MnFullpageDirective = MnFullpageDirective;
+var MnFullpageDirective_1;
+
+
+/***/ },
+
+/***/ 916:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 11/05/16.
+ */
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(367));
+
+
+/***/ },
+
+/***/ 92:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36,8 +449,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(2);
-var $ = __webpack_require__(74);
-__webpack_require__(83);
+var $ = __webpack_require__(80);
+__webpack_require__(88);
 var MnFullpageService = (function () {
     function MnFullpageService() {
     }
@@ -185,400 +598,15 @@ var MnFullpageService = (function () {
     MnFullpageService.prototype.reBuild = function () {
         $.fn.fullpage.reBuild();
     };
-    MnFullpageService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], MnFullpageService);
     return MnFullpageService;
 }());
+MnFullpageService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], MnFullpageService);
 exports.MnFullpageService = MnFullpageService;
-
-
-/***/ },
-
-/***/ 355:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 11/05/16.
- */
-"use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-var index_1 = __webpack_require__(86);
-__export(__webpack_require__(86));
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = {
-    directives: index_1.MN_FULLPAGE_DIRECTIVES.slice()
-};
-
-
-/***/ },
-
-/***/ 84:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
- */
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(2);
-var MnFullpageOptions = (function () {
-    /**
-     * Public default constructor
-     *
-     * @param options options js-object
-     */
-    function MnFullpageOptions(options) {
-        if (options) {
-            Object.assign(this, options);
-        }
-    }
-    MnFullpageOptions = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [Object])
-    ], MnFullpageOptions);
-    return MnFullpageOptions;
-}());
-exports.MnFullpageOptions = MnFullpageOptions;
-
-
-/***/ },
-
-/***/ 85:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
- */
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(2);
-var $ = __webpack_require__(74);
-__webpack_require__(83);
-var mnFullpage_options_class_1 = __webpack_require__(84);
-var DIRECTIVE_NAME = 'mnFullpage';
-var MnFullpageDirective = (function () {
-    /**
-     * Default public constructor
-     *
-     * @param el element where directive is placed on
-     */
-    function MnFullpageDirective(el) {
-        this._el = el;
-    }
-    /**
-     * Static method for option name retrieving
-     *
-     * @param property this class property name
-     * @returns {string} FullpageOption class option (property) name
-     */
-    MnFullpageDirective.extractName = function (property) {
-        return property[MnFullpageDirective.propertyPrefix.length].toLowerCase()
-            + property.substring(MnFullpageDirective.propertyPrefix.length + 1);
-    };
-    /**
-     * Perform actions on init
-     */
-    MnFullpageDirective.prototype.ngOnInit = function () {
-        /**
-         * Initialize options object with default (empty)
-         * values if it doesn't exist
-         */
-        if (!this.options) {
-            this.options = new mnFullpage_options_class_1.MnFullpageOptions();
-        }
-        /**
-         * Iterate over all properties of directive class
-         */
-        for (var _i = 0, _a = Object.keys(this); _i < _a.length; _i++) {
-            var property = _a[_i];
-            /**
-             * If property name doesn't start with 'fullpage' prefix (it is stored in
-             * FullpageDirective.propertyPrefix static property) then skip this property and
-             * continue the cycle
-             */
-            if (!property.startsWith(MnFullpageDirective.propertyPrefix)) {
-                continue;
-            }
-            /**
-             * Extract option name from the property name
-             *
-             * @type {string} option name
-             */
-            var option = MnFullpageDirective.extractName(property);
-            /**
-             * If options is already defined skip it
-             */
-            if (this.options[option]) {
-                continue;
-            }
-            /**
-             * Set property value to the options object property
-             */
-            this.options[option] = this[property];
-        }
-        /**
-         * Enable fullpage for the element
-         */
-        $(this._el.nativeElement).fullpage(this.options);
-    };
-    /**
-     * Prefix for directive-relative properties
-     *
-     * @type {string} prefix
-     */
-    MnFullpageDirective.propertyPrefix = "" + DIRECTIVE_NAME;
-    __decorate([
-        core_1.Input("" + DIRECTIVE_NAME), 
-        __metadata('design:type', mnFullpage_options_class_1.MnFullpageOptions)
-    ], MnFullpageDirective.prototype, "options", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageMenu", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageLockAnchors", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], MnFullpageDirective.prototype, "mnFullpageAnchors", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageNavigation", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageNavigationPosition", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], MnFullpageDirective.prototype, "mnFullpageNavigationTooltips", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageShowActiveTooltip", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageSlidesNavigation", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageSlidesNavPosition", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageCss3", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageScrollingSpeed", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageAutoScrolling", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageFitToSection", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageFitToSectionDelay", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageScrollBar", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageEasing", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageEasingcss3", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageLoopBottom", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageLoopTop", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageLoopHorizontal", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageContinuousVertical", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageNormalScrollElements", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageScrollOverflow", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageTouchSensitivity", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageNormalScrollElementTouchThreshold", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageKeyboardScrolling", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageAnimateAnchor", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageRecordHistory", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageControlArrows", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageVerticalCentered", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageResize", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], MnFullpageDirective.prototype, "mnFullpageSectionsColor", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpagePaddingTop", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpagePaddingBottom", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageFixedElements", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageResponsiveWidth", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageResponsiveHeight", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageSectionSelector", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageSlideSelector", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageAfterLoad", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageOnLeave", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageAfterRender", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageAfterResize", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageAfterSlideLoad", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageOnSlideLeave", void 0);
-    MnFullpageDirective = __decorate([
-        core_1.Directive({
-            selector: "[" + DIRECTIVE_NAME + "]"
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], MnFullpageDirective);
-    return MnFullpageDirective;
-}());
-exports.MnFullpageDirective = MnFullpageDirective;
-
-
-/***/ },
-
-/***/ 86:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
- */
-"use strict";
-var mnFullpage_directive_1 = __webpack_require__(85);
-var index_1 = __webpack_require__(145);
-exports.MnFullpageDirective = index_1.MnFullpageDirective;
-exports.MnFullpageOptions = index_1.MnFullpageOptions;
-exports.MnFullpageService = index_1.MnFullpageService;
-exports.MN_FULLPAGE_DIRECTIVES = [mnFullpage_directive_1.MnFullpageDirective];
-
-
-/***/ },
-
-/***/ 898:
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 11/05/16.
- */
-"use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(__webpack_require__(355));
 
 
 /***/ }
 
-},[898]);
+},[916]);

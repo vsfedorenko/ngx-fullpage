@@ -955,7 +955,7 @@ img { max-width: 100%; }
 <span class="hljs-keyword">import</span> { AppComponent } from <span class="hljs-string">"./app.component"</span>;
 <span class="hljs-keyword">import</span> { MnFullpageDirective, MnFullpageService } from <span class="hljs-string">"ng2-fullpage"</span>;
 
-@NgModule({
+<span class="hljs-meta">@NgModule</span>({
     bootstrap: [ AppComponent ],
     declarations: [
         AppComponent,
@@ -983,7 +983,7 @@ img { max-width: 100%; }
 
 <span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
 
-@Component({
+<span class="hljs-meta">@Component</span>({
   selector: <span class="hljs-string">'app'</span>,
   template: <span class="hljs-string">`
         &lt;div mnFullpage 
@@ -1050,7 +1050,7 @@ img { max-width: 100%; }
 <span class="hljs-keyword">import</span> { AppComponent } from <span class="hljs-string">"./app.component"</span>;
 <span class="hljs-keyword">import</span> { MnFullpageDirective, MnFullpageService } from <span class="hljs-string">"ng2-fullpage"</span>;
 
-@NgModule({
+<span class="hljs-meta">@NgModule</span>({
     bootstrap: [ AppComponent ],
     declarations: [
         AppComponent,
@@ -1070,7 +1070,7 @@ img { max-width: 100%; }
 			<p><em>app/app.component.ts</em>:</p>
 			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
 
-@Component({
+<span class="hljs-meta">@Component</span>({
   selector: <span class="hljs-string">'my-app'</span>,
   templateUrl: ./template.html
 })
@@ -1096,7 +1096,7 @@ img { max-width: 100%; }
 			</blockquote>
 			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
 
-@Component({
+<span class="hljs-meta">@Component</span>({
   selector: <span class="hljs-string">'app'</span>,
   template: <span class="hljs-string">`
     &lt;div mnFullpage [mnFullpageNavigation]="true" [mnFullpageKeyboardScrolling]="true"&gt;
@@ -1116,7 +1116,7 @@ img { max-width: 100%; }
 			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component, Input } from <span class="hljs-string">'@angular/core'</span>;
 <span class="hljs-keyword">import</span> { MnFullpageOptions } from <span class="hljs-string">'ng2-fullpage'</span>;
 
-@Component({
+<span class="hljs-meta">@Component</span>({
     selector: <span class="hljs-string">'app'</span>,
     template: <span class="hljs-string">`
         &lt;div [mnFullpage]="options"&gt;
@@ -1126,7 +1126,7 @@ img { max-width: 100%; }
 })
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
 
-    @Input() <span class="hljs-keyword">public</span> options: MnFullpageOptions = <span class="hljs-keyword">new</span> MnFullpageOptions({
+    <span class="hljs-meta">@Input</span>() <span class="hljs-keyword">public</span> options: MnFullpageOptions = <span class="hljs-keyword">new</span> MnFullpageOptions({
         navigation: <span class="hljs-literal">true</span>,
         keyboardScrolling: <span class="hljs-literal">true</span>
     });
@@ -1142,7 +1142,7 @@ img { max-width: 100%; }
 			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component, Input } from <span class="hljs-string">'@angular/core'</span>;
 <span class="hljs-keyword">import</span> { MnFullpageOptions } from <span class="hljs-string">'ng2-fullpage'</span>;
 
-@Component({
+<span class="hljs-meta">@Component</span>({
     selector: <span class="hljs-string">'app'</span>,
     template: <span class="hljs-string">`
         &lt;div [mnFullpage]="options" [mnFullpageNavigation]="true"&gt;
@@ -1152,7 +1152,7 @@ img { max-width: 100%; }
 })
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
 
-    @Input() <span class="hljs-keyword">public</span> options:MnFullpageOptions = <span class="hljs-keyword">new</span> MnFullpageOptions({
+    <span class="hljs-meta">@Input</span>() <span class="hljs-keyword">public</span> options:MnFullpageOptions = <span class="hljs-keyword">new</span> MnFullpageOptions({
         keyboardScrolling: <span class="hljs-literal">true</span>
     });
 
@@ -1163,7 +1163,7 @@ img { max-width: 100%; }
 			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { Component, Input } from <span class="hljs-string">'@angular/core'</span>;
 <span class="hljs-keyword">import</span> { MnFullpageService } from <span class="hljs-string">'ng2-fullpage'</span>;
 
-@Component({
+<span class="hljs-meta">@Component</span>({
     selector: <span class="hljs-string">'app'</span>,
     template: <span class="hljs-string">`
         &lt;button (click)="fullpageService.moveSectionUp();"&gt;Move section up&lt;/button&gt;
@@ -1176,7 +1176,7 @@ img { max-width: 100%; }
 })
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
 
-     <span class="hljs-keyword">constructor</span>(private fullpageService: MnFullpageService) {
+     <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> fullpageService: MnFullpageService</span>) {
      }
 
 }
@@ -1188,7 +1188,7 @@ img { max-width: 100%; }
 			probably you&#39;ve faced with Angular 2 <em>ViewEncapsulation issue</em> <a href="https://github.com/meiblorn/ng2-fullpage/issues/94">#94</a>.</p>
 			<p>Try to update your component:
 			<em>Set value of &#39;encapsulation&#39; property to &#39;ViewEncapsulation.None&#39; like this below</em>:</p>
-			<pre><code class="lang-typescript">  @Component({
+			<pre><code class="lang-typescript">  <span class="hljs-meta">@Component</span>({
       ...
       encapsulation: ViewEncapsulation.None
       ...
@@ -1228,6 +1228,7 @@ npm run build:prod
 							<li class="tsd-kind-external-module"><a href="modules/_fullpage_index_.html" class="tsd-kind-icon">"fullpage/index"</a></li>
 							<li class="tsd-kind-external-module"><a href="modules/_fullpage_mnfullpage_options_class_.html" class="tsd-kind-icon">"fullpage/mn<wbr>Fullpage-<wbr>options.class"</a></li>
 							<li class="tsd-kind-external-module"><a href="modules/_fullpage_mnfullpage_directive_.html" class="tsd-kind-icon">"fullpage/mn<wbr>Fullpage.directive"</a></li>
+							<li class="tsd-kind-external-module"><a href="modules/_fullpage_mnfullpage_module_.html" class="tsd-kind-icon">"fullpage/mn<wbr>Fullpage.module"</a></li>
 							<li class="tsd-kind-external-module"><a href="modules/_fullpage_mnfullpage_service_.html" class="tsd-kind-icon">"fullpage/mn<wbr>Fullpage.service"</a></li>
 							<li class="tsd-kind-external-module"><a href="modules/_index_.html" class="tsd-kind-icon">"index"</a></li>
 							<li class="tsd-kind-external-module"><a href="modules/_polyfills_browser_.html" class="tsd-kind-icon">"polyfills.browser"</a></li>

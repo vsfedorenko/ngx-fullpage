@@ -11,12 +11,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var $ = require('jquery');
-require('fullpage.js');
-var mnFullpage_options_class_1 = require('./mnFullpage-options.class');
+var core_1 = require("@angular/core");
+var $ = require("jquery");
+require("fullpage.js");
+var mnFullpage_options_class_1 = require("./mnFullpage-options.class");
 var DIRECTIVE_NAME = 'mnFullpage';
-var MnFullpageDirective = (function () {
+var MnFullpageDirective = MnFullpageDirective_1 = (function () {
     /**
      * Default public constructor
      *
@@ -32,8 +32,8 @@ var MnFullpageDirective = (function () {
      * @returns {string} FullpageOption class option (property) name
      */
     MnFullpageDirective.extractName = function (property) {
-        return property[MnFullpageDirective.propertyPrefix.length].toLowerCase()
-            + property.substring(MnFullpageDirective.propertyPrefix.length + 1);
+        return property[MnFullpageDirective_1.propertyPrefix.length].toLowerCase()
+            + property.substring(MnFullpageDirective_1.propertyPrefix.length + 1);
     };
     /**
      * Perform actions on init
@@ -56,7 +56,7 @@ var MnFullpageDirective = (function () {
              * FullpageDirective.propertyPrefix static property) then skip this property and
              * continue the cycle
              */
-            if (!property.startsWith(MnFullpageDirective.propertyPrefix)) {
+            if (!property.startsWith(MnFullpageDirective_1.propertyPrefix)) {
                 continue;
             }
             /**
@@ -64,7 +64,7 @@ var MnFullpageDirective = (function () {
              *
              * @type {string} option name
              */
-            var option = MnFullpageDirective.extractName(property);
+            var option = MnFullpageDirective_1.extractName(property);
             /**
              * If options is already defined skip it
              */
@@ -81,202 +81,203 @@ var MnFullpageDirective = (function () {
          */
         $(this._el.nativeElement).fullpage(this.options);
     };
-    /**
-     * Prefix for directive-relative properties
-     *
-     * @type {string} prefix
-     */
-    MnFullpageDirective.propertyPrefix = "" + DIRECTIVE_NAME;
-    __decorate([
-        core_1.Input("" + DIRECTIVE_NAME), 
-        __metadata('design:type', mnFullpage_options_class_1.MnFullpageOptions)
-    ], MnFullpageDirective.prototype, "options", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageMenu", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageLockAnchors", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], MnFullpageDirective.prototype, "mnFullpageAnchors", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageNavigation", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageNavigationPosition", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], MnFullpageDirective.prototype, "mnFullpageNavigationTooltips", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageShowActiveTooltip", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageSlidesNavigation", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageSlidesNavPosition", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageCss3", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageScrollingSpeed", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageAutoScrolling", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageFitToSection", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageFitToSectionDelay", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageScrollBar", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageEasing", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageEasingcss3", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageLoopBottom", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageLoopTop", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageLoopHorizontal", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageContinuousVertical", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageNormalScrollElements", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageScrollOverflow", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageTouchSensitivity", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageNormalScrollElementTouchThreshold", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageKeyboardScrolling", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageAnimateAnchor", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageRecordHistory", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageControlArrows", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageVerticalCentered", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], MnFullpageDirective.prototype, "mnFullpageResize", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], MnFullpageDirective.prototype, "mnFullpageSectionsColor", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpagePaddingTop", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpagePaddingBottom", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageFixedElements", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageResponsiveWidth", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], MnFullpageDirective.prototype, "mnFullpageResponsiveHeight", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageSectionSelector", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], MnFullpageDirective.prototype, "mnFullpageSlideSelector", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageAfterLoad", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageOnLeave", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageAfterRender", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageAfterResize", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageAfterSlideLoad", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Function)
-    ], MnFullpageDirective.prototype, "mnFullpageOnSlideLeave", void 0);
-    MnFullpageDirective = __decorate([
-        core_1.Directive({
-            selector: "[" + DIRECTIVE_NAME + "]"
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], MnFullpageDirective);
     return MnFullpageDirective;
 }());
+/**
+ * Prefix for directive-relative properties
+ *
+ * @type {string} prefix
+ */
+MnFullpageDirective.propertyPrefix = "" + DIRECTIVE_NAME;
+__decorate([
+    core_1.Input("" + DIRECTIVE_NAME),
+    __metadata("design:type", mnFullpage_options_class_1.MnFullpageOptions)
+], MnFullpageDirective.prototype, "options", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageMenu", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageLockAnchors", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], MnFullpageDirective.prototype, "mnFullpageAnchors", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageNavigation", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageNavigationPosition", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], MnFullpageDirective.prototype, "mnFullpageNavigationTooltips", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageShowActiveTooltip", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageSlidesNavigation", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageSlidesNavPosition", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageCss3", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageScrollingSpeed", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageAutoScrolling", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageFitToSection", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageFitToSectionDelay", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageScrollBar", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageEasing", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageEasingcss3", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageLoopBottom", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageLoopTop", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageLoopHorizontal", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageContinuousVertical", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageNormalScrollElements", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageScrollOverflow", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageTouchSensitivity", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageNormalScrollElementTouchThreshold", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageKeyboardScrolling", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageAnimateAnchor", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageRecordHistory", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageControlArrows", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageVerticalCentered", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], MnFullpageDirective.prototype, "mnFullpageResize", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], MnFullpageDirective.prototype, "mnFullpageSectionsColor", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpagePaddingTop", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpagePaddingBottom", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageFixedElements", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageResponsiveWidth", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], MnFullpageDirective.prototype, "mnFullpageResponsiveHeight", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageSectionSelector", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], MnFullpageDirective.prototype, "mnFullpageSlideSelector", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageAfterLoad", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageOnLeave", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageAfterRender", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageAfterResize", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageAfterSlideLoad", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Function)
+], MnFullpageDirective.prototype, "mnFullpageOnSlideLeave", void 0);
+MnFullpageDirective = MnFullpageDirective_1 = __decorate([
+    core_1.Directive({
+        selector: "[" + DIRECTIVE_NAME + "]"
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], MnFullpageDirective);
 exports.MnFullpageDirective = MnFullpageDirective;
+var MnFullpageDirective_1;
