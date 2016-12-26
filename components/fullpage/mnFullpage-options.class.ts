@@ -2,9 +2,6 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
  */
 
-import {Injectable} from '@angular/core';
-
-@Injectable()
 export class MnFullpageOptions {
 
     /**
@@ -493,6 +490,7 @@ export class MnFullpageOptions {
      */
     public onSlideLeave: (anchorLink: string, index: number, slideIndex: number,
                           direction: string, nextSlideIndex: number) => void;
+
 
     /**
      * Public default constructor
