@@ -94,7 +94,7 @@
     "rimraf": "^2.5.4",
     "rxjs": "^5.0.2",
     "sass-loader": "^4.1.1",
-    "source-map-loader": "^0.1.5",
+    "source-map-loader": "^0.1.6",
     "string-replace-loader": "github:gdi2290/string-replace-loader",
     "style-loader": "^0.13.1",
     "to-string-loader": "^1.1.5",
