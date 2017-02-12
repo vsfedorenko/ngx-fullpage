@@ -102,7 +102,7 @@
     "ts-helpers": "1.1.2",
     "ts-node": "^1.7.2",
     "tslint": "4.2.0",
-    "tslint-loader": "^3.3.0",
+    "tslint-loader": "^3.4.1",
     "typedoc": "^0.5.1",
     "typescript": "2.1.4",
     "typings": "^2.1.0",
