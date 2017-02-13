@@ -92,7 +92,7 @@
     "raw-loader": "0.5.1",
     "remap-istanbul": "^0.8.4",
     "rimraf": "^2.5.4",
-    "rxjs": "^5.0.2",
+    "rxjs": "^5.1.1",
     "sass-loader": "^4.1.1",
     "source-map-loader": "^0.1.5",
     "string-replace-loader": "github:gdi2290/string-replace-loader",
