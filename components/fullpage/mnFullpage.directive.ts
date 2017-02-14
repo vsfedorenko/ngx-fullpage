@@ -4,29 +4,27 @@
 
 import {Directive, Input, OnInit, ElementRef} from '@angular/core';
 
-import * as $ from 'jquery';
+import * as $ from 'jquery';  
 import 'fullpage.js';
 
-import {MnFullpageOptions} from './mnFullpage-options.class';
+import { MnFullpageOptions } from './mnFullpage-options.class';
 
-const DIRECTIVE_NAME = 'mnFullpage';
+
+
 
 @Directive({
-    selector: `[${DIRECTIVE_NAME}]`
+    selector: '[mnFullpage]',
 })
 export class MnFullpageDirective implements OnInit {
 
-    /**
-     * Prefix for directive-relative properties
-     *
-     * @type {string} prefix
-     */
-    private static propertyPrefix: string = `${DIRECTIVE_NAME}`;
-
+    
+    
+    private static propertyPrefix: string = 'mnFullpage';
+    
     /**
      * Directive options reference
      */
-    @Input(`${DIRECTIVE_NAME}`) public options: MnFullpageOptions;
+    @Input('mnFullpage') public options: MnFullpageOptions;
 
     /**
      * Index signature
@@ -135,6 +133,8 @@ export class MnFullpageDirective implements OnInit {
 
     private _el: ElementRef;
 
+    
+
     /**
      * Static method for option name retrieving
      *
@@ -142,8 +142,8 @@ export class MnFullpageDirective implements OnInit {
      * @returns {string} FullpageOption class option (property) name
      */
     private static extractName(property: string) {
-        return property[MnFullpageDirective.propertyPrefix.length].toLowerCase()
-            + property.substring(MnFullpageDirective.propertyPrefix.length + 1);
+        return property[this.propertyPrefix.length].toLowerCase()
+            + property.substring(this.propertyPrefix.length + 1);
     }
 
     /**
@@ -153,6 +153,7 @@ export class MnFullpageDirective implements OnInit {
      */
     public constructor(el: ElementRef) {
         this._el = el;
+
     }
 
     /**
