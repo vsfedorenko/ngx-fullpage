@@ -80,7 +80,7 @@
     "karma-mocha-reporter": "^2.2.1",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-spec-reporter": "0.0.26",
+    "karma-spec-reporter": "0.0.27",
     "karma-webpack": "1.8.1",
     "lodash.template": "^4.4.0",
     "mocha": "^3.2.0",
