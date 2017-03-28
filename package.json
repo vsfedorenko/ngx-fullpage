@@ -96,7 +96,7 @@
     "sass-loader": "^4.1.1",
     "source-map-loader": "^0.1.5",
     "string-replace-loader": "github:gdi2290/string-replace-loader",
-    "style-loader": "^0.13.1",
+    "style-loader": "^0.16.1",
     "to-string-loader": "^1.1.5",
     "traverse": "^0.6.6",
     "ts-helpers": "1.1.2",
