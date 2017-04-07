@@ -46,7 +46,7 @@
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.18.0",
-    "babel-register": "^6.18.0",
+    "babel-register": "^6.24.1",
     "changelog": "^1.0.7",
     "clean-webpack-plugin": "^0.1.14",
     "codeclimate-test-reporter": "^0.4.0",
