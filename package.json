@@ -105,7 +105,7 @@
     "tslint-loader": "^3.3.0",
     "typedoc": "^0.5.1",
     "typescript": "2.1.4",
-    "typings": "^2.1.0",
+    "typings": "^2.1.1",
     "unminified-webpack-plugin": "^1.2.0",
     "url-loader": "^0.5.7",
     "webpack": "2.1.0-beta.21",
