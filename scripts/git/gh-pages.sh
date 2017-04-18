@@ -14,7 +14,9 @@
       SOURCE="$(readlink "$SOURCE")"
       [[ ${SOURCE} != /* ]] && SOURCE="$THIS_SCRIPT_DIR/$SOURCE"
     done
+
     THIS_SCRIPT_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+    PROJECT_ROOT_DIRECTORY=${THIS_SCRIPT_DIR}/../..
 
 # /1 ####################################################################################################
 #  2 #################################### SCRIPT ENVIRONMENT VALIDATION #################################
@@ -34,21 +36,29 @@
 # /3 ####################################################################################################
 #  4 ############################################# SCRIPT ###############################################
 
-    mkdir ${PROJECT_PUBLISH_DIR}
-    cd ${PROJECT_PUBLISH_DIR}
+    WORKING_DIR=${PROJECT_ROOT_DIRECTORY}/${PROJECT_PUBLISH_DIR_NAME}/gh-pages
+    mkdir -p ${WORKING_DIR}
+
+    cd ${WORKING_DIR}
+    echo "Current dir: $(pwd)"
+
     git init
     git remote add origin ${REPOSITORY}
-    git fetch
-    git checkout -t origin/${GIT_PAGES_TARGET_BRANCH} || git checkout --orphan ${GIT_PAGES_TARGET_BRANCH}
-    rm -rf ./**/* || exit 0
-    cd ..
+    git fetch --all --prune
+    git checkout --track origin/${GIT_PAGES_TARGET_BRANCH} \
+        || git checkout --orphan ${GIT_PAGES_TARGET_BRANCH}
+
+    # Clean directory
+    rm -rf *
 
     # Copy content from build directory to publish directory
-    cp -r ${PROJECT_BUILD_DIR}/demo ${PROJECT_PUBLISH_DIR}/
+    cp -r ${PROJECT_ROOT_DIRECTORY}/${PROJECT_BUILD_DIR_NAME}/demo/* ${WORKING_DIR}/
 
-    cd ${PROJECT_PUBLISH_DIR}
     echo "Content to be deployed: $(pwd)"
     ${THIS_SCRIPT_DIR}/../utils/tree.sh # Print directory content
+
+    cd ${WORKING_DIR}
+    echo "Current dir: $(pwd)"
 
     git config user.name "Travis CI"
     git config user.email "$COMMIT_AUTHOR_EMAIL"
@@ -57,7 +67,9 @@
     git commit -m "Deploy to GitHub Pages: ${SHA_HASH}"
 
     # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
-    openssl aes-256-cbc -K $encrypted_66be4555b98b_key -iv $encrypted_66be4555b98b_iv -in ${THIS_SCRIPT_DIR}/keys/deploy_key.enc -out deploy_key -d
+    openssl aes-256-cbc -K $encrypted_26052853ecfe_key -iv $encrypted_26052853ecfe_iv \
+            -in ${THIS_SCRIPT_DIR}/keys/deploy_key.enc -out deploy_key -d
+
     chmod 600 deploy_key
     eval `ssh-agent -s`
     ssh-add deploy_key
