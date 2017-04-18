@@ -35,16 +35,18 @@
 #  4 ############################################# SCRIPT ###############################################
 
     mkdir ${PROJECT_PUBLISH_DIR}
-    cd ${PROJECT_PUBLISH_DIR}
+    cd ${PROJECT_PUBLISH_DIR} && echo "Current dir: $(pwd)"
+
     git init
     git remote add origin ${REPOSITORY}
     git fetch
     git checkout -t origin/${GIT_PAGES_TARGET_BRANCH} || git checkout --orphan ${GIT_PAGES_TARGET_BRANCH}
-    rm -rf ./**/* || exit 0
-    cd ..
+    rm -rf * && mv .git git && rm -rf .* && mv git .git && rm -rf git || exit -1
+
+    cd .. && echo "Current dir: $(pwd)"
 
     # Copy content from build directory to publish directory
-    cp -r ${PROJECT_BUILD_DIR}/demo ${PROJECT_PUBLISH_DIR}/
+    cp -r ${PROJECT_BUILD_DIR}/demo/* ${PROJECT_PUBLISH_DIR}/
 
     cd ${PROJECT_PUBLISH_DIR}
     echo "Content to be deployed: $(pwd)"
