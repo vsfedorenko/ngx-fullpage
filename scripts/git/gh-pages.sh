@@ -44,7 +44,7 @@
     cd ..
 
     # Copy content from build directory to publish directory
-    cp -r ${PROJECT_BUILD_DIR}/* ${PROJECT_PUBLISH_DIR}/
+    cp -r ${PROJECT_BUILD_DIR}/demo ${PROJECT_PUBLISH_DIR}/
 
     cd ${PROJECT_PUBLISH_DIR}
     echo "Content to be deployed: $(pwd)"

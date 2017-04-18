@@ -1,48 +1,36 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "outDir": "./build",
+    "baseUrl": "sources",
+    "sourceMap": true,
     "declaration": true,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "strictNullChecks": false,
-    "sourceMap": false,
-    "listFiles": true,
-    "removeComments": false,
-    "noEmitHelpers": false,
-    "outDir": "build",
-    "noLib": false,
-    "baseUrl": ".",
-    "paths": {
-    },
-    "lib": [
-      "dom",
-      "es6"
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
     ],
-    "types": [
-      "hammerjs",
-      "jasmine",
-      "node",
-      "webpack",
-      "jquery"
-    ]
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "paths": {
+      "@fullpage/*": [
+        "components/fullpage/*"
+      ],
+      "@demo/*": [
+        "demo/*"
+      ]
+    }
   },
   "exclude": [
-    "node_modules",
-    "build",
-
-    "test",
-    "demo"
-  ],
-  "awesomeTypescriptLoaderOptions": {
-    "forkChecker": true,
-    "useWebpackText": true
-  },
-  "compileOnSave": false,
-  "buildOnSave": false,
-  "atom": {
-    "rewriteTsconfig": false
-  }
+    "**/node_modules/*",
+    "**/build/*",
+    "sources/demo/**",
+    "sources/test.ts",
+    "*/**.spec.ts",
+    "**/e2e/*"
+  ]
 }

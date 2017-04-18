@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# install module via npm
+npm install ng2-fullpage --save
+
+# you are done!
