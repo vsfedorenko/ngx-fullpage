@@ -1,6 +1,6 @@
 {
   "name": "ngx-fullpage",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Angular 2(4) fullpage scrolling",
   "keywords": [
     "angular",
@@ -55,18 +55,18 @@
     "typedoc": "typedoc"
   },
   "dependencies": {
-    "fullpage.js": ">=2.9.4",
-    "jquery": "^3.2.1"
+    "fullpage.js": ">=2.7.9",
+    "jquery": ">=1.6.0"
   },
   "devDependencies": {
     "@angular/cli": "1.0.0",
-    "@angular/common": "^4.0.2",
-    "@angular/compiler": "^4.0.2",
-    "@angular/compiler-cli": "^4.0.2",
-    "@angular/core": "^4.0.2",
-    "@angular/platform-browser": "^4.0.2",
-    "@angular/platform-browser-dynamic": "^4.0.2",
-    "@angular/router": "^4.0.2",
+    "@angular/common": ">=2.*",
+    "@angular/compiler": ">=2.*",
+    "@angular/compiler-cli": ">=2.*",
+    "@angular/core": ">=2.*",
+    "@angular/platform-browser": ">=2.*",
+    "@angular/platform-browser-dynamic": ">=2.*",
+    "@angular/router": ">=3.*",
     "@types/jasmine": "2.5.47",
     "@types/jquery": "^2.0.41",
     "@types/node": "^7.0.13",
@@ -83,16 +83,16 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "npm-check-updates": "^2.11.0",
     "protractor": "~5.1.1",
-    "rxjs": "^5.3.0",
+    "rxjs": ">=5.*",
     "sort-package-json": "^1.6.0",
     "ts-node": "~3.0.2",
     "tslint": "^4.5.0",
     "typedoc": "^0.5.10",
     "typescript": "~2.2.2",
-    "zone.js": "^0.8.5"
+    "zone.js": ">=0.6.21"
   },
   "peerDependencies": {
-    "@angular/core": "^4.0.2"
+    "@angular/core": ">=2.*"
   },
   "maintainers": [
     {
