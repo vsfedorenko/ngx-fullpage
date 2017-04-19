@@ -1,6 +1,6 @@
 {
   "name": "ngx-fullpage",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Angular 2 fullpage scrolling",
   "keywords": [
     "angular",
@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "fullpage.js": ">=2.7.9",
-    "jquery": ">=2.2.3"
+    "jquery": "*"
   },
   "devDependencies": {
     "@angular/cli": "1.0.0",
