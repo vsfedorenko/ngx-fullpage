@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MnFullpageService } from 'ng2-fullpage';
+import { MnFullpageService } from 'ngx-fullpage';
 
 @Component({
     selector: 'app',
@@ -14,7 +14,7 @@ import { MnFullpageService } from 'ng2-fullpage';
 })
 export class AppComponent {
 
-     constructor(private fullpageService: MnFullpageService) {
+     constructor(public fullpageService: MnFullpageService) {
      }
 
 }

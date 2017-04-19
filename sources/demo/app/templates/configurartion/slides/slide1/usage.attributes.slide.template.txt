@@ -2,8 +2,8 @@
      [mnFullpageNavigation]="true"
      [mnFullpageKeyboardScrolling]="true"
      [mnFullpageSlidesNavigation]="true"
-     [mnFullpageSlidesNavPosition]="bottom"
-     [mnFullpageControlArrows]="false">
+     [mnFullpageControlArrows]="false"
+     mnFullpageSlidesNavPosition="bottom">
 
     <div id="section1" class="section fp-section fp-table">
         <div class="fp-tableCell">

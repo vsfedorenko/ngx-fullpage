@@ -1,17 +1,17 @@
 import { Component, Output } from '@angular/core';
-import { MnFullpageOptions } from 'ng2-fullpage';
+import { MnFullpageOptions } from 'ngx-fullpage';
 
 @Component({
     selector: 'app',
     template: `
-        <div [mnFullpage]="options" [mnFullpageControlArrows]="false">
+        <div mnFullpage="options" [mnFullpageControlArrows]="false">
             <div class="section"> Some section 1 </div>
             <div class="section"> Some section 2 </div>
         </div>
     `
 })
 export class AppComponent {
-    @Output() private options: MnFullpageOptions = new MnFullpageOptions({
+    @Output() public options: MnFullpageOptions = new MnFullpageOptions({
         navigation: true,
         keyboardScrolling: true
     });

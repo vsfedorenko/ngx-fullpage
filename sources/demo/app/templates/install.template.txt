@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # install module via npm
-npm install ng2-fullpage --save
+npm install ngx-fullpage --save
 
-# you are done!
+# import 'jQuery' and 'fullpage.js'
+# node modules in your project
+
+# no typings required! you are done!
