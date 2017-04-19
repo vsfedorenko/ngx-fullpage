@@ -17,3 +17,8 @@ Updated for Angular 4.X.X
 ## Demo
 
 Check out the live demo [HERE](http://meiblorn.github.io/ngx-fullpage)
+
+## Docs 
+
+For docs checkout our [WIKI](https://github.com/meiblorn/ngx-fullpage/wiki)
+
