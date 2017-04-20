@@ -41,3 +41,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# NGC
+*.ngfactory.ts
+*.ngsummary.json
