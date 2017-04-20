@@ -7,6 +7,7 @@ This is an Angular 2(4) [fullPage.js](https://github.com/alvarotrigo/fullPage.js
 [![npm version](https://badge.fury.io/js/ngx-fullpage.svg)](https://badge.fury.io/js/ngx-fullpage)
 [![Dependency Status](https://david-dm.org/meiblorn/ngx-fullpage.svg)](https://david-dm.org/meiblorn/ngx-fullpage)
 [![devDependency Status](https://david-dm.org/meiblorn/ngx-fullpage/dev-status.svg)](https://david-dm.org/meiblorn/ngx-fullpage#info=devDependencies)
+[![peerDependency Status](https://david-dm.org/meiblorn/ngx-fullpage/peer-status.svg)](https://david-dm.org/meiblorn/ngx-fullpage?type=peer)
 [![Test Coverage](https://codeclimate.com/github/meiblorn/ngx-fullpage/badges/coverage.svg)](https://codeclimate.com/github/meiblorn/ngx-fullpage/coverage)
 [![Code Climate](https://codeclimate.com/github/meiblorn/ngx-fullpage/badges/gpa.svg)](https://codeclimate.com/github/meiblorn/ngx-fullpage)
 
