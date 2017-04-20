@@ -1,6 +1,6 @@
 {
   "name": "ngx-fullpage",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "Angular 2(4) fullpage scrolling",
   "keywords": [
     "angular",
@@ -27,7 +27,7 @@
     "build:demo:docker": "npm run build:prod:aot && npm run docker:build",
     "build:demo:prod": "ng build -prod --aot=false",
     "build:dev": "npm run build:demo:dev && npm run build:lib",
-    "build:lib": "npm run tsc",
+    "build:lib": "npm run ngc",
     "build:prod": "npm run build:demo:prod && npm run build:lib",
     "build:release": "npm run build:prod && npm run docs:generate",
     "ci": "npm run test && npm run e2e",
@@ -46,6 +46,7 @@
     "lint": "ng lint",
     "ncu": "ncu -ua",
     "ng": "ng",
+    "ngc": "ngc",
     "sort": "sort-package-json",
     "start": "ng serve",
     "start:docker": "npm run docker:stop && npm run docker:clean && npm run build:docker && npm run docker:start",
