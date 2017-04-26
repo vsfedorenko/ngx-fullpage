@@ -88,7 +88,7 @@
     "sort-package-json": "^1.6.0",
     "ts-node": "~3.0.2",
     "tslint": "^5.1.0",
-    "typedoc": "^0.5.10",
+    "typedoc": "^0.6.0",
     "typescript": "~2.2.2",
     "zone.js": ">=0.6.21"
   },
