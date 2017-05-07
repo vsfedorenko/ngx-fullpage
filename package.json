@@ -1,6 +1,6 @@
 {
   "name": "ngx-fullpage",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "description": "Angular 2(4) fullpage scrolling",
   "keywords": [
     "angular",
@@ -61,13 +61,13 @@
   },
   "devDependencies": {
     "@angular/cli": "1.0.2",
-    "@angular/common": ">=2.*",
-    "@angular/compiler": ">=2.*",
-    "@angular/compiler-cli": ">=2.*",
-    "@angular/core": ">=2.*",
-    "@angular/platform-browser": ">=2.*",
-    "@angular/platform-browser-dynamic": ">=2.*",
-    "@angular/router": ">=3.*",
+    "@angular/common": ">=4.*",
+    "@angular/compiler": ">=4.*",
+    "@angular/compiler-cli": ">=4.*",
+    "@angular/core": ">=4.*",
+    "@angular/platform-browser": ">=4.*",
+    "@angular/platform-browser-dynamic": ">=4.*",
+    "@angular/router": ">=4.*",
     "@types/jasmine": "2.5.47",
     "@types/jquery": "^2.0.43",
     "@types/node": "^7.0.18",
