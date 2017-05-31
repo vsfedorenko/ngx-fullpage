@@ -60,7 +60,7 @@
     "jquery": ">=3.2.1"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.6",
+    "@angular/cli": "1.1.0",
     "@angular/common": ">=4.*",
     "@angular/compiler": ">=4.*",
     "@angular/compiler-cli": ">=4.*",
