@@ -69,7 +69,7 @@
     "@angular/platform-browser-dynamic": ">=4.*",
     "@angular/router": ">=4.*",
     "@types/jasmine": "2.5.49",
-    "@types/jquery": "^2.0.43",
+    "@types/jquery": "^3.2.0",
     "@types/node": "^7.0.18",
     "codeclimate-test-reporter": "^0.4.1",
     "codelyzer": "~3.0.1",
