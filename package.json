@@ -70,7 +70,7 @@
     "@angular/router": ">=4.*",
     "@types/jasmine": "2.5.49",
     "@types/jquery": "^2.0.43",
-    "@types/node": "^7.0.18",
+    "@types/node": "^8.0.0",
     "codeclimate-test-reporter": "^0.4.1",
     "codelyzer": "~3.0.1",
     "core-js": "^2.4.1",
