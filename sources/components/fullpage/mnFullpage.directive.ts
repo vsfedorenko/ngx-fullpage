@@ -199,6 +199,12 @@ export class MnFullpageDirective implements OnInit {
              */
             this.options[ option ] = this[ property ];
         }
+    }
+
+    /**
+     * Perform actions after init
+     */
+    ngAfterViewInit(): void {
 
         /**
          * Enable fullpage for the element
