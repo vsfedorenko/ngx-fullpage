@@ -149,10 +149,3 @@ interface JQueryFullpage extends JQuery {
     fullpage: (options?: Object) => void;
 }
 
-/**
- * Extends jQuery static interface
- * i.e: To use $.fullpage()
- */
-interface JQueryFullpageStatic extends JQueryStatic {
-    fn: Fn;
-}

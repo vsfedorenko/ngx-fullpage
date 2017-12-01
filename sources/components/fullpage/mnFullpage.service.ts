@@ -12,7 +12,7 @@ export class MnFullpageService {
      * Scrolls one section up
      */
     public moveSectionUp(): void {
-        $.fn.fullpage.moveSectionUp();
+        (<any>$).fn.fullpage.moveSectionUp();
     }
 
     //noinspection JSMethodCanBeStatic
@@ -20,7 +20,7 @@ export class MnFullpageService {
      * Scrolls one section down
      */
     public moveSectionDown() {
-        $.fn.fullpage.moveSectionDown();
+        (<any>$).fn.fullpage.moveSectionDown();
     }
 
     //noinspection JSMethodCanBeStatic
@@ -32,7 +32,7 @@ export class MnFullpageService {
      * @param slide
      */
     public moveTo(section: string | number, slide?: number) {
-        $.fn.fullpage.moveTo(section, slide);
+        (<any>$).fn.fullpage.moveTo(section, slide);
     }
 
     //noinspection JSMethodCanBeStatic
@@ -44,7 +44,7 @@ export class MnFullpageService {
      * @param slide
      */
     public silentMoveTo(section: string | number, slide?: number) {
-        $.fn.fullpage.silentMoveTo(section, slide);
+        (<any>$).fn.fullpage.silentMoveTo(section, slide);
     }
 
     //noinspection JSMethodCanBeStatic
@@ -52,7 +52,7 @@ export class MnFullpageService {
      * Scrolls the horizontal slider of the current section to the next slide
      */
     public moveSlideRight() {
-        $.fn.fullpage.moveSlideRight();
+        (<any>$).fn.fullpage.moveSlideRight();
     }
 
     //noinspection JSMethodCanBeStatic
@@ -60,7 +60,7 @@ export class MnFullpageService {
      * Scrolls the horizontal slider of the current section to the previous slide
      */
     public moveSlideLeft() {
-        $.fn.fullpage.moveSlideLeft();
+        (<any>$).fn.fullpage.moveSlideLeft();
     }
 
     //noinspection JSMethodCanBeStatic
@@ -75,7 +75,7 @@ export class MnFullpageService {
      * @param enable
      */
     public setAutoScrolling(enable: boolean) {
-        $.fn.fullpage.setAutoScrolling(enable);
+        (<any>$).fn.fullpage.setAutoScrolling(enable);
     }
 
     //noinspection JSMethodCanBeStatic
@@ -86,7 +86,7 @@ export class MnFullpageService {
      * @param enable
      */
     public setFitToSection(enable: boolean) {
-        $.fn.fullpage.setFitToSection(enable);
+        (<any>$).fn.fullpage.setFitToSection(enable);
     }
 
     //noinspection JSMethodCanBeStatic
@@ -97,7 +97,7 @@ export class MnFullpageService {
      * @param enable
      */
     public setLockAnchors(enable: boolean) {
-        $.fn.fullpage.setLockAnchors(enable);
+        (<any>$).fn.fullpage.setLockAnchors(enable);
     }
 
     //noinspection JSMethodCanBeStatic
@@ -116,7 +116,7 @@ export class MnFullpageService {
      * @param directions
      */
     public setAllowScrolling(allow: boolean, directions?: string) {
-        $.fn.fullpage.setAllowScrolling(allow, directions);
+        (<any>$).fn.fullpage.setAllowScrolling(allow, directions);
     }
 
     //noinspection JSMethodCanBeStatic
@@ -133,7 +133,7 @@ export class MnFullpageService {
      * @param directions
      */
     public setKeyboardScrolling(allow: boolean, directions?: string) {
-        $.fn.fullpage.setKeyboardScrolling(allow, directions);
+        (<any>$).fn.fullpage.setKeyboardScrolling(allow, directions);
     }
 
     //noinspection JSMethodCanBeStatic
@@ -143,7 +143,7 @@ export class MnFullpageService {
      * @param enable
      */
     public setRecordHistory(enable: boolean) {
-        $.fn.fullpage.setRecordHistory(enable);
+        (<any>$).fn.fullpage.setRecordHistory(enable);
     }
 
     //noinspection JSMethodCanBeStatic
@@ -153,7 +153,7 @@ export class MnFullpageService {
      * @param milliseconds
      */
     public setScrollingSpeed(milliseconds: number) {
-        $.fn.fullpage.setScrollingSpeed(milliseconds);
+        (<any>$).fn.fullpage.setScrollingSpeed(milliseconds);
     }
 
     //noinspection JSMethodCanBeStatic
@@ -168,7 +168,7 @@ export class MnFullpageService {
      * @param type
      */
     public destroy(type: string) {
-        $.fn.fullpage.destroy(type);
+        (<any>$).fn.fullpage.destroy(type);
     }
 
     //noinspection JSMethodCanBeStatic
@@ -178,7 +178,7 @@ export class MnFullpageService {
      * DOM structure of the site.
      */
     public reBuild() {
-        $.fn.fullpage.reBuild();
+        (<any>$).fn.fullpage.reBuild();
     }
 
 }

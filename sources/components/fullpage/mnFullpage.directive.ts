@@ -4,6 +4,8 @@
 
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 import { MnFullpageOptions } from './mnFullpage-options.class';
+import * as $ from 'jquery';
+import 'fullpage.js';
 
 const DIRECTIVE_NAME = 'mnFullpage';
 
