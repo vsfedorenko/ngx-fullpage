@@ -2,7 +2,7 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
  */
 
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, AfterViewInit } from '@angular/core';
 import { MnFullpageOptions } from './mnFullpage-options.class';
 
 const DIRECTIVE_NAME = 'mnFullpage';
@@ -10,7 +10,7 @@ const DIRECTIVE_NAME = 'mnFullpage';
 @Directive({
     selector: '[' + DIRECTIVE_NAME + ']'
 })
-export class MnFullpageDirective implements OnInit {
+export class MnFullpageDirective implements OnInit, AfterViewInit {
 
     /**
      * Prefix for directive-relative properties
@@ -153,6 +153,17 @@ export class MnFullpageDirective implements OnInit {
         this._el = el;
     }
 
+
+    /**
+     * Perform fullpage after the view finish rendering
+     */
+    ngAfterViewInit(): void {
+
+        /**
+         * Enable fullpage for the element
+         */
+        (<any>$)(this._el.nativeElement).fullpage(this.options);
+    }
     /**
      * Perform actions on init
      */
@@ -197,11 +208,8 @@ export class MnFullpageDirective implements OnInit {
              */
             this.options[ option ] = this[ property ];
         }
-
-        /**
-         * Enable fullpage for the element
-         */
-        (<any>$)(this._el.nativeElement).fullpage(this.options);
     }
+
+
 
 }
