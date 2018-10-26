@@ -1,55 +1,60 @@
 os:
-  - linux
+- linux
+
 dist: trusty
 
 sudo: false
 
 env:
   global:
-    - ENCRYPTION_LABEL: "26052853ecfe"
-    - COMMIT_AUTHOR_EMAIL: "meiblorn@gmail.com"
+  - COMMIT_AUTHOR_EMAIL: meiblorn@gmail.com
 
 addons:
   apt:
     sources:
-      - google-chrome
+    - google-chrome
     packages:
-      - google-chrome-stable
-      - tree
-
-  code_climate:
-    repo_token:
-      secure: cCpVDCkuWfXusQw4ePvio33Jpsprwft1JbdoGlhwXF0wIVC9YmES5Q7/aXOP2WWqxfG2Ts4peNPJHOQHZXOn0dtdIzmZQMXkbyMQomAYk6gL0+GENEtOqihCRInC4Ej+2rKsBv5xjl5WjAgc/odngMLXr2MvjRNjvZMFmuQexMv87muXdXg6cQTLVV4IqN7KaHjr4U9UZsngf/NaHUGj4qVo+kxoURAKHFMdK4LbdIfr+Vn39EWhDNUhRVehgOSH1a52xBS3o4AvsELdryqaeI6g7ZBwlVltBhKvVRsUBZJ62wmUWV6jru/v2gfBH74oT2KPqGrb2DIkodrARmZV2cvwEAV/I+6sgwWb4EvEBNAcVz/FE58ZDjF17yyC+gcMpLrJS1oleruN3bQFF3ud5W600Ql5BOjqFiMxDS9NEfGiIB7Jm0+Y2F+9ATiG1AHCm30YvaxdwQ85JwXJeslk3hG/MLQIHGUqpYL8UpscHQoIfhbssxabvZ5RyhzAPw3fLDVcMkLkJLssVunkO0Z8/Axk4r+M2gXpJxNi/uzzKNJD3yCWlV8867xbvl6a+aSfSjjxy5JFmM2OpCOnxyV4qFW98ID6DKJOL9CVO3xgCTDcWjr7YUijsQX3SSUfxbFiE8hV0gnIrE/FzCLoYGZ1hdZuqoC/eiQ5258MfplXNrM=
+    - google-chrome-stable
+    - tree
 
 git:
   depth: 5
 
 branches:
   except:
-    - gh-pages
+  - gh-pages
 
 language: node_js
+
 node_js:
-  - stable
+- stable
 
 cache:
   directories:
-  - "node_modules"
+  - node_modules
 
 before_install:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 10 # give xvfb some time to start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 10
 
 install:
-  - npm install
+- npm install
+
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
 
 script:
-  - npm run test:ci
-  - npm run build:release
+- npm run test:ci
+- npm run build:release
+
+after_script:
+- ./cc-test-reporter format-coverage $(pwd)/coverage/lcov.info --debug --input-type lcov --output coverage/lcov.json
+- ./cc-test-reporter sum-coverage $(pwd)/coverage/lcov.json --parts 1
+- if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
 
 after_success:
-  - chmod -R a+x scripts
-  - bash ./scripts/git/gh-pages.sh
-  - bash ./scripts/npm/publish.sh
-  - bash ./scripts/npm/codeclimate.sh
+- chmod -R a+x scripts
+- bash ./scripts/git/gh-pages.sh
+- bash ./scripts/npm/publish.sh

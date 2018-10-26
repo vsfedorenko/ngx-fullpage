@@ -21,8 +21,17 @@
 # /1 ####################################################################################################
 #  2 #################################### SCRIPT ENVIRONMENT VALIDATION #################################
 
-    if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$PUBLISH_SOURCE_BRANCH" ]; then
+    if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
         echo "Pull requests and commits to other branches are not eligible for deploy. Skipping ..."
+        exit 0
+    fi
+
+    # Check if it is release or not
+    git show-ref --tags -d | grep ^`git rev-parse --verify HEAD` | sed -e 's,.* refs/tags/,,' -e 's/\^{}//' | grep -Eq ^release-
+    IS_RELEASE=$?
+
+    if [[ ! $IS_RELEASE ]]; then
+        echo "Only releases are deployed. Skipping ..."
         exit 0
     fi
 

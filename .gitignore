@@ -46,3 +46,7 @@ Thumbs.db
 # NGC
 *.ngfactory.ts
 *.ngsummary.json
+
+
+# Codeclimate
+cc-test-reporter
