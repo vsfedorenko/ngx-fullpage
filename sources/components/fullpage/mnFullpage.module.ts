@@ -3,11 +3,16 @@
  */
 
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { MnFullpageService } from './mnFullpage.service';
+import {MnFullpageResponsiveSlides, MnFullpageService} from './mnFullpage.service';
 import { MnFullpageDirective } from './mnFullpage.directive';
+import {MnFullpageOptions} from '@fullpage/mnFullpage-options.class';
+
+
+const PROVIDERS = [ MnFullpageService, MnFullpageOptions, MnFullpageResponsiveSlides ];
 
 @NgModule({
     declarations: [ MnFullpageDirective ],
+    providers: PROVIDERS,
     exports: [ MnFullpageDirective ]
 })
 export class MnFullpageModule {
@@ -15,7 +20,7 @@ export class MnFullpageModule {
     public static forRoot(): ModuleWithProviders {
         return {
             ngModule: MnFullpageModule,
-            providers: [ MnFullpageService ]
+            providers: PROVIDERS
         };
     }
 

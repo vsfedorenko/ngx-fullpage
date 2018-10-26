@@ -3,7 +3,7 @@
 
 Create Beautiful Fullscreen Scrolling websites (now with Angular 2 and above)!
 
-This is an Angular 2(4) [fullPage.js](https://github.com/alvarotrigo/fullPage.js) port library.
+This is an Angular [fullPage.js](https://github.com/alvarotrigo/fullPage.js) port library.
   
 [![npm version](https://badge.fury.io/js/ngx-fullpage.svg)](https://badge.fury.io/js/ngx-fullpage)
 [![Dependency Status](https://david-dm.org/meiblorn/ngx-fullpage.svg)](https://david-dm.org/meiblorn/ngx-fullpage)
@@ -12,9 +12,8 @@ This is an Angular 2(4) [fullPage.js](https://github.com/alvarotrigo/fullPage.js
 [![Test Coverage](https://codeclimate.com/github/meiblorn/ngx-fullpage/badges/coverage.svg)](https://codeclimate.com/github/meiblorn/ngx-fullpage/coverage)
 [![Code Climate](https://codeclimate.com/github/meiblorn/ngx-fullpage/badges/gpa.svg)](https://codeclimate.com/github/meiblorn/ngx-fullpage)
 
------------------------------------
-Updated for Angular 4.X.X 
------------------------------------
+New: 
+ - Project is updated to support Angular 7 !  
 
 ## Demo
 

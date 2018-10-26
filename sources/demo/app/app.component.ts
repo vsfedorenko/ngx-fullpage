@@ -13,7 +13,7 @@ import { MnFullpageOptions, MnFullpageService } from '@fullpage/index';
 })
 export class AppComponent {
 
-    @Input() public options: MnFullpageOptions = new MnFullpageOptions({
+    @Input() public options: MnFullpageOptions = MnFullpageOptions.create({
         controlArrows: false,
         scrollingSpeed: 1000,
 
