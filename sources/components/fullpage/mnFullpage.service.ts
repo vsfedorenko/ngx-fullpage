@@ -2,12 +2,36 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 11/05/16.
  */
 
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+
+@Injectable()
+export class MnFullpageResponsiveSlides {
+    // noinspection JSMethodCanBeStatic
+    /**
+     * Extension of fullpage.js. Requires fullpage.js >= 2.8.5.
+     * Turns horizontal slides into vertical sections.
+     */
+    public toSections(): void {
+        $.fn.fullpage.responsiveSlides.toSections();
+    }
+
+    // noinspection JSMethodCanBeStatic
+    /**
+     * Extension of fullpage.js. Requires fullpage.js >= 2.8.5.
+     * Turns back the original slides (now converted into
+     * vertical sections) into horizontal slides again.
+     */
+    public toSlides(): void {
+        $.fn.fullpage.responsiveSlides.toSlides();
+    }
+}
 
 @Injectable()
 export class MnFullpageService {
 
-    //noinspection JSMethodCanBeStatic
+    responsiveSlides: MnFullpageResponsiveSlides;
+
+    // noinspection JSMethodCanBeStatic
     /**
      * Scrolls one section up
      */
@@ -15,7 +39,7 @@ export class MnFullpageService {
         $.fn.fullpage.moveSectionUp();
     }
 
-    //noinspection JSMethodCanBeStatic
+    // noinspection JSMethodCanBeStatic
     /**
      * Scrolls one section down
      */
@@ -25,11 +49,8 @@ export class MnFullpageService {
 
     //noinspection JSMethodCanBeStatic
     /**
-     * Scrolls the page to the given section and slide.
+     * @description Scrolls the page to the given section and slide.
      * The first slide, the visible one by default, will have index 0.
-     *
-     * @param section
-     * @param slide
      */
     public moveTo(section: string | number, slide?: number) {
         $.fn.fullpage.moveTo(section, slide);
@@ -39,9 +60,6 @@ export class MnFullpageService {
     /**
      * Exactly the same as moveTo but in this case it performs the scroll without animation.
      * A direct jump to the destination.
-     *
-     * @param section
-     * @param slide
      */
     public silentMoveTo(section: string | number, slide?: number) {
         $.fn.fullpage.silentMoveTo(section, slide);
@@ -71,8 +89,6 @@ export class MnFullpageService {
      * or "normal" scrolling of the site. Be careful when combining this option with
      * scrollOverflow set to true, as it might be difficult to scroll using the mouse
      * wheel or the trackpad when the section is scrollable
-     *
-     * @param enable
      */
     public setAutoScrolling(enable: boolean) {
         $.fn.fullpage.setAutoScrolling(enable);
@@ -82,8 +98,6 @@ export class MnFullpageService {
     /**
      * Sets the value for the option fitToSection determining whether to fit
      * the section in the screen or not.
-     *
-     * @param enable
      */
     public setFitToSection(enable: boolean) {
         $.fn.fullpage.setFitToSection(enable);
@@ -93,8 +107,6 @@ export class MnFullpageService {
     /**
      * Sets the value for the option lockAnchors determining whether
      * anchors will have any effect in the URL or not.
-     *
-     * @param enable
      */
     public setLockAnchors(enable: boolean) {
         $.fn.fullpage.setLockAnchors(enable);
@@ -111,9 +123,6 @@ export class MnFullpageService {
      * left, right or a combination of them separated by commas like down,
      * right. It defines the direction for which the scrolling will
      * be enabled or disabled.
-     *
-     * @param allow
-     * @param directions
      */
     public setAllowScrolling(allow: boolean, directions?: string) {
         $.fn.fullpage.setAllowScrolling(allow, directions);
@@ -128,9 +137,6 @@ export class MnFullpageService {
      * left, right or a combination of them separated by commas like down,
      * right. It defines the direction for which the scrolling will be
      * enabled or disabled.
-     *
-     * @param allow
-     * @param directions
      */
     public setKeyboardScrolling(allow: boolean, directions?: string) {
         $.fn.fullpage.setKeyboardScrolling(allow, directions);
@@ -139,8 +145,6 @@ export class MnFullpageService {
     //noinspection JSMethodCanBeStatic
     /**
      * Defines whether to record the history for each hash change in the URL
-     *
-     * @param enable
      */
     public setRecordHistory(enable: boolean) {
         $.fn.fullpage.setRecordHistory(enable);
@@ -149,8 +153,6 @@ export class MnFullpageService {
     //noinspection JSMethodCanBeStatic
     /**
      * Defines the scrolling speed in milliseconds
-     *
-     * @param milliseconds
      */
     public setScrollingSpeed(milliseconds: number) {
         $.fn.fullpage.setScrollingSpeed(milliseconds);
@@ -164,10 +166,8 @@ export class MnFullpageService {
      * type: can be empty or all. If all is passed, the HTML markup and styles
      * used by fullpage.js will be removed. This way the original HTML markup,
      * the one used before any plugin modification is made, will be maintained.
-     *
-     * @param type
      */
-    public destroy(type: string) {
+    public destroy(type) {
         $.fn.fullpage.destroy(type);
     }
 
@@ -181,4 +181,35 @@ export class MnFullpageService {
         $.fn.fullpage.reBuild();
     }
 
+    // noinspection JSMethodCanBeStatic
+    /**
+     * Determines whether or not to fit sections to the viewport or not.
+     * When set to true the current active section will always fill the whole viewport.
+     * Otherwise the user will be free to stop in the middle of a section.
+     */
+    public fitToSection(): void {
+        $.fn.fullpage.fitToSection();
+    }
+
+    // noinspection JSMethodCanBeStatic
+    /**
+     * Adds or remove the possibility of scrolling through sections
+     * by using the mouse wheel or the trackpad.
+     */
+    public setMouseWheelScrolling(active: boolean): void {
+        $.fn.fullpage.setMouseWheelScrolling(active);
+    }
+
+    // noinspection JSMethodCanBeStatic
+    /**
+     * Sets the responsive mode of the page. When set to true the autoScrolling will be turned off and the result
+     * will be exactly the same one as when the responsiveWidth or responsiveHeight options get fired.
+     */
+    public setResponsive(active: boolean): void {
+        $.fn.fullpage.setResponsive(active);
+    }
+
+    constructor(responsiveSlides?: MnFullpageResponsiveSlides) {
+        this.responsiveSlides = responsiveSlides;
+    }
 }

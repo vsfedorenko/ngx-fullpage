@@ -1,17 +1,17 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../build/spec",
-    "module": "commonjs",
-    "target": "es5",
-    "baseUrl": "",
+    "outDir": "../.build/spec",
     "types": [
-      "node",
-      "jasmine"
+      "jquery",
+      "fullpage.js",
+      "jasmine",
+      "node"
     ]
   },
   "files": [
-    "test.ts"
+    "test.ts",
+    "polyfills.ts"
   ],
   "include": [
     "**/*.spec.ts",

@@ -2,22 +2,33 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
  */
 
-import { fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { Component, Input } from '@angular/core';
-import { MnFullpageDirective } from './mnFullpage.directive';
-import { MnFullpageOptions } from './mnFullpage-options.class';
+import {async, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {Component, Input} from '@angular/core';
+import {MnFullpageOptions} from './mnFullpage-options.class';
+import {MnFullpageModule} from '@fullpage/mnFullpage.module';
 
 describe('mnFullpage directive spec', () => {
 
     @Component({
         template: `
             <!--suppress HtmlUnknownAttribute -->
-            <div mnFullpage>Content</div>
+            <div id="content-wrapper" [mnFullpage]="options">
+                <div class="section  fp-section fp-table">
+                    <div class="fp-tableCell">
+                        First section
+                    </div>
+                </div>
+                <div class="section fp-section fp-table">
+                    <div class="fp-tableCell">
+                        Second section
+                    </div>
+                </div>
+            </div>
         `,
     })
     class TestComponent {
 
-        @Input() public options: MnFullpageOptions = new MnFullpageOptions({
+        @Input() public options: MnFullpageOptions = MnFullpageOptions.create({
             controlArrows: false,
             scrollingSpeed: 1000,
             css3: true
@@ -25,28 +36,30 @@ describe('mnFullpage directive spec', () => {
 
     }
 
-    beforeEach(() => {
+    beforeEach(async(() => {
         TestBed.configureTestingModule({
+            imports: [
+                MnFullpageModule.forRoot()
+            ],
             declarations: [
-                MnFullpageDirective,
                 TestComponent
             ]
-        });
-    });
+        }).compileComponents();
+    }));
 
-    it('compiled element should have fullpage-wrapper class, 100% height style', fakeAsync(() => {
+    it('compiled element should have fullpage-wrapper class, 100% height style', () => {
         TestBed.compileComponents().then(() => {
 
             const fixture = TestBed.createComponent(TestComponent);
-            fixture.detectChanges();
-            tick();
+            fixture.autoDetectChanges(true);
 
-            const compiled = fixture.debugElement.nativeElement.children[ 0 ];
+            fixture.whenRenderingDone().then(() => {
+                const compiled = fixture.debugElement.nativeElement.children[0];
 
-            expect(compiled.classList.contains('fullpage-wrapper')).toBe(true);
-            expect(compiled.style.height).toBe('100%');
-
+                expect(compiled.id).toEqual('content-wrapper');
+                expect(compiled.classList.contains('fullpage-wrapper')).toBeTruthy();
+                expect(compiled.style.height).toEqual('100%');
+            });
         });
-    }));
-
+    });
 });
