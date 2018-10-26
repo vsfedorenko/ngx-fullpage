@@ -7,6 +7,14 @@ import { Injectable } from '@angular/core';
 export class MnFullpageOptions {
 
     /**
+     *  This option is compulsory.** If you use fullPage in a non open source project,
+     *  then you should use the license key provided on the purchase of the fullPage Commercial License.
+     *  Otherwise, you can use the string `OPEN-SOURCE-GPLV3-LICENSE`. Please read more about licenses
+     * [here](https://github.com/alvarotrigo/fullPage.js#license) and [on the website](https://alvarotrigo.com/fullPage/pricing/)
+     */
+    licenseKey = 'OPEN-SOURCE-GPLV3-LICENSE';
+
+    /**
      * (default false) A selector can be used to specify the menu to link with the sections. This way the scrolling of the sections will
      * activate the corresponding element in the menu using the class active. This won't generate a menu but will just add the active class
      * to the element in the given menu with the corresponding anchor links. In order to link the elements of the menu with the sections,
