@@ -1,7 +1,7 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../build/e2e",
+    "outDir": "../.build/e2e",
     "module": "commonjs",
     "target": "es5",
     "types": [

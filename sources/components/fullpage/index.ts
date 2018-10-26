@@ -5,4 +5,4 @@
 export { MnFullpageModule } from './mnFullpage.module';
 export { MnFullpageDirective } from './mnFullpage.directive';
 export { MnFullpageOptions } from './mnFullpage-options.class';
-export { MnFullpageService } from './mnFullpage.service';
+export { MnFullpageService, MnFullpageResponsiveSlides } from './mnFullpage.service';

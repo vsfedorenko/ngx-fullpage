@@ -1,13 +1,7 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../build/demo",
-    "module": "es2015",
-    "baseUrl": "",
-    "types": [
-      "node",
-      "jquery"
-    ]
+    "outDir": "../.build/demo"
   },
   "exclude": [
     "test.ts",

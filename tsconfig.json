@@ -1,10 +1,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./build",
+    "outDir": "./.build",
     "baseUrl": "sources",
     "sourceMap": true,
     "declaration": true,
+    "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -13,7 +14,7 @@
       "node_modules/@types"
     ],
     "lib": [
-      "es2016",
+      "es2018",
       "dom"
     ],
     "paths": {
@@ -26,9 +27,8 @@
     }
   },
   "exclude": [
-    "**/node_modules/*",
-    "**/build/*",
-    "sources/demo/**",
+    "**/node_modules/**",
+    "**/.build/**",
     "sources/test.ts",
     "*/**.spec.ts",
     "**/e2e/*"
