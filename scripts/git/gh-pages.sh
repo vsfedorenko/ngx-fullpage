@@ -76,8 +76,9 @@
     git commit -m "Deploy to GitHub Pages: ${SHA_HASH}"
 
     # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
-    openssl aes-256-cbc -K $encrypted_26052853ecfe_key -iv $encrypted_26052853ecfe_iv \
+    openssl aes-256-cbc -K $encrypted_fea7b670d196_key -iv $encrypted_fea7b670d196_iv \
             -in ${THIS_SCRIPT_DIR}/keys/deploy_key.enc -out deploy_key -d
+
 
     chmod 600 deploy_key
     eval `ssh-agent -s`
