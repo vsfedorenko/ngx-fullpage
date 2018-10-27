@@ -12,5 +12,5 @@
   "suppressExcessPropertyErrors": true,
   "suppressImplicitAnyIndexErrors": true,
   "module": "commonjs",
-  "out": "build/demo/docs"
+  "out": ".build/demo/docs"
 }

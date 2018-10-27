@@ -2,10 +2,10 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
  */
 
-import {async, fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {Component, Input} from '@angular/core';
-import {MnFullpageOptions} from './mnFullpage-options.class';
-import {MnFullpageModule} from '@fullpage/mnFullpage.module';
+import { async, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { Component, Input } from '@angular/core';
+import { MnFullpageOptions } from './mnFullpage-options.class';
+import { MnFullpageModule } from '@fullpage/mnFullpage.module';
 
 describe('mnFullpage directive spec', () => {
 
@@ -54,7 +54,7 @@ describe('mnFullpage directive spec', () => {
             fixture.autoDetectChanges(true);
 
             fixture.whenRenderingDone().then(() => {
-                const compiled = fixture.debugElement.nativeElement.children[0];
+                const compiled = fixture.debugElement.nativeElement.children[ 0 ];
 
                 expect(compiled.id).toEqual('content-wrapper');
                 expect(compiled.classList.contains('fullpage-wrapper')).toBeTruthy();

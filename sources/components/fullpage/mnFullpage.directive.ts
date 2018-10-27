@@ -2,8 +2,8 @@
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 12/05/16.
  */
 
-import {AfterViewInit, Directive, ElementRef, Input, OnInit} from '@angular/core';
-import {MnFullpageOptions} from './mnFullpage-options.class';
+import { AfterViewInit, Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { MnFullpageOptions } from './mnFullpage-options.class';
 
 const DIRECTIVE_NAME = 'mnFullpage';
 
@@ -28,7 +28,7 @@ export class MnFullpageDirective implements OnInit, AfterViewInit {
     /**
      * Index signature
      */
-    [key: string]: any;
+    [ key: string ]: any;
 
     /**
      * ---------------------------------------------------------------------------
@@ -176,7 +176,7 @@ export class MnFullpageDirective implements OnInit, AfterViewInit {
      * @returns FullpageOption class option (property) name
      */
     private static extractName(property: string) {
-        return property[MnFullpageDirective.propertyPrefix.length].toLowerCase()
+        return property[ MnFullpageDirective.propertyPrefix.length ].toLowerCase()
             + property.substring(MnFullpageDirective.propertyPrefix.length + 1);
     }
 
@@ -234,14 +234,14 @@ export class MnFullpageDirective implements OnInit, AfterViewInit {
             /**
              * If options is already defined skip it
              */
-            if (this.options[option]) {
+            if (this.options[ option ]) {
                 continue;
             }
 
             /**
              * Set property value to the options object property
              */
-            this.options[option] = this[property];
+            this.options[ option ] = this[ property ];
         }
 
         /**
