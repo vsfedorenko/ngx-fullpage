@@ -1,7 +1,7 @@
 /**
  * @author Meiblorn (Vadim Fedorenko) <meiblorn@gmail.com | admin@meiblorn.com> on 15/05/16.
  */
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class MnFullpageOptions {
@@ -410,7 +410,7 @@ export class MnFullpageOptions {
     /**
      * Index signature
      */
-    [key: string]: any;
+    [ key: string ]: any;
 
     /**
      * Public factory method

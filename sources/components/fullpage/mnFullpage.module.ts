@@ -3,9 +3,9 @@
  */
 
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import {MnFullpageResponsiveSlides, MnFullpageService} from './mnFullpage.service';
+import { MnFullpageResponsiveSlides, MnFullpageService } from './mnFullpage.service';
 import { MnFullpageDirective } from './mnFullpage.directive';
-import {MnFullpageOptions} from '@fullpage/mnFullpage-options.class';
+import { MnFullpageOptions } from './mnFullpage-options.class';
 
 
 const PROVIDERS = [ MnFullpageService, MnFullpageOptions, MnFullpageResponsiveSlides ];

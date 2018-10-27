@@ -29,6 +29,7 @@
   "exclude": [
     "**/node_modules/**",
     "**/.build/**",
+    "sources/demo/**",
     "sources/test.ts",
     "*/**.spec.ts",
     "**/e2e/*"
