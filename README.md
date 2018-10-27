@@ -14,6 +14,15 @@ This is an Angular [fullPage.js](https://github.com/alvarotrigo/fullPage.js) por
 
 New: 
  - Project is updated to support Angular 7 !  
+ 
+## Help wanted
+
+As for now, I have no enough time to work on the this library. 
+I am a backend developer, write Java / Python programs and that's the reason why library updates are so rare. I am not able to follow all the new trends in Angular, fullpage.js and frontend in general.
+
+I am looking for collaborators who could help me to keep library up to date and resolve incoming PR's and issues.
+If you are interested in it, contact me via email: meiblorn@gmail.com 
+
 
 ## Demo
 
