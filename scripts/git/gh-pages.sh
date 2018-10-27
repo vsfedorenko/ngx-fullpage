@@ -63,10 +63,20 @@
     # Copy content from build directory to publish directory
     cp -r ${PROJECT_ROOT_DIRECTORY}/${PROJECT_BUILD_DIR_NAME}/demo/* ${WORKING_DIR}/
 
+    recursive_add_nojekyll_file() {
+      for d in *; do
+        if [ -d "$d" ]; then
+          (cd -- "$d" && recursive_add_nojekyll_file)
+        fi
+        touch .nojekyll
+      done
+    }
+
+    recursive_add_nojekyll_file
+
     echo "Content to be deployed: $(pwd)"
     ${THIS_SCRIPT_DIR}/../utils/tree.sh # Print directory content
 
-    cd ${WORKING_DIR}
     echo "Current dir: $(pwd)"
 
     git config user.name "Travis CI"
