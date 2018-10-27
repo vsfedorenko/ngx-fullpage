@@ -31,4 +31,5 @@ Check out the live demo [HERE](http://meiblorn.github.io/ngx-fullpage)
 ## Docs 
 
 For docs checkout our [WIKI](https://github.com/meiblorn/ngx-fullpage/wiki)
+
 For typedocs checkout this [LINK](http://meiblorn.github.io/ngx-fullpage/docs/index.html)
