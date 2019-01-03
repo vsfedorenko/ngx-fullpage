@@ -91,7 +91,7 @@
     "sort-package-json": "^1.16.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typedoc": "^0.13.0",
+    "typedoc": "^0.14.0",
     "typescript": "~3.1.1",
     "zone.js": ">=0.8.26"
   },
