@@ -86,7 +86,7 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "npm-check-updates": "^2.14.2",
-    "protractor": "~5.4.0",
+    "protractor": "~6.0.0",
     "rxjs": ">=6.*",
     "sort-package-json": "^1.16.0",
     "ts-node": "~7.0.0",
